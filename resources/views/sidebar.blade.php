@@ -126,60 +126,7 @@
             </nav>
             
             
-            <h2>Gestion de Trabajadores Activos</h2>
-
-            <div class="field" id="searchform">
-                <input type="text" id="searchterm" placeholder="what are you searching for?" />
-                <button type="button" id="search">Find!</button>
-              </div>
-
-            <table border="1px" class="col-sm-4">
-              <tr>
-                <th scope="col">ID</th>
-                <th scope="col">Nombre</th>
-                <th scope="col">Area</th>
-                <th scope="col">Turno</th>
-              </tr>
             
-              <tr>
-                <td>001</td>
-                <td>Diana Murillo</td>
-                <td>ADM</td>
-                <td>Mañana</td>
-              </tr>
-            
-              <tr>
-                <td>002</td>
-                <td>Nelson Galvan</td>
-                <td>Cajero</td>
-                <td>Tarde</td>
-              </tr>
-            
-              <tr>
-                <td>003</td>
-                <td>Mauricio Choque</td>
-                <td>Jefe de Caja</td>
-                <td>Mañana</td>
-              </tr>
-            
-              <tr>
-                <td >004</th>
-                <td>Jorge Cari</td>
-                <td>Cajero</td>
-                <td>Tarde</td>
-              </tr>
-
-              <tr>
-                <td >005</th>
-                <td>Rene Burgoa</td>
-                <td>Atencion al Cliente</td>
-                <td>Mañana</td>
-              </tr>
-            </table>
-            
-          
-          
-        </div>
     </div>
 
     <!-- jQuery CDN - Slim version (=without AJAX) -->
