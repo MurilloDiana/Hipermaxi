@@ -23,5 +23,5 @@ Route:: get('/', function() {
     return view('login');
 });
 Route:: get('/home', function() {
-    return view('sidebar');
+    return view('home');
 });
