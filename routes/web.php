@@ -22,6 +22,6 @@ Route:: view('sidebar','siderbar');
 Route:: get('/', function() {
     return view('login');
 });
-Route:: get('/home', function() {
-    return view('home');
+Route:: get('/404', function() {
+    return view('404');
 });
