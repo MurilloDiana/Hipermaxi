@@ -1,6 +1,20 @@
 /*
     DEMO STYLE
 */
+.container{
+    text-align: center;
+   }
+   .table-striped tbody tr:nth-of-type(odd){
+    background-color: rgb(237,245,245);
+   }
+   .table-hover tbody tr:hover{
+    background-color: rgba(122,114,81, 0.7);
+    color: rgb(112,24,78);
+   }
+   .thead-green{
+    background-color: rgb(0, 99, 71);
+    color: white;
+   }
 
 @import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
 body {
@@ -331,12 +345,4 @@ a.article:hover {
     border:none;
   }
 
-  table {
-    display:flex;
-    position:relative;
-    margin: auto;
-    width:50%;
-    flex-direction:row;
-   
-    
-  }
+ 
