@@ -1,7 +1,7 @@
 @extends('layouts.master')
 @section('title', 'empleado')
 @section('content')
-<form>
+<form action="NuevoRegistroEmpleado" method="POST">
   @csrf
   <H1>DATOS PERSONALES</H1>
   <div class="form-row">
@@ -11,7 +11,7 @@
     </div>
     <div class="form-group col-md-6">
       <label>Nombre</label>
-      <input type="text" class="form-control" placeholder="codigo" name="NOMBRE">
+      <input type="text" class="form-control" placeholder="Apellidos y nombres" name="NOMBRE">
     </div>
     <div class="form-group col-md-6">
       <label>Fechas de Nacimiento</label>
@@ -31,7 +31,7 @@
     </div>
     <div class="form-group col-md-6">
       <label>Correo Electronico</label>
-      <input type="text" class="form-control" placeholder="example@gmail.com" name="EMAIL">
+      <input type="email" class="form-control" placeholder="example@gmail.com" name="EMAIL">
     </div>
     <div class="form-group col-md-6">
       <label >Telefono</label>
@@ -66,9 +66,9 @@
       <label>Nivel</label>
       <select name="NIVEL" class="form-control">
         <option selected></option>
-        <option>1</option>
-        <option>2</option>
-        <option>3</option>
+        <option value="1">RRHH</option>
+        <option value="2">ADMINISTRACION</option>
+        <option value="3">TRABAJADOR BASE</option>
       </select>
     </div>
   <button type="submit" class="btn btn-primary">Registrar</button>
