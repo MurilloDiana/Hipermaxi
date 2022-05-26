@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\EmpleadoController;
+
 
 
 /*
@@ -19,12 +21,17 @@ use Illuminate\Support\Facades\Route;
 // });
 Route:: view ('login','login');
 Route:: view('sidebar','siderbar');
+
 Route:: get('/', function() {
     return view('login');
 });
+
 Route:: get('/404', function() {
     return view('404');
 });
+
 Route:: get('/usuario', function() {
     return view('usuario');
 });
+
+Route::get('/empleado', [EmpleadoController::class, 'create'])->name('empleado.index');
