@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\EmpleadoController;
 
 
 /*
@@ -28,3 +29,12 @@ Route:: get('/404', function() {
 Route:: get('/usuario', function() {
     return view('usuario');
 });
+
+
+Route:: get('/empleado', function() {
+    return view('empleado');
+});
+
+Route::get('/empleado1', [EmpleadoController::class, 'mostrar1']);
+Route::get('/empleado2', [EmpleadoController::class, 'mostrar2']);
+//Route::get('/empleado'{nombre que se va escribir en la url}, [EmpleadoController::class, 'mostrar']{funcion a llamar de controllers});
