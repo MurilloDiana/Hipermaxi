@@ -7,9 +7,10 @@ use Illuminate\Http\Request;
 
 class EmpleadoController extends Controller
 {
-    public function mostrar1(){    
+    public function listarEmpleados(){    
         $datos = empleado::get();
-        dd($datos);
+        //dd($datos);
+        return view ('empleado', compact('datos'));
     }
 
     public function mostrar2(){    

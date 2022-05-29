@@ -1,4 +1,5 @@
 @extends('layouts.master')
+@section('title', 'usuario')
 @section('content')
 <link rel="stylesheet" href="{{asset('css/sidebar.css')}}">
     <div >
