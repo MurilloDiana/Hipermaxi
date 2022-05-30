@@ -4,7 +4,6 @@
 <table class="table">
   <thead>
     <tr>
-      <th scope="col">#</th>
       <th scope="col">Codigo</th>
       <th scope="col">Nombre</th>
       <th scope="col">Fecha de Nacimiento</th>
@@ -13,7 +12,7 @@
       <th scope="col">Telefono</th>
       <th scope="col">Fecha de Ingreso</th>
       <th scope="col">Usuario</th>
-      <th scope="col">Cargo</th>
+      <th scope="col">Nivel</th>
       <th scope="col">Area</th>
     </tr>
   </thead>
@@ -32,19 +31,25 @@
         <td>{{$dato->AREA}}</td>        
         <td>            
             <div>            
-                <form method="POST" action="{{ url("eliminar/{$dato->CODIGO}") }}">
+                <form method="POST" action="{{ url('eliminar/'.$dato->CODIGO) }}">
                 @csrf
                 @method('DELETE')
                 <button type="submit">Eliminar</button>
                 </form>
             </div>                        
-        </td>        
+        </td>
+        <td>            
+            <div>            
+                <a href="{{ url('editar_empleado/'.$dato->CODIGO) }}"class="btn btn-primary btn-sm">Editar</a>
+            </div>                        
+        </td>   
     </tr>
       @endforeach
 </table>
 
 <form action="{{route('registrar')}}" method="POST">
     {{csrf_field()}}
+    @method('POST')
     <div>
         <input type="text" placeholder="nombre" name="NOMBRE">
     </div>    
@@ -53,9 +58,9 @@
     </div>    
     <div>
         <select name="GENERO">
-            <option selected>seleccione...</option>
-            <option values="M">M</option>
-            <option values="F">F</option>
+            
+            <option value="M">M</option>
+            <option value="F">F</option>
         </select>
     </div> 
     <div>
@@ -93,8 +98,8 @@
             <option value="3">TRABAJADOR BASE</option>            
         </select>
     </div> 
-    <div>
-        <input type="submit" class="button" values="registrar">
+    <div>                
+        <button class="btn btn-primary" type="submit" values="registrar">Registrar</button>        
     </div>
 </form>
 @endsection

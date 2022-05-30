@@ -36,4 +36,6 @@ Route::get('/empleado', [EmpleadoController::class, 'listarEmpleados']);
 
 Route::post('/registrar', [EmpleadoController::class, 'registrarEmpleado'])->name("registrar");
 //Route::post('/eliminar_usuario', [EmpleadoController::class, 'eliminar'])->name("eliminar");
-Route::delete('eliminar/{CODIGO}', [EmpleadoController::class, 'eliminar'])->name('eliminar');
+Route::delete('eliminar/{CODIGO}', [EmpleadoController::class, 'eliminar'])->name('eliminar');//elimina
+Route::get('editar_empleado/{CODIGO}', [EmpleadoController::class, 'edit']);//manda los datos a editar
+Route::put('actualizar_empleado/{CODIGO}', [EmpleadoController::class, 'update']);//actualiza los datos

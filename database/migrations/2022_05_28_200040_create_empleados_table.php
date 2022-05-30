@@ -14,7 +14,6 @@ return new class extends Migration
     public function up()
     {
         Schema::create('empleados', function (Blueprint $table) {
-
             $table->increments('CODIGO');//primary key auto incremental
             $table->string('NOMBRE',50);
             $table->date('FECHA_NAC');

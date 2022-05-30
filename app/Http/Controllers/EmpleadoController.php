@@ -10,7 +10,7 @@ use App\Http\Controllers\Post;
 class EmpleadoController extends Controller
 {
     public function listarEmpleados(){    
-        $datos = empleado::get();
+        $datos = empleado::all();
         //dd($datos);
         return view ('empleado', compact('datos'));
     }
@@ -28,7 +28,7 @@ class EmpleadoController extends Controller
             [
                 'CODIGO'=>$request->CODIGO,
                 'NOMBRE'=>$request->NOMBRE,
-                'FECHA_NAC'=>$request->FECHA_NAC,
+                'GENERO'=>$request->GENERO,
                 'GENERO'=>$request->GENERO,
                 'CI'=>$request->CI,
                 'EMAIL'=>$request->EMAIL,
@@ -60,6 +60,48 @@ class EmpleadoController extends Controller
         }
         $datos = empleado::get();
         return view('empleado', compact('datos'));
+    }
+
+
+    /**
+     * devuelve los datos para ser actualizado
+     *
+     * @param  \App\Models\empleado  $empleado
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($CODIGO){
+        
+        $usuario = empleado::find($CODIGO);        
+        //$usuario = empleado::where('CODIGO', $request->CODIGO)->first();
+        //dd($usuario);
+        return view('modificar_empleado', compact('usuario'));
+    }
+
+  /**
+     * modifica cuando le das click en actualizar
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Models\empleado  $empleado
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, $CODIGO){
+        $dato = empleado::find($CODIGO);         
+        $dato->NOMBRE = $request->input('NOMBRE');
+        $dato->GENERO = $request->input('GENERO');
+        $dato->CI = $request->input('CI');
+        $dato->EMAIL = $request->input('EMAIL');
+        $dato->TELEFONO = $request->input('TELEFONO');
+        $dato->DIRECCION = $request->input('DIRECCION');
+        $dato->FECHA_ING = $request->input('FECHA_ING');
+        $dato->AREA = $request->input('AREA');
+        $dato->ANTIGUEDAD = $request->input('ANTIGUEDAD');
+        $dato->USUARIO = $request->input('USUARIO');
+        $dato->PASSWORD = Hash::make( $request->input('PASSWORD'));
+        $dato->NIVEL = $request->input('NIVEL');        
+        $dato->update();
+        
+        $datos=empleado::get();
+        return view ('empleado', compact('datos'));  
     }
 
     /**
@@ -100,29 +142,6 @@ class EmpleadoController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show(empleado $empleado)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\empleado  $empleado
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(empleado $empleado)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\empleado  $empleado
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, empleado $empleado)
     {
         //
     }
