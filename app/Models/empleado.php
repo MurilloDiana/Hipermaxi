@@ -9,7 +9,8 @@ class empleado extends Model
 {
     use HasFactory;
 
-    protected $fillable = [
+    protected $primaryKey = "CODIGO";
+    protected $fillable = [        
         'CODIGO',
         'NOMBRE',
         'FECHA_NAC',
@@ -25,5 +26,4 @@ class empleado extends Model
         'PASSWORD',
         'NIVEL'
     ];
-
 }

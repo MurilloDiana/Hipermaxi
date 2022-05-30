@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\empleado;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
+use App\Http\Controllers\Post;
 
 class EmpleadoController extends Controller
 {
@@ -13,12 +15,51 @@ class EmpleadoController extends Controller
         return view ('empleado', compact('datos'));
     }
 
-    public function mostrar2(){    
+    /*public function mostrarLista(){    
        // $datos = empleado::where('NOMBRE','nelson')->get();
         //->frist muestra solo el primero
         //$prueba = $datos[0]->nombre //muestra datos de la columna 0
         //dd($datos);
         return view('empleado');
+    }*/
+
+    public function registrarEmpleado(Request $request){
+        $datos=(
+            [
+                'CODIGO'=>$request->CODIGO,
+                'NOMBRE'=>$request->NOMBRE,
+                'FECHA_NAC'=>$request->FECHA_NAC,
+                'GENERO'=>$request->GENERO,
+                'CI'=>$request->CI,
+                'EMAIL'=>$request->EMAIL,
+                'TELEFONO'=>$request->TELEFONO,
+                'DIRECCION'=>$request->DIRECCION,
+                'FECHA_ING'=>$request->FECHA_ING,
+                'AREA'=>$request->AREA,
+                'ANTIGUEDAD'=>$request->ANTIGUEDAD,
+                'USUARIO'=>$request->USUARIO,
+                'PASSWORD'=>Hash::make($request->PASSWORD),
+                'NIVEL'=>$request->NIVEL
+            ]
+            );
+        empleado::create($datos);
+        $datos = empleado::get();
+        //dd($datos); 
+        return view('empleado', compact('datos'));
+    }
+
+
+    public function eliminar(Request $request){
+        /*if ($post != null) {
+            $post->delete();
+            return redirect()->route('dashboard')->with(['message'=> 'Successfully deleted!!']);
+        }*/
+        $existe = empleado::find($request->CODIGO);
+        if($existe != null){
+            $existe->delete();
+        }
+        $datos = empleado::get();
+        return view('empleado', compact('datos'));
     }
 
     /**

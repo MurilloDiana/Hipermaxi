@@ -30,12 +30,10 @@ Route:: get('/usuario', function() {
     return view('usuario');
 });
 
-/*
-Route::get('/empleado', function(){
-    return view('empleado')
-});
-*/
-
 Route::get('/empleado', [EmpleadoController::class, 'listarEmpleados']);
-Route::get('/empleado2', [EmpleadoController::class, 'mostrar2']);
+//Route::get('/empleado', [EmpleadoController::class, 'mostrarLista']);
 //Route::get('/empleado'{nombre que se va escribir en la url}, [EmpleadoController::class, 'mostrar']{funcion a llamar de controllers});
+
+Route::post('/registrar', [EmpleadoController::class, 'registrarEmpleado'])->name("registrar");
+//Route::post('/eliminar_usuario', [EmpleadoController::class, 'eliminar'])->name("eliminar");
+Route::delete('eliminar/{CODIGO}', [EmpleadoController::class, 'eliminar'])->name('eliminar');
