@@ -3,9 +3,6 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EmpleadoController;
 
-// Route::get('/', function () {
-//     return view('sidebar');
-// });
 Route:: view ('login','login');
 Route:: view('sidebar','siderbar');
 
