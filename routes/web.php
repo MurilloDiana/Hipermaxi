@@ -29,6 +29,9 @@ Route:: get('/404', function() {
 Route:: get('/usuario', function() {
     return view('usuario');
 });
+Route:: get('/home', function() {
+    return view('home');
+});
 
 Route::get('/empleado', [EmpleadoController::class, 'listarEmpleados']);
 //Route::get('/empleado', [EmpleadoController::class, 'mostrarLista']);
