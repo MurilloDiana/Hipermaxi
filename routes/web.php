@@ -17,7 +17,9 @@ Route:: get('/404', function() {
 Route:: get('/usuario', function() {
     return view('usuario');
 });
-
+Route:: get('/contrato', function() {
+    return view('contrato');
+});
 Route::get('/empleado', [EmpleadoController::class, 'create'])->name('empleado.index');
 
 Route::post('NuevoRegistroEmpleado', [EmpleadoController::class, 'RegistrarEmpleado']);
