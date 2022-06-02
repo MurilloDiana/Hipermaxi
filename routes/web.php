@@ -32,7 +32,12 @@ Route:: get('/usuario', function() {
 Route:: get('/home', function() {
     return view('home');
 });
-
+Route:: get('/chart', function() {
+    return view('chart');
+});
+Route:: get('/bar-chart', function() {
+    return view('bar-chart');
+});
 Route::get('/empleado', [EmpleadoController::class, 'listarEmpleados']);
 //Route::get('/empleado', [EmpleadoController::class, 'mostrarLista']);
 //Route::get('/empleado'{nombre que se va escribir en la url}, [EmpleadoController::class, 'mostrar']{funcion a llamar de controllers});
