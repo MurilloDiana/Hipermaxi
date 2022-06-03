@@ -6,6 +6,8 @@ use App\Models\empleado;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use App\Http\Controllers\Post;
+use Illuminate\Support\Facades\DB;
+
 
 class EmpleadoController extends Controller
 {
@@ -102,6 +104,14 @@ class EmpleadoController extends Controller
         
         $datos=empleado::get();
         return view ('empleado', compact('datos'));  
+    }
+
+
+
+    public function antiguedad_index(){
+        $datos=DB::table('empleados')->select('ANTIGUEDAD','NOMBRE')->get();
+        dd($datos);
+        return view('empleado', compact('datos'));
     }
 
     /**
