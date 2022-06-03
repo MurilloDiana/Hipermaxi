@@ -43,12 +43,11 @@ class LoginController extends Controller
         dd($boolean);*/        
         if(isset($request)){
             $usuario = $request->input('USUARIO');            
-            $password = $request->input('PASSWORD');        
+            $password = $request->input('PASSWORD');                   
             //$res=DB::table('empleados')->where('USUARIO', $usuario)->first();//$res = mysqli_query($cser,"select* from users where uname='$a'and upassword='$b'");            
             //$hashedPassword=DB::table('empleados')->select('PASSWORD')->where('CODIGO', $usuario)->get();
-            $datos = empleado::where('CODIGO', '=', $request->CODIGO)->first();
-            //dd($hashedPassword);            
-            if($datos and (Hash::check($password, $datos->PASSWORD))){                                         
+            $datos = empleado::find($request->CODIGO);
+            if($datos and (Hash::check($password, $datos->PASSWORD) and ($datos->CODIGO == $request->CODIGO))){
                 session(['idSession' => $usuario]);
                 $request->session()->regenerate();
                 return redirect('/')->with('message', $usuario); 

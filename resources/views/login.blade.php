@@ -38,9 +38,9 @@
                 </div>
                 <div class="form-group">
                     <select class="form-control" name="NIVEL" >
-                        <option value="1">EMPLEADO</option>
-                        <option value="2">ADMINISTRATIVO</option>    
-                        <option value="3">RRHH</option>     
+                        <option value="1">RRHH</option>
+                        <option value="2">ADMINISTRADOR</option>
+                        <option value="3">TRABAJADOR BASE</option>        
                     </select>
                 </div>
                 <button type="submit" class="btn btn-primary block full-width m-b">Login</button>

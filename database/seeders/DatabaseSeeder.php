@@ -37,5 +37,20 @@ class DatabaseSeeder extends Seeder
             'PASSWORD'=>Hash::make('123456789'),
             'NIVEL'=>'1'
         ]);
+        Empleado::create([        
+            'NOMBRE'=>'nelson',
+            'FECHA_NAC'=>'2022-05-11',
+            'GENERO'=>'M',
+            'CI'=>'12345678',
+            'EMAIL'=>'root@gmail.com',
+            'TELEFONO'=>'12345678',
+            'DIRECCION'=>'raiz',
+            'FECHA_ING'=>'2022-05-11',
+            'AREA'=>'raiz',
+            'ANTIGUEDAD'=>'2',
+            'USUARIO'=>'fabian',
+            'PASSWORD'=>Hash::make('1234567899'),
+            'NIVEL'=>'1'
+        ]);
     }
 }

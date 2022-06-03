@@ -24,11 +24,11 @@ class EmpleadoController extends Controller
     }*/
 
     public function registrarEmpleado(Request $request){
-        $datos=(
+        $datos=( 
             [
                 'CODIGO'=>$request->CODIGO,
                 'NOMBRE'=>$request->NOMBRE,
-                'GENERO'=>$request->GENERO,
+                'FECHA_NAC'=>$request->FECHA_NAC,
                 'GENERO'=>$request->GENERO,
                 'CI'=>$request->CI,
                 'EMAIL'=>$request->EMAIL,
