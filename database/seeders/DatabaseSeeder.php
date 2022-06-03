@@ -31,11 +31,11 @@ class DatabaseSeeder extends Seeder
             'TELEFONO'=>'69008952',
             'DIRECCION'=>'radial 10',
             'FECHA_ING'=>'2022-05-11',
-            'AREA'=>'produccion',
+            'AREA'=>'Cajero',
             'ANTIGUEDAD'=>'2',
             'USUARIO'=>'300',
             'PASSWORD'=>Hash::make('miralonomas'),
-            'NIVEL'=>'1'
+            'NIVEL'=>'3'
         ]);
 
         Empleado::create([            
@@ -47,11 +47,11 @@ class DatabaseSeeder extends Seeder
             'TELEFONO'=>'69008952',
             'DIRECCION'=>'radial 10',
             'FECHA_ING'=>'2022-05-11',
-            'AREA'=>'produccion',
+            'AREA'=>'Cajero',
             'ANTIGUEDAD'=>'2',
             'USUARIO'=>'300',
             'PASSWORD'=>Hash::make('maria'),
-            'NIVEL'=>'1'
+            'NIVEL'=>'3'
         ]);
 
     }
