@@ -11,7 +11,6 @@ class empleado extends Model
 
     protected $primaryKey = "CODIGO";
     protected $fillable = [        
-        'CODIGO',
         'NOMBRE',
         'FECHA_NAC',
         'GENERO',
