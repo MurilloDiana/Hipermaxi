@@ -32,7 +32,7 @@ class DatabaseSeeder extends Seeder
             'DIRECCION'=>'radial 10',
             'FECHA_ING'=>'2022-05-11',
             'AREA'=>'Cajero',
-            'ANTIGUEDAD'=>'2',
+            'ANTIGUEDAD'=>'2 años',
             'USUARIO'=>'301',
             'PASSWORD'=>Hash::make('miralonomas'),
             'NIVEL'=>'3'
@@ -48,7 +48,7 @@ class DatabaseSeeder extends Seeder
             'DIRECCION'=>'radial 10',
             'FECHA_ING'=>'2022-05-11',
             'AREA'=>'Cajero',
-            'ANTIGUEDAD'=>'2',
+            'ANTIGUEDAD'=>'2 años',
             'USUARIO'=>'302',
             'PASSWORD'=>Hash::make('maria2'),
             'NIVEL'=>'3'
@@ -64,7 +64,7 @@ class DatabaseSeeder extends Seeder
             'DIRECCION'=>'radial 17/2',
             'FECHA_ING'=>'2022-05-10',
             'AREA'=>'Cajero',
-            'ANTIGUEDAD'=>'2',
+            'ANTIGUEDAD'=>'2 años',
             'USUARIO'=>'303',
             'PASSWORD'=>Hash::make('carlos1'),
             'NIVEL'=>'3'
@@ -79,7 +79,7 @@ class DatabaseSeeder extends Seeder
             'DIRECCION'=>'Av. Irala',
             'FECHA_ING'=>'2022-06-11',
             'AREA'=>NULL,
-            'ANTIGUEDAD'=>'1',
+            'ANTIGUEDAD'=>'1 año',
             'USUARIO'=>'201',
             'PASSWORD'=>Hash::make('mario1'),
             'NIVEL'=>'2'
@@ -95,7 +95,7 @@ class DatabaseSeeder extends Seeder
             'DIRECCION'=>'Av.Paurito',
             'FECHA_ING'=>'2022-05-11',
             'AREA'=>NUll,
-            'ANTIGUEDAD'=>'1',
+            'ANTIGUEDAD'=>'1 año',
             'USUARIO'=>'202',
             'PASSWORD'=>Hash::make('carla1'),
             'NIVEL'=>'2'
@@ -110,7 +110,7 @@ class DatabaseSeeder extends Seeder
             'DIRECCION'=>'Av.Cañoto',
             'FECHA_ING'=>'2020-05-11',
             'AREA'=>NUll,
-            'ANTIGUEDAD'=>'3',
+            'ANTIGUEDAD'=>'3 años',
             'USUARIO'=>'101',
             'PASSWORD'=>Hash::make('daniel1'),
             'NIVEL'=>'1'
