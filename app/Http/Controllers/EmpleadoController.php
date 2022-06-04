@@ -109,9 +109,9 @@ class EmpleadoController extends Controller
 
 
     public function antiguedad_index(){
-        $datos=DB::table('empleados')->select('ANTIGUEDAD','NOMBRE')->get();
-        dd($datos);
-        return view('empleado', compact('datos'));
+        $datos=DB::table('empleados')->select('NOMBRE','ANTIGUEDAD')->get();
+        //dd($datos);
+        return view('antiguedad', compact('datos'));
     }
 
     /**

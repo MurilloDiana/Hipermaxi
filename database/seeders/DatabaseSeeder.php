@@ -112,8 +112,38 @@ class DatabaseSeeder extends Seeder
             'AREA'=>NUll,
             'ANTIGUEDAD'=>'3',
             'USUARIO'=>'101',
-            'PASSWORD'=>Hash::make('carla1'),
+            'PASSWORD'=>Hash::make('daniel1'),
             'NIVEL'=>'1'
+        ]);
+        Empleado::create([            
+            'NOMBRE'=>'luis',
+            'FECHA_NAC'=>'1999-08-11',
+            'GENERO'=>'M',
+            'CI'=>'11378000',
+            'EMAIL'=>'luis@gmail.com',
+            'TELEFONO'=>'77688945',
+            'DIRECCION'=>'Av.Paraguay',
+            'FECHA_ING'=>'2022-05-15',
+            'AREA'=>'Panaderia',
+            'ANTIGUEDAD'=>NULL,
+            'USUARIO'=>'304',
+            'PASSWORD'=>Hash::make('luis1'),
+            'NIVEL'=>'3'
+        ]);
+        Empleado::create([            
+            'NOMBRE'=>'daniela',
+            'FECHA_NAC'=>'1999-11-01',
+            'GENERO'=>'F',
+            'CI'=>'11356982',
+            'EMAIL'=>'daniela@gmail.com',
+            'TELEFONO'=>'75788945',
+            'DIRECCION'=>'Av.Cañoto',
+            'FECHA_ING'=>'2020-08-11',
+            'AREA'=>'Panaderia',
+            'ANTIGUEDAD'=>NULL,
+            'USUARIO'=>'305',
+            'PASSWORD'=>Hash::make('daniela1'),
+            'NIVEL'=>'3'
         ]);
     }
 }
