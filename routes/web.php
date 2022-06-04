@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EmpleadoController;
+use App\Http\Controllers\ChartController;
 
 
 /*
@@ -32,9 +33,10 @@ Route:: get('/usuario', function() {
 Route:: get('/home', function() {
     return view('home');
 });
-Route:: get('/chart', function() {
-    return view('chart');
-});
+Route:: get('/chart', [ChartController::class,'index']);
+
+Route::get('/bar-chart', [ChartController::class,'barChart']);
+
 Route:: get('/bar-chart', function() {
     return view('bar-chart');
 });

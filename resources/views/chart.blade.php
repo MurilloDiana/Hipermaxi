@@ -5,15 +5,15 @@
         
     <a class="btn btn-primary" href="{{ url('bar-chart') }}" role="button">Gráfico de Barras</a>
     <br>
-    <a class="btn btn-primary" href="{{ url('/') }}" role="button">Inicio</a>
+    <a class="btn btn-primary" href="{{ url('/home') }}" role="button">Inicio</a>
 
     <script src="https://code.highcharts.com/highcharts.js"></script>
     <script>
-        
+        let datas = <?php echo json_encode($datas) ?>
 
         Highcharts.chart('chart-container', {
             title: {
-                text: 'Incremento de nuevos usuarios, 2020'
+                text: 'Incremento de nuevos usuarios, 2022'
             },
             subtitle: {
                 text: 'Fuente: medios de TI'
