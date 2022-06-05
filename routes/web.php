@@ -36,10 +36,8 @@ Route:: get('/home', function() {
 Route:: get('/chart', [ChartController::class,'index']);
 
 Route::get('/bar-chart', [ChartController::class,'barChart']);
+Route::get('/circular', [ChartController::class,'circular']);
 
-Route:: get('/bar-chart', function() {
-    return view('bar-chart');
-});
 Route::get('/empleado', [EmpleadoController::class, 'listarEmpleados']);
 //Route::get('/empleado', [EmpleadoController::class, 'mostrarLista']);
 //Route::get('/empleado'{nombre que se va escribir en la url}, [EmpleadoController::class, 'mostrar']{funcion a llamar de controllers});

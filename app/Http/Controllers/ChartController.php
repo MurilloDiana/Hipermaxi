@@ -50,4 +50,14 @@ class ChartController extends Controller
 
         return view('bar-chart', compact('datas'));
     }
+
+    public function circular(){
+        $users=Empleado::all();
+        $datas=[];
+
+        foreach($users as $user){
+            $datas[]=['name'=>$user['NOMBRE'], 'y'=>$user['ANTIGUEDAD']];
+        }
+        return view('circular',compact('datas'));
+    }
 }

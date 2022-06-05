@@ -4,8 +4,7 @@
     <div id="chart-container"></div>
         
     <a class="btn btn-primary" href="{{ url('bar-chart') }}" role="button">Gráfico de Barras</a>
-    <br>
-    <a class="btn btn-primary" href="{{ url('/home') }}" role="button">Inicio</a>
+    
 
     <script src="https://code.highcharts.com/highcharts.js"></script>
     <script>
