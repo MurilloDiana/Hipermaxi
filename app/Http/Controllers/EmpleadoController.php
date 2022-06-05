@@ -110,7 +110,7 @@ class EmpleadoController extends Controller
 
     public function antiguedad_index(){
         //$datos=DB::table('empleados')->select('NOMBRE','ANTIGUEDAD')->WHERE('ANTIGUEDAD'!=Null)->get();
-        $datos= DB::table('empleados')->orderBy('ANTIGUEDAD')->select('NOMBRE','ANTIGUEDAD')->where('ANTIGUEDAD', '<>', NULL)->get();
+        $datos= DB::table('empleados')->orderBy('ANTIGUEDAD')->select('NOMBRE','FECHA_ING','ANTIGUEDAD')->where('ANTIGUEDAD', '<>', NULL)->get();
         //dd($datos);
          return view('antiguedad', compact('datos'));
     }
