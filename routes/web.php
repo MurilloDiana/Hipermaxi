@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EmpleadoController;
 
+
 Route:: view ('login','login');
 Route:: view('sidebar','siderbar');
 
@@ -17,9 +18,9 @@ Route:: get('/404', function() {
 Route:: get('/usuario', function() {
     return view('usuario');
 });
-Route:: get('/contrato', function() {
-    return view('contrato');
-});
-Route::get('/empleado', [EmpleadoController::class, 'create'])->name('empleado.index');
 
+    
+
+Route::get('/empleado', [EmpleadoController::class, 'create'])->name('empleado.index');
+Route::get('/vacaciones', [EmpleadoController::class, 'vac'])->name('vacaciones.index');
 Route::post('NuevoRegistroEmpleado', [EmpleadoController::class, 'RegistrarEmpleado']);
