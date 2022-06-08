@@ -15,6 +15,7 @@ class EmpleadoController extends Controller
         return view('auth.empleado');
     }
     public function vac(){
+       
         return view('auth.vacaciones');
     }
     public function RegistrarEmpleado(EmpleadoRequest $request){

@@ -15,6 +15,25 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // \App\Models\User::factory(10)->create();
+        $vacaciones = new vacaciones();
+        $vacaciones->name ="laravel";
+        $vacaciones->descripcion ="lo mejor de lo mejor";
+        $vacaciones->categoria ="pruebas de desarrollo web";
+        $vacaciones->save();
+
+
+
+        $vacaciones2 = new vacaciones();
+        $vacaciones->name ="laravel";
+        $vacaciones->descripcion ="lo mejor de lo mejor";
+        $vacaciones->categoria ="pruebas de desarrollo web";
+        $vacaciones->save();
+
+
+
+
+
+
 
         // \App\Models\User::factory()->create([
         //     'name' => 'Test User',

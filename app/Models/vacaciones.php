@@ -8,8 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class vacaciones extends Model
 {
     use HasFactory;
-    
-    public function index (){
-        return 'Home';
-    }
+        
+
+
 }
