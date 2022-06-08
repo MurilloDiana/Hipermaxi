@@ -9,11 +9,10 @@ class Empleado extends Model
 {
     use HasFactory;
     
-    protected $table='empleado';
-    protected $primayKey='CODIGO';
-    public $timestamps=false;//sirve para no migrar esta base de datos
-    protected $fillable = [
-        'CODIGO',
+    use HasFactory;
+
+    
+    protected $fillable = [                
         'NOMBRE',
         'FECHA_NAC',
         'GENERO',
@@ -23,9 +22,9 @@ class Empleado extends Model
         'DIRECCION',
         'FECHA_ING',
         'AREA',
-        'USUARIO',
-        'CONTRASEÑA',
+        'ANTIGUEDAD',
         'NIVEL',
+        'CODIGO'
     ];
     
 
