@@ -53,11 +53,11 @@ class ChartController extends Controller
 
     public function circular(){
         $users=Empleado::all();
-        $datas=[];
+        $data=[];
 
         foreach($users as $user){
-            $datas[]=['name'=>$user['NOMBRE'], 'y'=>$user['ANTIGUEDAD']];
+            $data[]=['name'=>$user['NOMBRE'], 'y'=>$user['ANTIGUEDAD']];
         }
-        return view('circular',compact('datas'));
+        return view('circular',compact('data'));
     }
 }
