@@ -47,3 +47,5 @@ Route::post('/registrar', [EmpleadoController::class, 'registrarEmpleado'])->nam
 Route::delete('eliminar/{CODIGO}', [EmpleadoController::class, 'eliminar'])->name('eliminar');//elimina
 Route::get('editar_empleado/{CODIGO}', [EmpleadoController::class, 'edit']);//manda los datos a editar
 Route::put('actualizar_empleado/{CODIGO}', [EmpleadoController::class, 'update']);//actualiza los datos
+//Caso de uso Gestion Antiguedad
+Route::get('/antiguedad', [EmpleadoController::class, 'antiguedad_index']);

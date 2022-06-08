@@ -23,8 +23,8 @@ return new class extends Migration
             $table->unsignedInteger('TELEFONO');
             $table->string('DIRECCION',100);
             $table->date('FECHA_ING');
-            $table->string('AREA',100);
-            $table->unsignedInteger('ANTIGUEDAD');
+            $table->string('AREA',100)->nullable();//nullable permite meter valores nulos
+            $table->string('ANTIGUEDAD')->nullable();
             $table->unsignedInteger('USUARIO');
             $table->string('PASSWORD');
             $table->unsignedInteger('NIVEL');/*1=RH;2=ADM;3=TRAB*/

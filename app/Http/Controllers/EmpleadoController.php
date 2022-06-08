@@ -6,6 +6,8 @@ use App\Models\empleado;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use App\Http\Controllers\Post;
+use Illuminate\Support\Facades\DB;
+use phpDocumentor\Reflection\Types\Nullable;
 
 class EmpleadoController extends Controller
 {
@@ -103,6 +105,17 @@ class EmpleadoController extends Controller
         $datos=empleado::get();
         return view ('empleado', compact('datos'));  
     }
+
+
+
+    public function antiguedad_index(){
+        //$datos=DB::table('empleados')->select('NOMBRE','ANTIGUEDAD')->WHERE('ANTIGUEDAD'!=Null)->get();
+        $datos= DB::table('empleados')->orderBy('ANTIGUEDAD')->select('NOMBRE','FECHA_ING','ANTIGUEDAD')->where('ANTIGUEDAD', '<>', NULL)->get();
+        //dd($datos);
+         return view('antiguedad', compact('datos'));
+    }
+    //Bibliografia
+    //https://www.oulub.com/es-ES/Laravel/queries
 
     /**
      * Display a listing of the resource.
