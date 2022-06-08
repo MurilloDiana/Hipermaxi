@@ -1,5 +1,4 @@
-@extends('layouts.master')
-@section('title', 'usuario')
+@extends('layouts.app-master')
 @section('content')
 <table class="table">
   <thead>

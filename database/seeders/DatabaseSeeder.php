@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use App\Models\empleado;//adiciona el models de la tabla
+use App\Models\User;
 
 class DatabaseSeeder extends Seeder
 {
@@ -22,6 +23,8 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
+        
+        /*
         Empleado::create([        
             'NOMBRE'=>'super administrador',
             'FECHA_NAC'=>'2022-05-11',
@@ -51,6 +54,6 @@ class DatabaseSeeder extends Seeder
             'USUARIO'=>'fabian',
             'PASSWORD'=>Hash::make('1234567899'),
             'NIVEL'=>'1'
-        ]);
+        ]);*/
     }
 }
