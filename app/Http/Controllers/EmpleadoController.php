@@ -15,8 +15,8 @@ class EmpleadoController extends Controller
         return view('auth.empleado');
     }
     public function vac(){
-        $users = Empleado::all();
-        return view('auth.vacaciones',compact('vaca'));
+        $datos = empleado::all();
+        return view('auth.vacaciones',compact('datos'));
     }
     public function RegistrarEmpleado(EmpleadoRequest $request){
         //dd($request);verifica si los datos son correctos antes de una conexion
