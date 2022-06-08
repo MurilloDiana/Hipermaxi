@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('empleados', function (Blueprint $table) {
-            $table->increments('CODIGO');//primary key auto incremental
+            $table->id('CODIGO');//primary key auto incremental
             $table->string('NOMBRE',50);
             $table->date('FECHA_NAC');
             $table->char('GENERO',1);
@@ -24,12 +24,11 @@ return new class extends Migration
             $table->string('DIRECCION',100);
             $table->date('FECHA_ING');
             $table->string('AREA',100);
-            $table->unsignedInteger('ANTIGUEDAD');
-            $table->string('USUARIO');
-            $table->string('PASSWORD');
+            $table->unsignedInteger('ANTIGUEDAD');            
             $table->unsignedInteger('NIVEL');/*1=RH;2=ADM;3=TRAB*/
             $table->rememberToken();
             $table->timestamps();
+          
             /*
             para hacer foreign key en casaca
             $table->foreign('id_cliente')->references('id')->on('clientes')->onDelete('cascade')->onUpdate('cascade');

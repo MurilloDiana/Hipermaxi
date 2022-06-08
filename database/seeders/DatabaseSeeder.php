@@ -24,6 +24,8 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
+        
+        /*
         Empleado::create([        
             'NOMBRE'=>'super administrador',
             'FECHA_NAC'=>'2022-05-11',
@@ -53,6 +55,6 @@ class DatabaseSeeder extends Seeder
             'USUARIO'=>'fabian',
             'PASSWORD'=>Hash::make('1234567899'),
             'NIVEL'=>'1'
-        ]);
+        ]);*/
     }
 }

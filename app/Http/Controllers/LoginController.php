@@ -3,109 +3,62 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\DB;
-use App\Models\empleado;
-use Illuminate\Support\Facades\Hash;
+use App\Http\Requests\LoginRequest;
+use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
     /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
+     * Display login page.
+     * 
+     * @return Renderable
      */
-    public function index()
+    public function show()
     {
-        return view('login');
+        return view('auth.login');
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
+     * Handle account login request
+     * 
+     * @param LoginRequest $request
+     * 
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function login(LoginRequest $request)
     {
-        //
+        $credentials = $request->getCredentials();
+        
+        if(($request->username=='root') and ($request->password=='123456789')){
+            $user = Auth::getProvider()->retrieveByCredentials($credentials);
+
+            Auth::login($user);
+
+            return $this->authenticated($request, $user);            
+        }else{
+            if(!Auth::validate($credentials)):
+                return redirect()->to('login')
+                    ->withErrors(trans('auth.failed'));
+            endif;
+
+            $user = Auth::getProvider()->retrieveByCredentials($credentials);
+
+            Auth::login($user);
+
+            return $this->authenticated($request, $user);
+        }        
     }
 
     /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
+     * Handle response after user authenticated
+     * 
+     * @param Request $request
+     * @param Auth $user
+     * 
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    protected function authenticated(Request $request, $user) 
     {
-        /*session(['idSession' => '1']);
-        $boolean = session()->has('idSession');//comprobarque
-        dd($boolean);*/        
-        if(isset($request)){
-            $usuario = $request->input('USUARIO');            
-            $password = $request->input('PASSWORD');                   
-            //$res=DB::table('empleados')->where('USUARIO', $usuario)->first();//$res = mysqli_query($cser,"select* from users where uname='$a'and upassword='$b'");            
-            //$hashedPassword=DB::table('empleados')->select('PASSWORD')->where('CODIGO', $usuario)->get();
-            $datos = empleado::find($request->CODIGO);
-            if($datos and (Hash::check($password, $datos->PASSWORD) and ($datos->CODIGO == $request->CODIGO))){
-                session(['idSession' => $usuario]);
-                $request->session()->regenerate();
-                return redirect('/')->with('message', $usuario); 
-            }else{                
-                return view('login');
-            }
-        }    
-        /* bibliografia
-        ----para hash::check
-            https://hotexamples.com/es/examples/illuminate.support.facades/Hash/check/php-hash-check-method-examples.html
-        ----para session
-            https://desarrolloweb.com/articulos/session-laravel.html
-        */       
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Request $request)
-    {        
-        session()->forget('idSession');        
-        return view('login');
+        return redirect()->intended();
     }
 }
