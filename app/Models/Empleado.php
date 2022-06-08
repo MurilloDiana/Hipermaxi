@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Empleado extends Model
 {
     use HasFactory;
+    
     protected $table='empleado';
     protected $primayKey='CODIGO';
     public $timestamps=false;//sirve para no migrar esta base de datos
