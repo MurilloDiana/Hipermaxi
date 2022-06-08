@@ -28,6 +28,7 @@ return new class extends Migration
             $table->unsignedInteger('USUARIO');
             $table->string('PASSWORD');
             $table->unsignedInteger('NIVEL');/*1=RH;2=ADM;3=TRAB*/
+            $table->rememberToken();
             $table->timestamps();
             /*
             para hacer foreign key en casaca

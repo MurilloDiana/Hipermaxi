@@ -25,6 +25,21 @@ class DatabaseSeeder extends Seeder
         //     'email' => 'test@example.com',
         // ]);
         Empleado::create([        
+            'NOMBRE'=>'super administrador',
+            'FECHA_NAC'=>'2022-05-11',
+            'GENERO'=>'M',
+            'CI'=>'12345678',
+            'EMAIL'=>'root@gmail.com',
+            'TELEFONO'=>'12345678',
+            'DIRECCION'=>'raiz',
+            'FECHA_ING'=>'2022-05-11',
+            'AREA'=>'raiz',
+            'ANTIGUEDAD'=>'2',
+            'USUARIO'=>'root',
+            'PASSWORD'=>Hash::make('123456789'),
+            'NIVEL'=>'1'
+        ]);
+        Empleado::create([        
             'NOMBRE'=>'nelson',
             'FECHA_NAC'=>'2000-05-11',
             'GENERO'=>'M',
