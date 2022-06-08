@@ -33,6 +33,9 @@ Route:: get('/usuario', function() {
 Route:: get('/home', function() {
     return view('home');
 });
+Route:: get('/contrato', function() {
+    return view('contrato');
+});
 Route:: get('/chart', [ChartController::class,'index']);
 
 Route::get('/bar-chart', [ChartController::class,'barChart']);
