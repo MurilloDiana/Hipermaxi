@@ -13,8 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('empleados', function (Blueprint $table) {
-            $table->id('CODIGO');//primary key auto incremental
+        Schema::create('empleados', function (Blueprint $table) {            
             $table->string('NOMBRE',50);
             $table->date('FECHA_NAC');
             $table->char('GENERO',1);
