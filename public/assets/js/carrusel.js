@@ -50,4 +50,4 @@ var actual = 0;
 					play = null;
 					boton.src = "http://www.reciclay.com.ve/gio/play.png";
 				}
-			}
+			}			
