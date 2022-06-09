@@ -57,6 +57,4 @@
     <button type="submit" class="btn btn-primary">Dar Vacaciones</button>
    
   </form>
-  </*  <button type="submit" class="btn btn-primary"> Ver Registro de Vacaciones</button>  */>
-
 @endsection
