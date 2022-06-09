@@ -23,4 +23,7 @@ Route:: get('/usuario', function() {
 
 Route::get('/empleado', [EmpleadoController::class, 'create'])->name('empleado.index');
 Route::get('/vacaciones', [EmpleadoController::class, 'vac'])->name('vacaciones.index');
+Route::post('vacaciones', [EmpleadoController::class, 'asignar'])->name('vacaciones.asignar');
+
+//Route::get('asignarvacaciones', [EmpleadoController::class, 'create'])->name('vacaciones.create');
 Route::post('NuevoRegistroEmpleado', [EmpleadoController::class, 'RegistrarEmpleado']);

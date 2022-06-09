@@ -2,8 +2,26 @@
 @section('title','vacaciones')
 @section('content')
 
+<table class="table">
 
-<form action="Asignar Vacaciones" method="POST">
+  <tbody>
+      @foreach ($datos as $dato)
+      <tr>
+        <td>{{$dato->CODIGO}}</td>
+        <td>{{$dato->NOMBRE}}</td>
+        <td>{{$dato->FECHA_NAC}}</td>
+        <td>{{$dato->GENERO}}</td>
+        <td>{{$dato->CI}}</td>
+        <td>{{$dato->FECHA_ING}}</td>            
+        <td>{{$dato->USUARIO}}</td>
+        <td>{{$dato->NIVEL}}</td>
+        <td>{{$dato->AREA}}</td>        
+        
+      @endforeach
+</table>
+
+
+<form action= {{ route('vacaciones.asignar')  }} method="POST">
     @csrf
     <H1>ASIGNAR VACACIONES</H1>
     <div class="form-row">
@@ -23,11 +41,7 @@
    
       
       
-      <div class="form-group col-md-6">
-        <label >Fecha de llegada</label>
-        <input type="date" class="form-control" name="FECHA_SAL">
-      </div>
-      
+ 
     
       
     </div>
@@ -41,6 +55,8 @@
         </select>
       </div>
     <button type="submit" class="btn btn-primary">Dar Vacaciones</button>
-    <button type="submit" class="btn btn-primary"> Ver Registro de Vacaciones</button>
+   
   </form>
+  </*  <button type="submit" class="btn btn-primary"> Ver Registro de Vacaciones</button>  */>
+
 @endsection
