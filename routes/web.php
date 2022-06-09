@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EmpleadoController;
+use App\Http\Controllers\ChartController;
 use App\Http\Controllers\LoginController;
 
 
@@ -55,6 +56,14 @@ Route::group(['namespace' => 'App\Http\Controllers'], function(){
         });
     });
 });
+Route:: get('/contrato', function() {
+    return view('contrato');
+});
+Route:: get('/chart', [ChartController::class,'index']);
+
+Route::get('/bar-chart', [ChartController::class,'barChart']);
+Route::get('/circular', [ChartController::class,'circular']);
+
 /*
 Route::get('login', [LoginController::class, 'index'])->name('login');
 
