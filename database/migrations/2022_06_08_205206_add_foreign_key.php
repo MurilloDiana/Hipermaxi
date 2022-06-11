@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::table('users', function (Blueprint $table) {
             $table->id()->unique();
             $table->foreign('id')->references('CODIGO')->on('empleados');
-        });
+        }); 
     }
 
     /**
