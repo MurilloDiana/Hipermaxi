@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('layouts.app-master')
 @section('content')
     <div>
     <div id="chart-container"></div>

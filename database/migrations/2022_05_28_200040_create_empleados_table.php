@@ -23,8 +23,7 @@ return new class extends Migration
             $table->unsignedInteger('TELEFONO');
             $table->string('DIRECCION',100);
             $table->date('FECHA_ING');
-            $table->string('AREA',100);
-            $table->unsignedInteger('ANTIGUEDAD');            
+            $table->string('AREA',100);         
             $table->unsignedInteger('NIVEL');/*1=RH;2=ADM;3=TRAB*/
             $table->rememberToken();
             $table->timestamps();
