@@ -2,9 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EmpleadoController;
+use App\Http\Controllers\AntiguedadController;
 use App\Http\Controllers\ChartController;
 use App\Http\Controllers\LoginController;
-
+use App\Http\Controllers\AsistenciaController;
 
 
 /*
@@ -49,20 +50,18 @@ Route::group(['namespace' => 'App\Http\Controllers'], function(){
             return 'Hello World';
         });
 
-        Route::get('/empleado', [EmpleadoController::class, 'listarEmpleados'])->name('empleado.index');
+        Route::get('/empleado', [EmpleadoController::class, 'listarEmpleados'])->name('empleado.index');        
 
-        Route:: get('/hola', function() {
-            return "hola mundo";
-        });
+        Route:: get('/chart', [ChartController::class,'index'])->name('chart.index');        
+        Route::get('/bar-chart', [ChartController::class,'barChart'])->name('bar-char.index');
+        Route::get('/circular', [ChartController::class,'circular'])->name('circular.index');
+
+        Route::get('/antiguedad', [AntiguedadController::class, 'index'])->name('antiguedad.index');
+
+        Route::get('/asistencia',[AsistenciaController::class, 'listar'])->name('asistencias.index');
+        
     });
 });
-Route:: get('/contrato', function() {
-    return view('contrato');
-});
-Route:: get('/chart', [ChartController::class,'index']);
-
-Route::get('/bar-chart', [ChartController::class,'barChart']);
-Route::get('/circular', [ChartController::class,'circular']);
 
 /*
 Route::get('login', [LoginController::class, 'index'])->name('login');

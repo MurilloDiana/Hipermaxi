@@ -15,7 +15,7 @@
   <main class="container-fluid">
       @yield('content')
   </main>
-  @extends('layouts.footer-master')
+  <!--@extends('layouts.footer-master')-->
   <script src="{!! url('assets/bootstrap/js/bootstrap.bundle.min.js') !!}"></script>  
 </body>
 </html>

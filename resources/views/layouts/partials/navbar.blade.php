@@ -7,10 +7,13 @@
       </form>-->
 
       @auth
-        <a href="#">Inicio</a>        
-        <a href="#blog">Asistencia</a>        
-        <a href="#contactanos">Antiguedad</a>
-        <a href="#acercade">acerca de...</a>
+      <nav>
+        <a href="{{route('home.index')}}">Inicio</a>        
+        <a href="{{ route('chart.index') }}">Vitacora</a>        
+        <a href="{{route('antiguedad.index')}}">Antiguedad</a>
+        <a href="{{route('asistencias.index')}}">Asistencia</a>
+        <div class="animation start-home"></div>
+      </nav>
         {{auth()->user()->name}}
         <div class="text-end">
           <a href="{{ route('logout.perform') }}" class="btn btn-outline-light me-2">Salir</a>
@@ -19,7 +22,7 @@
 
       @guest
       <nav>
-        <a href="#">Inicio</a>        
+        <a href="{{route('home.index')}}">Inicio</a>        
         <a href="#blog">Blog</a>        
         <a href="#contactanos">Contactanos</a>
         <a href="#acercade">acerca de...</a>

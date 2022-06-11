@@ -1,0 +1,4 @@
+guia de Carbon manipulacion del tiempo
+https://styde.net/componente-carbon-fechas-laravel-5/
+selec orderby
+https://stackoverflow.com/questions/17429427/laravel-eloquent-ordering-results-of-all

@@ -20,7 +20,6 @@ class empleado extends Model
         'DIRECCION',
         'FECHA_ING',
         'AREA',
-        'ANTIGUEDAD',
         'NIVEL'
     ];
 }
