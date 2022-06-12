@@ -1,4 +1,6 @@
-
+@extends('layouts.master')
+@section('title', '404')
+@section('content')
     <div >
         <h2 style="text-align: center"> Under Construction </h2>
 

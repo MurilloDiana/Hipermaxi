@@ -1,4 +1,5 @@
 @extends('layouts.master')
+@section('title', 'usuario')
 @section('content')
     <div >
         <h2>Gestion de Trabajadores Activos</h2>
