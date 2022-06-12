@@ -20,7 +20,7 @@ class AntiguedadController extends Controller
     }
 
     public function antiguedad_index(){
-        $year = 3;
+        $year = 5;
         $date = Carbon::now(); //2015-01-01 00:00:00
         $endDate = $date->subYear($year);  //2016-01-01 00:00:00                
         $datos = empleado::whereYear('FECHA_ING',$endDate)->get();        

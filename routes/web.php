@@ -62,7 +62,7 @@ Route::group(['namespace' => 'App\Http\Controllers'], function(){
         Route::get('/circular', [ChartController::class,'circular'])->name('circular.index');
 
         /*CRUD ANTIGUEDADES*/
-        Route::get('/antiguedad', [AntiguedadController::class, 'index'])->name('antiguedad.index');
+        Route::get('/antiguedad', [AntiguedadController::class, 'antiguedad_index'])->name('antiguedad.index');
 
         /*CRUD ASISTENCIAS */
         Route::get('/asistencia',[AsistenciaController::class, 'listar'])->name('asistencias.index');
