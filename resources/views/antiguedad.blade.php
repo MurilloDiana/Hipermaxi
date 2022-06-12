@@ -1,23 +1,12 @@
-@extends('layouts.master')
-@section('title', 'usuario')
+@extends('layouts.app-master')
 @section('content')
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Antiguedad</title>
-  <link rel="stylesheet" href="{{asset('css/style_antiguedad.css')}}">
-</head>
 <body>
-  <div id="main-container">
-  <table class="table">
-    <thead>
+  <div class="py-4">
+  <table class="table table-hover bg-light">
+    <thead class="bg-primary text-light">
       <tr>
         <th scope="col">Nombre</th>
-        <th scope="col">Fecha de Ingreso</th>
-        <th scope="col">Antiguedad</th>
+        <th scope="col">Fecha de Ingreso</th>        
       
       </tr>
     </thead>
@@ -25,8 +14,7 @@
         @foreach ($datos as $dato)
         <tr>
           <td>{{$dato->NOMBRE}}</td>
-          <td>{{$dato->FECHA_ING}}</td>    
-          <td>{{$dato->ANTIGUEDAD}}</td>
+          <td>{{$dato->FECHA_ING}}</td>          
       </tr>
         @endforeach
   </table>

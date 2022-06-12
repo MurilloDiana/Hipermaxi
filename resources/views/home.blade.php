@@ -17,4 +17,13 @@
         </li>
     </ul>
 </div>
+<strong>{{session('message')}}</strong> 
+@if (session('message'))
+   <strong>{{session('message')}}</strong> 
+@endif
+
+<form action="{{ route('logout') }}" method="post">
+       @csrf
+       <button type="submit">Logout</button>
+</form>
 @endsection

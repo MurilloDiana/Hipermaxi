@@ -2,6 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EmpleadoController;
+use App\Http\Controllers\AntiguedadController;
+use App\Http\Controllers\ChartController;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\AsistenciaController;
 
 
 /*
@@ -15,32 +19,76 @@ use App\Http\Controllers\EmpleadoController;
 |
 */
 
-// Route::get('/', function () {
-//     return view('sidebar');
-// });
-Route:: view ('login','login');
-Route:: view('sidebar','siderbar');
-Route:: get('/', function() {
-    return view('login');
-});
-Route:: get('/404', function() {
-    return view('404');
-});
-Route:: get('/usuario', function() {
-    return view('usuario');
-});
-Route:: get('/home', function() {
-    return view('home');
+Route::group(['namespace' => 'App\Http\Controllers'], function(){   
+    /**
+     * Home Routes
+     */
+    Route::get('/', 'HomeController@index')->name('home.index');
+    
+
+    Route::group(['middleware' => ['guest']], function() {
+        /**
+         * Register Routes
+         */
+        Route::get('/register', 'RegisterController@show')->name('register.show');
+        Route::post('/register', 'RegisterController@register')->name('register.perform');
+
+        /**
+         * Login Routes
+         */
+        Route::get('/login', 'LoginController@show')->name('login.show');
+        Route::post('/login', 'LoginController@login')->name('login.perform');    
+    });
+
+    Route::group(['middleware' => ['auth']], function() {
+        /*FINALIZAR SESSION*/
+        Route::get('/logout', 'LogoutController@perform')->name('logout.perform');
+
+        /*MENSAJE POR ROUTE*/
+        Route::get('/saludo', function () {
+            return 'Hello World';
+        });
+
+        /*CRUD EMPLEADOS*/
+        Route::get('/empleado', [EmpleadoController::class, 'listarEmpleados'])->name('empleado.index');
+        Route::post('/registrar', [EmpleadoController::class, 'registrarEmpleado'])->name("registrar");
+        Route::get('editar_empleado/{CODIGO}', [EmpleadoController::class, 'edit']);//manda los datos a editar
+        Route::put('actualizar_empleado/{CODIGO}', [EmpleadoController::class, 'update'])->name('actualizarEmpleado');//actualiza los datos*/
+        Route::delete('/eliminar/{CODIGO}', [EmpleadoController::class, 'eliminar']);
+
+        /*VITACORAS*/
+        Route::get('/chart', [ChartController::class,'index'])->name('chart.index');        
+        Route::get('/bar-chart', [ChartController::class,'barChart'])->name('bar-char.index');
+        Route::get('/circular', [ChartController::class,'circular'])->name('circular.index');
+
+        /*CRUD ANTIGUEDADES*/
+        Route::get('/antiguedad', [AntiguedadController::class, 'index'])->name('antiguedad.index');
+
+        /*CRUD ASISTENCIAS */
+        Route::get('/asistencia',[AsistenciaController::class, 'listar'])->name('asistencias.index');
+        
+    });
 });
 
-Route::get('/empleado', [EmpleadoController::class, 'listarEmpleados']);
-//Route::get('/empleado', [EmpleadoController::class, 'mostrarLista']);
+/*
+Route::get('login', [LoginController::class, 'index'])->name('login');
+
+Route::post('login', [LoginCOntroller::class, 'store']);
+
+Route::post('logout', [LoginController::class, 'destroy'])->name('logout');*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //Route::get('/empleado'{nombre que se va escribir en la url}, [EmpleadoController::class, 'mostrar']{funcion a llamar de controllers});
-
-Route::post('/registrar', [EmpleadoController::class, 'registrarEmpleado'])->name("registrar");
-//Route::post('/eliminar_usuario', [EmpleadoController::class, 'eliminar'])->name("eliminar");
-Route::delete('eliminar/{CODIGO}', [EmpleadoController::class, 'eliminar'])->name('eliminar');//elimina
-Route::get('editar_empleado/{CODIGO}', [EmpleadoController::class, 'edit']);//manda los datos a editar
-Route::put('actualizar_empleado/{CODIGO}', [EmpleadoController::class, 'update']);//actualiza los datos
-//Caso de uso Gestion Antiguedad
-Route::get('/antiguedad', [EmpleadoController::class, 'antiguedad_index']);

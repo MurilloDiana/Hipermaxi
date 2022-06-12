@@ -25,19 +25,22 @@
             </div>
             <h3>Bienvenidos al Sistema de Informacion de Asistencia</h3>
             <p>Iniciar Sesion</p>
-            <form class="m-t" role="form"  method="post">
+            <form class="m-t" role="form"  action="{{route('login')}}" method="post">
                 @csrf
                 <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Usuario" required="" name="login">
+                    <input type="text" class="form-control" placeholder="Codigo" required="" name="CODIGO">
                 </div>
                 <div class="form-group">
-                    <input type="password" class="form-control" placeholder="Password" required="" name="password">
+                    <input type="text" class="form-control" placeholder="Usuario" required="" name="USUARIO">
                 </div>
                 <div class="form-group">
-                    <select class="form-control" name="tipo" id="tipo">
-                        <option value="est">EMPLEADO</option>
-                        <option value="adm">ADMINISTRATIVO</option>    
-                        <option value="est">RRHH</option>     
+                    <input type="password" class="form-control" placeholder="Password" required="" name="PASSWORD">
+                </div>
+                <div class="form-group">
+                    <select class="form-control" name="NIVEL" >
+                        <option value="1">RRHH</option>
+                        <option value="2">ADMINISTRADOR</option>
+                        <option value="3">TRABAJADOR BASE</option>        
                     </select>
                 </div>
                 <button type="submit" class="btn btn-primary block full-width m-b">Login</button>
