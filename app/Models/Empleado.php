@@ -5,12 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Empleado extends Model
+class empleado extends Model
 {
     use HasFactory;
-    
-    use HasFactory;
-
+    //RENOMBRA LA PRIMARY KEY
+    protected $primaryKey = "CODIGO";
     
     protected $fillable = [                
         'NOMBRE',
@@ -22,10 +21,6 @@ class Empleado extends Model
         'DIRECCION',
         'FECHA_ING',
         'AREA',
-        'ANTIGUEDAD',
-        'NIVEL',
-        'CODIGO'
+        'NIVEL'
     ];
-    
-
 }
