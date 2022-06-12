@@ -8,7 +8,7 @@
 
       @auth
       <nav>
-        <a href="{{route('home.index')}}">Inicio</a>        
+        <a href="{{route('empleado.index')}}">Inicio</a>        
         <a href="{{ route('chart.index') }}">Vitacora</a>        
         <a href="{{route('antiguedad.index')}}">Antiguedad</a>
         <a href="{{route('asistencias.index')}}">Asistencia</a>

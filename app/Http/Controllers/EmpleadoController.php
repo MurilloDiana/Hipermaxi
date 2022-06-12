@@ -12,18 +12,9 @@ use Carbon\Carbon;
 class EmpleadoController extends Controller
 {
     public function listarEmpleados(){    
-        $datos = empleado::all();
-        //dd($datos);
+        $datos = empleado::all()->sortBy("NOMBRE");        
         return view ('empleado', compact('datos'));
     }
-
-    /*public function mostrarLista(){    
-       // $datos = empleado::where('NOMBRE','nelson')->get();
-        //->frist muestra solo el primero
-        //$prueba = $datos[0]->nombre //muestra datos de la columna 0
-        //dd($datos);
-        return view('empleado');
-    }*/
 
     public function registrarEmpleado(Request $request){
         $datos=( 
@@ -44,48 +35,17 @@ class EmpleadoController extends Controller
                 'NIVEL'=>$request->NIVEL
             ]
             );
+
         empleado::create($datos);
-        $datos = empleado::get();
-        //dd($datos); 
-        return view('empleado', compact('datos'));
-    }
+        return $this->listarEmpleados();
+    } 
 
-
-    public function eliminar(Request $request){
-        /*if ($post != null) {
-            $post->delete();
-            return redirect()->route('dashboard')->with(['message'=> 'Successfully deleted!!']);
-        }*/
-        $existe = empleado::find($request->CODIGO);
-        if($existe != null){
-            $existe->delete();
-        }
-        $datos = empleado::get();
-        return view('empleado', compact('datos'));
-    }
-
-
-    /**
-     * devuelve los datos para ser actualizado
-     *
-     * @param  \App\Models\empleado  $empleado
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($CODIGO){
-        
-        $usuario = empleado::find($CODIGO);        
-        //$usuario = empleado::where('CODIGO', $request->CODIGO)->first();
-        //dd($usuario);
+    
+    public function edit($CODIGO){        
+        $usuario = empleado::find($CODIGO);                
         return view('modificar_empleado', compact('usuario'));
     }
 
-  /**
-     * modifica cuando le das click en actualizar
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\empleado  $empleado
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, $CODIGO){
         $dato = empleado::find($CODIGO);         
         $dato->NOMBRE = $request->input('NOMBRE');
@@ -95,67 +55,17 @@ class EmpleadoController extends Controller
         $dato->TELEFONO = $request->input('TELEFONO');
         $dato->DIRECCION = $request->input('DIRECCION');
         $dato->FECHA_ING = $request->input('FECHA_ING');
-        $dato->AREA = $request->input('AREA');
-        $dato->ANTIGUEDAD = $request->input('ANTIGUEDAD');
-        $dato->USUARIO = $request->input('USUARIO');
-        $dato->PASSWORD = Hash::make( $request->input('PASSWORD'));
+        $dato->AREA = $request->input('AREA');        
         $dato->NIVEL = $request->input('NIVEL');        
-        $dato->update();
-        
-        $datos=empleado::get();
-        return view ('empleado', compact('datos'));  
+        $dato->update();                
+        return $this->listarEmpleados();
     }
 
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\empleado  $empleado
-     * @return \Illuminate\Http\Response
-     */
-    public function show(empleado $empleado)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\empleado  $empleado
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(empleado $empleado)
-    {
-        //
+    public function eliminar($CODIGO){        
+        $existe = empleado::find($CODIGO);        
+        if($existe != null){
+            $existe->delete();
+        }
+        return $this->listarEmpleados();        
     }
 }

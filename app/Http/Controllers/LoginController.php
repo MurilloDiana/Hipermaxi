@@ -27,8 +27,7 @@ class LoginController extends Controller
      */
     public function login(LoginRequest $request)
     {
-        $credentials = $request->getCredentials();
-        //dd($credentials);        
+        $credentials = $request->getCredentials();        
             if(!Auth::validate($credentials)):
                 return redirect()->to('login')
                     ->withErrors(trans('auth.failed'));
@@ -50,7 +49,7 @@ class LoginController extends Controller
      * @return \Illuminate\Http\Response
      */
     protected function authenticated(Request $request, $user) 
-    {
-        return redirect()->intended();
+    {        
+        return redirect()->intended("empleado");
     }
 }

@@ -41,23 +41,30 @@ Route::group(['namespace' => 'App\Http\Controllers'], function(){
     });
 
     Route::group(['middleware' => ['auth']], function() {
-        /**
-         * Logout Routes
-         */
+        /*FINALIZAR SESSION*/
         Route::get('/logout', 'LogoutController@perform')->name('logout.perform');
-        
+
+        /*MENSAJE POR ROUTE*/
         Route::get('/saludo', function () {
             return 'Hello World';
         });
 
-        Route::get('/empleado', [EmpleadoController::class, 'listarEmpleados'])->name('empleado.index');        
+        /*CRUD EMPLEADOS*/
+        Route::get('/empleado', [EmpleadoController::class, 'listarEmpleados'])->name('empleado.index');
+        Route::post('/registrar', [EmpleadoController::class, 'registrarEmpleado'])->name("registrar");
+        Route::get('editar_empleado/{CODIGO}', [EmpleadoController::class, 'edit']);//manda los datos a editar
+        Route::put('actualizar_empleado/{CODIGO}', [EmpleadoController::class, 'update'])->name('actualizarEmpleado');//actualiza los datos*/
+        Route::delete('/eliminar/{CODIGO}', [EmpleadoController::class, 'eliminar']);
 
-        Route:: get('/chart', [ChartController::class,'index'])->name('chart.index');        
+        /*VITACORAS*/
+        Route::get('/chart', [ChartController::class,'index'])->name('chart.index');        
         Route::get('/bar-chart', [ChartController::class,'barChart'])->name('bar-char.index');
         Route::get('/circular', [ChartController::class,'circular'])->name('circular.index');
 
+        /*CRUD ANTIGUEDADES*/
         Route::get('/antiguedad', [AntiguedadController::class, 'index'])->name('antiguedad.index');
 
+        /*CRUD ASISTENCIAS */
         Route::get('/asistencia',[AsistenciaController::class, 'listar'])->name('asistencias.index');
         
     });
@@ -85,8 +92,3 @@ Route::post('logout', [LoginController::class, 'destroy'])->name('logout');*/
 
 
 //Route::get('/empleado'{nombre que se va escribir en la url}, [EmpleadoController::class, 'mostrar']{funcion a llamar de controllers});
-Route::post('/registrar', [EmpleadoController::class, 'registrarEmpleado'])->name("registrar");
-Route::post('/eliminar_usuario', [EmpleadoController::class, 'eliminar'])->name("eliminar");
-Route::delete('eliminar/{CODIGO}', [EmpleadoController::class, 'eliminar'])->name('eliminar');//elimina
-Route::get('editar_empleado/{CODIGO}', [EmpleadoController::class, 'edit']);//manda los datos a editar
-Route::put('actualizar_empleado/{CODIGO}', [EmpleadoController::class, 'update'])->name('actualizarEmpleado');//actualiza los datos*/

@@ -1,5 +1,4 @@
-@extends('layouts.master')
-@section('title', 'modificar empleado')
+@extends('layouts.app-master')
 @section('content')
 <form action="{{ url('actualizar_empleado/'.$usuario->CODIGO) }}" method="POST">
     {{csrf_field()}}
@@ -34,16 +33,7 @@
     </div>    
     <div>
         <input type="text" placeholder="area" name="AREA" value="{{$usuario->AREA}}">
-    </div>    
-    <div>
-        <input type="number" placeholder="años de antiguedad" name="ANTIGUEDAD" value="{{$usuario->ANTIGUEDAD}}">
-    </div>    
-    <div>
-        <input type="input" placeholder="Numero de usuario" name="USUARIO" value="{{$usuario->USUARIO}}">
-    </div>    
-    <div>
-        <input type="text" placeholder="contraseña" name="PASSWORD">
-    </div>    
+    </div>
     <div>
         <select name="NIVEL" value="{{$usuario->NIVEL}}">
             <option value="1">RRHH</option>
