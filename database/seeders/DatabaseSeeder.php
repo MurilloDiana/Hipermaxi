@@ -208,10 +208,56 @@ class DatabaseSeeder extends Seeder
         ]);
 
         User::create([                    
-            'username'=>'root',
-            'email'=>'root@gmail.com',            
+            'username'=>'RRHH',
+            'email'=>'rrhh@gmail.com', 
+            'type'=>1,
             'password'=>'123456789'            
-        ]);  
-        
+        ]);
+
+        User::create([                    
+            'username'=>'Administrador',
+            'email'=>'administrador@gmail.com', 
+            'type'=>2,
+            'password'=>'123456789'            
+        ]);
+
+        User::create([                    
+            'username'=>'user',
+            'email'=>'user@gmail.com', 
+            'type'=>0,
+            'password'=>'123456789'            
+        ]);
+        /*
+        $users = [
+            [
+                'name'=>'Admin User',
+                'email'=>'admin@laratutorials.com',
+                'type'=>1,
+                'password'=> bcrypt('123456'),
+            ],
+            [
+               'name'=>'Admin User',
+               'email'=>'admin@laratutorials.com',
+               'type'=>1,
+               'password'=> bcrypt('123456'),
+            ],
+            [
+               'name'=>'Manager User',
+               'email'=>'manager@laratutorials.com',
+               'type'=> 2,
+               'password'=> bcrypt('123456'),
+            ],
+            [
+               'name'=>'User',
+               'email'=>'user@laratutorials.com',
+               'type'=>0,
+               'password'=> bcrypt('123456'),
+            ],
+        ];
+    
+        foreach ($users as $key => $user) {
+            User::create($user);
+        }
+        */
     }
 }

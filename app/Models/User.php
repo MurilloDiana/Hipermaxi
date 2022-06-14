@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use Illuminate\Database\Eloquent\Casts\Attribute;
 
 class User extends Authenticatable
 {
@@ -21,6 +22,7 @@ class User extends Authenticatable
         'email',
         'username',
         'password',
+        'type'
     ];
 
     /**
@@ -40,7 +42,7 @@ class User extends Authenticatable
      */
     protected $casts = [
         'email_verified_at' => 'datetime',
-    ];
+    ];    
 
     /**
      * Always encrypt the password when it is updated.
@@ -51,5 +53,18 @@ class User extends Authenticatable
     public function setPasswordAttribute($value)
     {
     $this->attributes['password'] = bcrypt($value);
+    }
+    
+    /**
+     * Interact with the user's first name.
+     *
+     * @param  string  $value
+     * @return \Illuminate\Database\Eloquent\Casts\Attribute
+     */
+    protected function type(): Attribute
+    {
+        return new Attribute(
+            get: fn ($value) =>  ["user", "admin", "manager"][$value],
+        );
     }
 }

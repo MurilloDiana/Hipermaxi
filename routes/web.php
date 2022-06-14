@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\EmpleadoController;
 use App\Http\Controllers\AntiguedadController;
 use App\Http\Controllers\ChartController;
@@ -18,6 +20,62 @@ use App\Http\Controllers\AsistenciaController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+Route::get('/', function () {
+    return view('home');
+});
+  
+Auth::routes();
+  
+/*------------------------------------------
+--------------------------------------------
+All Normal Users Routes List
+--------------------------------------------
+--------------------------------------------*/
+Route::middleware(['auth', 'user-access:user'])->group(function () {
+  
+    Route::get('/home', [HomeController::class, 'index'])->name('home');
+});
+  
+/*------------------------------------------
+--------------------------------------------
+All Admin Routes List
+--------------------------------------------
+--------------------------------------------*/
+Route::middleware(['auth', 'user-access:admin'])->group(function () {
+  
+    Route::get('/admin/home', [HomeController::class, 'adminHome'])->name('admin.home');
+    Route::get('/admin/empleado', [EmpleadoController::class, 'listarEmpleados'])->name('empleado.index');
+});
+  
+/*------------------------------------------
+--------------------------------------------
+All Admin Routes List
+--------------------------------------------
+--------------------------------------------*/
+Route::middleware(['auth', 'user-access:manager'])->group(function () {
+  
+    Route::get('/manager/home', [HomeController::class, 'managerHome'])->name('manager.home');
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 Route::group(['namespace' => 'App\Http\Controllers'], function(){   
     /**
@@ -50,7 +108,7 @@ Route::group(['namespace' => 'App\Http\Controllers'], function(){
         });
 
         /*CRUD EMPLEADOS*/
-        Route::get('/empleado', [EmpleadoController::class, 'listarEmpleados'])->name('empleado.index');
+        //Route::get('/empleado', [EmpleadoController::class, 'listarEmpleados'])->name('empleado.index');
         Route::post('/registrar', [EmpleadoController::class, 'registrarEmpleado'])->name("registrar");
         Route::get('editar_empleado/{CODIGO}', [EmpleadoController::class, 'edit']);//manda los datos a editar
         Route::put('actualizar_empleado/{CODIGO}', [EmpleadoController::class, 'update'])->name('actualizarEmpleado');//actualiza los datos*/
@@ -92,3 +150,6 @@ Route::post('logout', [LoginController::class, 'destroy'])->name('logout');*/
 
 
 //Route::get('/empleado'{nombre que se va escribir en la url}, [EmpleadoController::class, 'mostrar']{funcion a llamar de controllers});
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
