@@ -37,7 +37,7 @@ class EmpleadoController extends Controller
             );
 
         empleado::create($datos);
-        return $this->listarEmpleados();
+        return redirect()->route('empleado.index');
     } 
 
     
@@ -58,7 +58,7 @@ class EmpleadoController extends Controller
         $dato->AREA = $request->input('AREA');        
         $dato->NIVEL = $request->input('NIVEL');        
         $dato->update();                
-        return $this->listarEmpleados();
+        return redirect()->route('empleado.index');
     }
 
     public function eliminar($CODIGO){        
@@ -66,6 +66,12 @@ class EmpleadoController extends Controller
         if($existe != null){
             $existe->delete();
         }
-        return $this->listarEmpleados();        
+        return redirect()->route('empleado.index');
+    }
+
+    public function buscarEmpleados(Request $request){
+        $datos = $request->input('CODIGO');
+        $datos = empleado::where('CODIGO',$datos)->get();        
+        return view('empleado', compact('datos'));
     }
 }

@@ -1,4 +1,4 @@
-@extends('layouts.app-master')
+@extends('layouts.app')
 @section('content')
 <form action="{{ url('actualizar_empleado/'.$usuario->CODIGO) }}" method="POST">
     {{csrf_field()}}

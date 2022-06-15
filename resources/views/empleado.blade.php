@@ -1,6 +1,6 @@
-@extends('layouts.app-master')
-@section('content')
+@extends('layouts.app')
 
+@section('content')
 <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#ModalForm">
     NUEVO USUARIO
 </button>
@@ -64,13 +64,24 @@
                         </select>
                     </div> 
                     <div class="mb-3 mt-4">                                        
-                        <button class="btn btn-light mt-3" type="submit" values="registrar">Registrar</button>        
+                        <button class="btn btn-light mt-3" type="submit">Registrar</button>        
                     </div>
                 </form>
             </div>
         </div>
       </div>
     </div>
+</div>
+
+
+<div class="box">
+  <div class="container-1">     
+        <form action="{{route('buscar')}}" method="GET">
+            @csrf                    
+            <input type="search" placeholder="Cuscar Codigo" name="CODIGO" requered/>
+            <button type="submit" class="btn btn-success">Buscar</button>            
+        </form>     
+  </div>
 </div>
 
 <div class="py-4">
@@ -110,7 +121,7 @@
                 </form>                
             </td>
             <td>            
-                <a type="submit"  class="btn btn-success" href="{{ url("editar_empleado/{$dato->CODIGO}") }}"> Editar</a>
+                <a type="submit"  class="btn btn-success" href="{{ url("admin/editar_empleado/{$dato->CODIGO}") }}"> Editar</a>
             </td>   
         </tr>
         @endforeach
