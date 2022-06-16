@@ -8,6 +8,8 @@ use App\Http\Controllers\AntiguedadController;
 use App\Http\Controllers\ChartController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\AsistenciaController;
+use App\Http\Controllers\HorarioController;
+
 
 
 /*
@@ -51,13 +53,18 @@ All Admin Routes List
 Route::middleware(['auth', 'user-access:admin'])->group(function () {
   
     Route::get('/admin/home', [HomeController::class, 'adminHome'])->name('admin.home');
-    
+
+    /*CRUD EMPLEADO*/
     Route::get('/admin/empleado', [EmpleadoController::class, 'listarEmpleados'])->name('empleado.index');
     Route::post('/admin/registrar', [EmpleadoController::class, 'registrarEmpleado'])->name("registrar");
     Route::get('/admin/editar_empleado/{CODIGO}', [EmpleadoController::class, 'edit']);//manda los datos a editar
     Route::put('/admin/actualizar_empleado/{CODIGO}', [EmpleadoController::class, 'update'])->name('actualizarEmpleado');//actualiza los datos*/
     Route::get('/admin/buscar', [EmpleadoController::class, 'buscarEmpleados'])->name("buscar");
     Route::delete('/admin/eliminar/{CODIGO}', [EmpleadoController::class, 'eliminar']);
+
+    /*CRUD HORARIO*/
+    Route::get('/admin/horario', [HorarioController::class, 'listarHorarios'])->name('horario.index');
+    
 });
   
 /*------------------------------------------

@@ -55,8 +55,7 @@ class EmpleadoController extends Controller
         $dato->TELEFONO = $request->input('TELEFONO');
         $dato->DIRECCION = $request->input('DIRECCION');
         $dato->FECHA_ING = $request->input('FECHA_ING');
-        $dato->AREA = $request->input('AREA');        
-        $dato->NIVEL = $request->input('NIVEL');        
+        $dato->AREA = $request->input('AREA');
         $dato->update();                
         return redirect()->route('empleado.index');
     }
