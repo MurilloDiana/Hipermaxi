@@ -19,8 +19,8 @@ class AntiguedadController extends Controller
         return view ('antiguedad', compact('datos'));
     }
 
-    public function antiguedad_index(){
-        $year = 5;
+    public function antiguedad_index(Request $request){//Request $request
+        $year =$request->get('texto');
         $date = Carbon::now(); //2015-01-01 00:00:00
         $endDate = $date->subYear($year);  //2016-01-01 00:00:00                
         $datos = empleado::whereYear('FECHA_ING',$endDate)->get();        
