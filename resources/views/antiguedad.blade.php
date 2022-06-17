@@ -6,7 +6,7 @@
       <form action="{{route('antiguedad.index')}}" method="get"> 
         <div class="form-row">
           <div class="col-sm-4 my-1">
-            <input type="text" class="form-control-white" name="texto" >
+            <input type="text" class="form-control-white" name="texto">
           </div>
           <div class="col-auto my-1">
             <input type="submit" class="btn btn-primary" value="Buscar">
@@ -23,12 +23,18 @@
       </tr>
     </thead>
     <tbody>
+      @if (count($datos)<=0)
+        <tr>
+          <td colspan="2">No hay resultados</td>
+        </tr>
+        @else
         @foreach ($datos as $dato)
         <tr>
           <td>{{$dato->NOMBRE}}</td>
           <td>{{$dato->FECHA_ING}}</td>          
       </tr>
         @endforeach
+        @endif
   </table>
   </div>
 </body>

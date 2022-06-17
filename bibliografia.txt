@@ -2,3 +2,4 @@ guia de Carbon manipulacion del tiempo
 https://styde.net/componente-carbon-fechas-laravel-5/
 selec orderby
 https://stackoverflow.com/questions/17429427/laravel-eloquent-ordering-results-of-all
+https://www.youtube.com/watch?v=HkfXZmM7jEU&t=553s(Buscar en Laravel)
