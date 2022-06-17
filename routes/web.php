@@ -64,7 +64,8 @@ Route::middleware(['auth', 'user-access:admin'])->group(function () {
 
     /*CRUD HORARIO*/
     Route::get('/admin/horario', [HorarioController::class, 'listarHorarios'])->name('horario.index');
-    
+    Route::get('/admin/asignar', [HorarioController::class, 'asignarHorarios'])->name("asignar");
+    Route::put('/admin/actualizar_horario/{CODIGO}', [HorarioController::class, 'update'])->name('actualizarHorario');
 });
   
 /*------------------------------------------
