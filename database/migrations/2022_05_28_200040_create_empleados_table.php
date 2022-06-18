@@ -23,10 +23,21 @@ return new class extends Migration
             $table->string('EMAIL',100);
             $table->unsignedInteger('TELEFONO');
             $table->string('DIRECCION',100);
+
             $table->date('FECHA_ING');    
             $table->string('AREA');
             $table->rememberToken();
             $table->timestamps();       
+
+            $table->date('FECHA_ING');
+            $table->string('AREA',100)->nullable();//nullable permite meter valores nulos
+            $table->string('ANTIGUEDAD')->nullable();
+            $table->unsignedInteger('USUARIO');
+            $table->string('PASSWORD');
+            $table->unsignedInteger('NIVEL');/*1=RH;2=ADM;3=TRAB*/
+            $table->rememberToken();
+            $table->timestamps();
+
             /*
             para hacer foreign key en casaca
             $table->foreign('id_cliente')->references('id')->on('clientes')->onDelete('cascade')->onUpdate('cascade');

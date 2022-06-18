@@ -11,7 +11,6 @@ use App\Http\Controllers\AsistenciaController;
 use App\Http\Controllers\HorarioController;
 
 
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -23,6 +22,7 @@ use App\Http\Controllers\HorarioController;
 |
 */
 
+
 Route::get('/', function () {
     return view('/home/index');
 });
@@ -31,7 +31,7 @@ Route::get('/', function () {
     
 Route::get('/hola', function () {
     return "hola mundo";
-});
+
 
 Auth::routes();  
   
@@ -53,6 +53,7 @@ All Admin Routes List
 Route::middleware(['auth', 'user-access:admin'])->group(function () {
   
     Route::get('/admin/home', [HomeController::class, 'adminHome'])->name('admin.home');
+
 
     /*CRUD EMPLEADO*/
     Route::get('/admin/empleado', [EmpleadoController::class, 'listarEmpleados'])->name('empleado.index');
@@ -77,3 +78,4 @@ Route::middleware(['auth', 'user-access:manager'])->group(function () {
   
     Route::get('/manager/home', [HomeController::class, 'managerHome'])->name('manager.home');
 });
+
