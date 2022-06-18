@@ -1,9 +1,15 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\EmpleadoController;
-use App\Http\Controllers\LoginController;
+use App\Http\Controllers\AntiguedadController;
 use App\Http\Controllers\ChartController;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\AsistenciaController;
+use App\Http\Controllers\HorarioController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -16,43 +22,60 @@ use App\Http\Controllers\ChartController;
 |
 */
 
-// Route::get('/', function () {
-//     return view('sidebar');
-// });
 
-Route:: get('/', function() {
-    return view('home');
+Route::get('/', function () {
+    return view('/home/index');
 });
-Route:: get('/chart', [ChartController::class,'index']);
 
-Route::get('/bar-chart', [ChartController::class,'barChart']);
-Route::get('/circular', [ChartController::class,'circular']);
-
-Route::get('login', [LoginController::class, 'index'])->name('login');
-
-Route::post('login', [LoginCOntroller::class, 'store']);
-
-Route::post('logout', [LoginController::class, 'destroy'])->name('logout');
+  
+    
+Route::get('/hola', function () {
+    return "hola mundo";
 
 
+Auth::routes();  
+  
+/*------------------------------------------
+--------------------------------------------
+All Normal Users Routes List
+--------------------------------------------
+--------------------------------------------*/
+Route::middleware(['auth', 'user-access:user'])->group(function () {
+  
+    Route::get('/home', [HomeController::class, 'index'])->name('home');
+});
+  
+/*------------------------------------------
+--------------------------------------------
+All Admin Routes List
+--------------------------------------------
+--------------------------------------------*/
+Route::middleware(['auth', 'user-access:admin'])->group(function () {
+  
+    Route::get('/admin/home', [HomeController::class, 'adminHome'])->name('admin.home');
 
 
+    /*CRUD EMPLEADO*/
+    Route::get('/admin/empleado', [EmpleadoController::class, 'listarEmpleados'])->name('empleado.index');
+    Route::post('/admin/registrar', [EmpleadoController::class, 'registrarEmpleado'])->name("registrar");
+    Route::get('/admin/editar_empleado/{CODIGO}', [EmpleadoController::class, 'edit']);//manda los datos a editar
+    Route::put('/admin/actualizar_empleado/{CODIGO}', [EmpleadoController::class, 'update'])->name('actualizarEmpleado');//actualiza los datos*/
+    Route::get('/admin/buscar', [EmpleadoController::class, 'buscarEmpleados'])->name("buscar");
+    Route::delete('/admin/eliminar/{CODIGO}', [EmpleadoController::class, 'eliminar']);
 
+    /*CRUD HORARIO*/
+    Route::get('/admin/horario', [HorarioController::class, 'listarHorarios'])->name('horario.index');
+    Route::get('/admin/asignar', [HorarioController::class, 'asignarHorarios'])->name("asignar");
+    Route::put('/admin/actualizar_horario/{CODIGO}', [HorarioController::class, 'update'])->name('actualizarHorario');
+});
+  
+/*------------------------------------------
+--------------------------------------------
+All Admin Routes List
+--------------------------------------------
+--------------------------------------------*/
+Route::middleware(['auth', 'user-access:manager'])->group(function () {
+  
+    Route::get('/manager/home', [HomeController::class, 'managerHome'])->name('manager.home');
+});
 
-
-
-
-
-
-
-
-
-Route::get('/empleado', [EmpleadoController::class, 'listarEmpleados'])->name('empleado');
-//Route::get('/empleado'{nombre que se va escribir en la url}, [EmpleadoController::class, 'mostrar']{funcion a llamar de controllers});
-Route::post('/registrar', [EmpleadoController::class, 'registrarEmpleado'])->name("registrar");
-Route::post('/eliminar_usuario', [EmpleadoController::class, 'eliminar'])->name("eliminar");
-Route::delete('eliminar/{CODIGO}', [EmpleadoController::class, 'eliminar'])->name('eliminar');//elimina
-Route::get('editar_empleado/{CODIGO}', [EmpleadoController::class, 'edit']);//manda los datos a editar
-Route::put('actualizar_empleado/{CODIGO}', [EmpleadoController::class, 'update']);//actualiza los datos
-//Caso de uso Gestion Antiguedad
-Route::get('/antiguedad', [EmpleadoController::class, 'antiguedad_index']);

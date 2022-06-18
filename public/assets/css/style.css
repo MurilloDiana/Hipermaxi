@@ -1,0 +1,29 @@
+body{
+  background-color: #1ABC9C;
+}
+
+.titulo-home{
+  font-size: 100px;
+  text-align: center;
+}
+
+.texto-home{
+  font-size: 30px;
+  text-align: center;
+}
+
+#blog, #contactanos, #acercade {
+	margin-top: 0%;
+	padding-bottom: 50%;
+}
+
+/*login*/
+.logoSI{
+  border-radius: 50%;
+  width: 450px;
+}
+
+.padre{
+  display: flex;        
+  justify-content: center;
+}
