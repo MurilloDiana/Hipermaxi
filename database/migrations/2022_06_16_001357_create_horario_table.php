@@ -13,11 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('asistencias', function (Blueprint $table) {
-            $table->id();
+        Schema::create('horarios', function (Blueprint $table) {
+            $table->id('id');
+            $table->time('hora_ingreso', 0);
+            $table->time('hora_salida', 0);
+            $table->enum('turno', ['mañana', 'tarde', 'noche']);
+            $table->date('dia_libre')->nullable();
             $table->timestamps();
-            $table->integer('total_dias');
-            $table->datetime('fecha');
         });
     }
 
@@ -28,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('asistencias');
+        Schema::dropIfExists('horario');
     }
 };
