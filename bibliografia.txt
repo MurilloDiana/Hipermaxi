@@ -4,3 +4,5 @@ selec orderby
 https://stackoverflow.com/questions/17429427/laravel-eloquent-ordering-results-of-all
 creacion multiusuarios
 https://laratutorials.com/laravel-9-multiple-user-role-based-authentication-example/
+consultas de tablas relacionadas
+https://www.codegrepper.com/code-examples/php/join+multiple+tables+in+laravel+eloquent
