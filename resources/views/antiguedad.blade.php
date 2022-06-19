@@ -1,3 +1,4 @@
+
 @extends('layouts.app-master')
 @section('content')
 <body>
@@ -7,6 +8,7 @@
       <tr>
         <th scope="col">Nombre</th>
         <th scope="col">Fecha de Ingreso</th>        
+
       
       </tr>
     </thead>
@@ -14,7 +16,9 @@
         @foreach ($datos as $dato)
         <tr>
           <td>{{$dato->NOMBRE}}</td>
+
           <td>{{$dato->FECHA_ING}}</td>          
+
       </tr>
         @endforeach
   </table>

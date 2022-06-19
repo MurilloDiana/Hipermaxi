@@ -10,7 +10,7 @@ class empleado extends Model
     use HasFactory;
     //RENOMBRA LA PRIMARY KEY
     protected $primaryKey = "CODIGO";
-    
+
     protected $fillable = [                
         'NOMBRE',
         'FECHA_NAC',
