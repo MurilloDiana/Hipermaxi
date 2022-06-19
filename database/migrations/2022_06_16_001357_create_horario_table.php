@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('horarios', function (Blueprint $table) {
             $table->id('id');
-            $table->time('hora_ingreso', 0);
-            $table->time('hora_salida', 0);
+            $table->time('hora_ingreso', 1);
+            $table->time('hora_salida', 1);
             $table->enum('turno', ['mañana', 'tarde', 'noche']);
             $table->date('dia_libre')->nullable();
             $table->timestamps();

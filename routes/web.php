@@ -9,6 +9,7 @@ use App\Http\Controllers\ChartController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\AsistenciaController;
 use App\Http\Controllers\HorarioController;
+use App\Http\Controllers\ContratoController;
 
 
 
@@ -66,6 +67,12 @@ Route::middleware(['auth', 'user-access:admin'])->group(function () {
     Route::get('/admin/horario', [HorarioController::class, 'listarHorarios'])->name('horario.index');
     Route::get('/admin/asignar', [HorarioController::class, 'asignarHorarios'])->name("asignar");
     Route::put('/admin/actualizar_horario/{CODIGO}', [HorarioController::class, 'update'])->name('actualizarHorario');
+
+    /*CRUD CONTRATO*/
+    Route::get('/admin/contrato', [ContratoController::class, 'listarContratos'])->name('contrato.index');
+    Route::get('/admin/asignarContrato', [ContratoController::class, 'asignarContrato'])->name('asignarContrato');
+    Route::post('/admin/registrarContrato', [ContratoController::class, 'registrarContrato'])->name('registrarContrato');
+    Route::delete('/admin/eliminarContrato/{CODIGO}', [ContratoController::class, 'eliminarContrato']);
 });
   
 /*------------------------------------------
