@@ -70,7 +70,9 @@ Route::group(['namespace' => 'App\Http\Controllers'], function(){
     });
 });
 
+
 /*
+
 Route::get('login', [LoginController::class, 'index'])->name('login');
 
 Route::post('login', [LoginCOntroller::class, 'store']);
@@ -81,14 +83,5 @@ Route::post('logout', [LoginController::class, 'destroy'])->name('logout');*/
 
 
 
+//});
 
-
-
-
-
-
-
-
-
-
-//Route::get('/empleado'{nombre que se va escribir en la url}, [EmpleadoController::class, 'mostrar']{funcion a llamar de controllers});
