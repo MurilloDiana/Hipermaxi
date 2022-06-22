@@ -1,120 +1,116 @@
-@extends('layouts.app-master')
+@extends('layouts.app')
+
 @section('content')
+<div class="container">
+    <h1 class="text-center">FORMULARIO DE REGISTRO</h1>                                
+    <form action="{{route('registrar')}}" method="POST">
+        {{csrf_field()}}
+        @method('POST')
+        <div class="mb-3 mt-4">
+            <label for="exampleInputEmail1" class="form-label">NOMBRE COMPLETO</label>
+            <input type="text" class="form-control" name="NOMBRE">
+        </div>    
+        <div class="mb-3 mt-4">
+            <label for="exampleInputEmail1" class="form-label">FECHA DE NACIMIENTO</label>
+            <input type="date" class="form-control" name="FECHA_NAC" >
+        </div>    
+        <div class="mb-3 mt-4">
+            <label for="exampleInputEmail1" class="form-label">GENERO</label>
+            <select name="GENERO">                            
+                <option value="M">M</option>
+                <option value="F">F</option>
+            </select>
+        </div> 
+        <div class="mb-3 mt-4">
+            <label for="exampleInputEmail1" class="form-label">CEDULA DE IDENTIDAD</label>
+            <input type="number" class="form-control" name="CI">
+        </div>    
+        
+        <div class="mb-3 mt-4">
+            <label for="exampleInputEmail1" class="form-label">CORREO ELECTRONICO</label>
+            <input type="email" class="form-control" name="EMAIL">
+        </div>    
+        <div class="mb-3 mt-4">
+            <label for="exampleInputEmail1" class="form-label">TELEFONO</label>
+            <input type="number" class="form-control" name="TELEFONO">
+        </div>    
+        <div class="mb-3 mt-4">
+            <label for="exampleInputEmail1" class="form-label">DIRECCION</label>
+            <input type="text" class="form-control" name="DIRECCION">
+        </div>    
+        <div class="mb-3 mt-4">
+            <label for="exampleInputEmail1" class="form-label">FECHA DE INGRESO</label>
+            <input type="date" class="form-control" name="FECHA_ING">
+        </div>    
+        <div class="mb-3 mt-4">
+            <label for="exampleInputEmail1" class="form-label">AREA</label>
+            <input type="text" class="form-control" name="AREA">
+        </div>
+        <!--
+        <div class="mb-3 mt-4">
+            <label for="exampleInputEmail1" class="form-label">NIVEL</label>
+            <select name="NIVEL">
+                <option value="1">RRHH</option>
+                <option value="2">ADMINISTRADOR</option>
+                <option value="3">TRABAJADOR BASE</option>            
+            </select>
+        </div> 
+        -->
+        <div class="mb-3 mt-4">                                        
+            <button class="btn btn-light mt-3" type="submit">Registrar</button>        
+        </div>
+    </form>
+</div>
+
+<div class="box">
+  <div class="container-1">     
+        <form action="{{route('buscar')}}" method="GET">
+            @csrf                    
+            <input type="search" placeholder="Cuscar Codigo" name="CODIGO" requered/>
+            <button type="submit" class="btn btn-success">Buscar</button>            
+        </form>     
+  </div>
+</div>
+
 <div class="py-4">
-    <table class="table table-hover bg-light">
-    <thead class="bg-primary text-light">
-        <tr>
-        <th scope="col">Codigo</th>
-        <th scope="col">Nombre</th>
-        <th scope="col">Fecha de Nacimiento</th>
-        <th scope="col">Genero</th>
-        <th scope="col">Cedula de Identidad</th>
-        <th scope="col">Telefono</th>
-        <th scope="col">Fecha de Ingreso</th>
-        <th scope="col">Nivel</th>
-        <th scope="col">Area</th>
-        </tr>
-    </thead>
+    <table class="table table-hover bg-light text-center">
+        <thead class="bg-primary text-light">
+            <tr>
+            <th scope="col">Nombre</th>
+            <th scope="col">Fecha de Nacimiento</th>
+            <th scope="col">Codigo</th>   
+            <th scope="col">Genero</th>
+            <th scope="col">Cedula de Identidad</th>
+            <th scope="col">Telefono</th>
+            <th scope="col">Fecha de Ingreso</th>        
+            <th scope="col">Area</th>
+            <th scope="col">Eliminar</th>
+            <th scope="col">Editar</th>
+            </tr>
+        </thead>
     <tbody>
         @foreach ($datos as $dato)
         <tr>
-            <td>{{$dato->CODIGO}}</td>
             <td>{{$dato->NOMBRE}}</td>
             <td>{{$dato->FECHA_NAC}}</td>
+            <td>{{$dato->CODIGO}}</td>
             <td>{{$dato->GENERO}}</td>
             <td>{{$dato->CI}}</td>
             <td>{{$dato->TELEFONO}}</td>        
-            <td>{{$dato->FECHA_ING}}</td>
-            <td>{{$dato->NIVEL}}</td>
+            <td>{{$dato->FECHA_ING}}</td>            
             <td>{{$dato->AREA}}</td>        
             <td>           
-                <form method="POST" action="{{ url('eliminar/'.$dato->CODIGO) }}">
+                <form method="POST" action="{{ url('/admin/eliminar/'.$dato->CODIGO) }}">                
                 @csrf
-                @method('DELETE')
+                @method('DELETE')                
                 <button type="submit" class="btn btn-danger">Eliminar</button>
                 </form>                
             </td>
             <td>            
-                <button href="{{ url('editar_empleado/'.$dato->CODIGO) }}"class="btn btn-success">Editar</button>
+                <a type="submit"  class="btn btn-success" href="{{ url('/admin/editar_empleado/'.$dato->CODIGO) }}"> Editar</a>
             </td>   
         </tr>
         @endforeach
     </table>
 </div>
-
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
-  Launch demo modal
-</button>
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-<form action="{{route('registrar')}}" method="POST">
-    {{csrf_field()}}
-    @method('POST')
-    <div>
-        <input type="text" placeholder="nombre" name="NOMBRE">
-    </div>    
-    <div>
-        <input type="date" name="FECHA_NAC" >
-    </div>    
-    <div>
-        <select name="GENERO">
-            
-            <option value="M">M</option>
-            <option value="F">F</option>
-        </select>
-    </div> 
-    <div>
-        <input type="number" placeholder="Cedula de Indentidad" name="CI">
-    </div>    
-    
-    <div>
-        <input type="email" placeholder="example@gmail.com" name="EMAIL">
-    </div>    
-    <div>
-        <input type="numer" placeholder="telefono" name="TELEFONO">
-    </div>    
-    <div>
-        <input type="text" placeholder="direccion" name="DIRECCION">
-    </div>    
-    <div>
-        <input type="date" name="FECHA_ING">
-    </div>    
-    <div>
-        <input type="text" placeholder="area" name="AREA">
-    </div>    
-    <div>
-        <input type="number" placeholder="años de antiguedad" name="ANTIGUEDAD">
-    </div>    
-    <div>
-        <select name="NIVEL">
-            <option value="1">RRHH</option>
-            <option value="2">ADMINISTRADOR</option>
-            <option value="3">TRABAJADOR BASE</option>            
-        </select>
-    </div> 
-    <div>                
-        <button class="btn btn-primary" type="submit" values="registrar">Registrar</button>        
-    </div>
-</form>
 @endsection

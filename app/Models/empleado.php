@@ -8,8 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class empleado extends Model
 {
     use HasFactory;
+    //RENOMBRA LA PRIMARY KEY
+    protected $primaryKey = "CODIGO";
 
-    
     protected $fillable = [                
         'NOMBRE',
         'FECHA_NAC',
@@ -19,7 +20,6 @@ class empleado extends Model
         'TELEFONO',
         'DIRECCION',
         'FECHA_ING',
-        'AREA',
-        'NIVEL'
+        'AREA'
     ];
 }

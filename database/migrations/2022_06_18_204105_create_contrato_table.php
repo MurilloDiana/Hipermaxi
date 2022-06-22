@@ -13,11 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('asistencias', function (Blueprint $table) {
-            $table->id();
+        Schema::create('contratos', function (Blueprint $table) {              
+            $table->unsignedBigInteger('id')->nullable()->unique();           
+            $table->date('inicio_contrato');
+            $table->date('final_contrato');
             $table->timestamps();
-            $table->integer('total_dias');
-            $table->datetime('fecha');
         });
     }
 
@@ -28,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('asistencias');
+        Schema::dropIfExists('contrato');
     }
 };
