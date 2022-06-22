@@ -7,6 +7,8 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use App\Models\empleado;//adiciona el models de la tabla
 use App\Models\User;
+use App\Models\asistencia;
+use App\Models\jornada_laboral;
 use Faker\Factory as Faker;
 use Illuminate\Support\Facades\DB;
 
@@ -212,6 +214,14 @@ class DatabaseSeeder extends Seeder
             'email'=>'root@gmail.com',            
             'password'=>'123456789'            
         ]);  
-        
+
+        Asistencia::create([
+            'total_dias'=>'30',
+            'fecha'=>'2021-03-02'
+        ]);
+        Asistencia::create([
+            'total_dias'=>'30',
+            'fecha'=>'2021-03-02'
+        ]);
     }
 }

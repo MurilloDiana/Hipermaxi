@@ -6,6 +6,7 @@ use App\Http\Controllers\AntiguedadController;
 use App\Http\Controllers\ChartController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\AsistenciaController;
+use App\Http\Controllers\permisoController;
 
 
 /*
@@ -66,7 +67,9 @@ Route::group(['namespace' => 'App\Http\Controllers'], function(){
 
         /*CRUD ASISTENCIAS */
         Route::get('/asistencia',[AsistenciaController::class, 'listar'])->name('asistencias.index');
-        
+
+        Route::get('/permiso',[PermisoController::class, 'listar'])->name('permiso.index');
+        Route::get('/Genpermiso',[PermisoController::class, 'index'])->name('Genpermiso.index');
     });
 });
 

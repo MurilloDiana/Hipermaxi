@@ -1,0 +1,51 @@
+table {
+    background-color: white;
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+th,
+td {
+    padding: 20px;
+}
+
+thead {
+    background-color: #000000;
+    color: white;
+    border-bottom: solid 5px #0f362d;
+}
+
+tr:nth-child(even) {
+    background-color: #ddd;
+}
+
+tr:hover {
+    background-color: #369681;
+    color: white;
+}
+
+h3 {
+    margin-top: 5px;
+    background-color: white;
+    border: white 5px solid;
+    border-radius: 20px;
+}
+
+form.elegante input {
+    padding: .2em;
+}
+
+label {
+    display: block;
+    margin: .5em 0 0 0;
+}
+
+.btn1 {
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+    text-decoration: none;
+    color: initial;
+    background-color: white;
+}

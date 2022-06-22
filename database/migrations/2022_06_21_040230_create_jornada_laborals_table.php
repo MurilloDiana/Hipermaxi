@@ -15,9 +15,9 @@ return new class extends Migration
     {
         Schema::create('jornada_laborals', function (Blueprint $table) {
             $table->id();
+            $table->time('hora_entrada');
+            $table->time('hora_salida');
             $table->timestamps();
-            $table->time('HORA ENTRADA');
-            $table->time('HORA SALIDA');
         });
     }
 

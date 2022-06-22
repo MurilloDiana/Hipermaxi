@@ -15,9 +15,10 @@ return new class extends Migration
     {
         Schema::create('asistencias', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
-            $table->integer('total_dias');
+            $table->unsignedInteger('total_dias');
             $table->datetime('fecha');
+            $table->rememberToken();
+            $table->timestamps();
         });
     }
 
