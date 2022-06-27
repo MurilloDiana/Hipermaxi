@@ -7,7 +7,7 @@ use App\Http\Controllers\ChartController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\AsistenciaController;
 use App\Http\Controllers\permisoController;
-
+use App\Http\Controllers\PagoadicionaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -70,6 +70,9 @@ Route::group(['namespace' => 'App\Http\Controllers'], function(){
 
         Route::get('/permiso',[PermisoController::class, 'listar'])->name('permiso.index');
         Route::get('/Genpermiso',[PermisoController::class, 'index'])->name('Genpermiso.index');
+
+        Route::get('/pagoadicional',[PagoadicionaController::class, 'listar'])->name('pagoadicional.index');
+        Route::get('/registrarPagoAdiciona',[PagoadicionaController::class, 'registro'])->name('registrarPagoAdciona.index');
     });
 });
 
