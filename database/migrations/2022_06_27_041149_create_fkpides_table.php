@@ -13,13 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('permisos', function (Blueprint $table) {
-            $table->id('id_p');
-            $table->date('FECHA_INI');
-            $table->date('FECHA_FIN');
-            $table->STRING('ASUNTO',100);
-            $table->unsignedBigInteger('DIAS');
+        Schema::create('fkpides', function (Blueprint $table) {
+            $table->unsignedBigInteger('ID_EMP');
+            $table->unsignedBigInteger('ID_PERM');
             $table->timestamps();
+           // $table->foreign('ID_EMP')->references('CODIGO')->on('empleados');
+           // $table->foreign('ID_PERM')->references('id_p')->on('permisos');
         });
     }
 
@@ -30,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('permisos');
+        Schema::dropIfExists('fkpides');
     }
 };

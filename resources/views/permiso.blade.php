@@ -17,6 +17,9 @@
         <th class="cell100 column1"> ID </th>
         <th class="cell100 column2">NOMBRE & APELLIDO</th>
         <th class="cell100 column2">ROL</th>
+        <th class="cell100 column2">ASUNTO</th>
+        <th class="cell100 column2">FECHA_INICIO</th>
+        <th class="cell100 column2">FECHA_FIN</th>
         <th class="cell100 column6"> N° DIAS </th>
         </tr>
         </thead>
@@ -26,8 +29,18 @@
         </div>
        <div class="table100-body js-pscroll">
            <table>
-            <tbody>
-
+        <tbody>
+        @foreach ($pess as $pe )
+        <tr class="row100 head">
+            <td class="cell100 column1"> {{ $loop->iteration }} </td>
+            <td class="cell100 column2">{{ $pe->NOMBRE }}</td>
+            <td class="cell100 column2">{{ $pe->area }}</td>
+            <td class="cell100 column2">{{ $pe->asunto }}</td>
+            <td class="cell100 column2">{{ $pe->fecha_ini }}</td>
+            <td class="cell100 column2">{{ $pe->fecha_fin }}</td>
+            <td class="cell100 column2">{{ $pe->DIAS }}</td>
+        </tr>
+        @endforeach
             </tbody>
            </table>
         </div>

@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class permiso extends Model
 { 
    // use HasFactory;
-   protected $primaryKey = "id";
+   protected $primaryKey = "id_p";
    protected $fillable = [      
        'FECHA_INI',
        'FECHA_FIN',

@@ -8,7 +8,9 @@ use Illuminate\Database\Seeder;
 use App\Models\empleado;//adiciona el models de la tabla
 use App\Models\User;
 use App\Models\asistencia;
+use App\Models\fkpide;
 use App\Models\jornada_laboral;
+use App\Models\permiso;
 use Faker\Factory as Faker;
 use Illuminate\Support\Facades\DB;
 
@@ -222,6 +224,17 @@ class DatabaseSeeder extends Seeder
         Asistencia::create([
             'total_dias'=>'30',
             'fecha'=>'2021-03-02'
+        ]);
+
+        permiso::create([
+            'FECHA_INI'=>'2021-05-10',
+            'FECHA_FIN'=>'2021-05-11',
+            'ASUNTO'=>'BAJA MEDICA',
+            'DIAS'=>'2'
+        ]);
+        fkpide::create([
+            'ID_EMP'=>'5',
+            'ID_PERM'=>'1'
         ]);
     }
 }
