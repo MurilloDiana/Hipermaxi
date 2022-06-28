@@ -31,7 +31,7 @@ Route::get('/', function () {
     
 Route::get('/hola', function () {
     return "hola mundo";
-
+});
 
 Auth::routes();  
   
