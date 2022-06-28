@@ -34,6 +34,7 @@ Route::group(['namespace' => 'App\Http\Controllers'], function(){
     Route::get('/falta', function () {
         return view('falta');
     });
+});
 
     Route::group(['middleware' => ['guest']], function() {
         /**
@@ -68,6 +69,8 @@ Route::group(['namespace' => 'App\Http\Controllers'], function(){
         /*CRUD ANTIGUEDADES*/
         Route::get('/antiguedad', [AntiguedadController::class, 'antiguedad_index'])->name('antiguedad.index');
 
+    });
+
 Route::get('/', function () {
     return view('/home/index');
 });
@@ -76,7 +79,7 @@ Route::get('/', function () {
     
 Route::get('/hola', function () {
     return "hola mundo";
-
+});
 
 Auth::routes();  
   
