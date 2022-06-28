@@ -11,6 +11,15 @@
             @endauth
 
             @guest 
+            <div class="gallery">
+              <a href="#"><img src="{{asset('img/img1.jpg')}}"  alt=""/>  </a>
+                <img src="{{asset('img/img1.jpg')}}"  alt=""/>
+                <img src="{{asset('img/img1.jpg')}}"  alt=""/>
+                <img src="{{asset('img/img1.jpg')}}" alt="" />
+            </div>
+            @endguest
+
+           <!--  
             <div>
                 <h1 class="titulo-home">HIPERMAXI</h1>
                 <p class="texto-home">Por favor inicia sesion</p>            
@@ -40,7 +49,7 @@
                     <span class="punto" onclick="mostrar(1);"></span>
                     <span class="punto" onclick="mostrar(2);"></span>
                     <span class="punto" onclick="mostrar(3);"></span>
-                </div>
+                </div>  -->
                 <!-- BOTON DE PAUSA
                 <div class="boton">
                     <a href="#">
@@ -48,12 +57,13 @@
                     </a>
                 </div>
                 -->
-            </header>
+           <!-- </header> -->
+        
             <!---->   
-            <section id="blog">BLOG</section>
+           <!-- <section id="blog">BLOG</section>
             <section id="contactanos">CONTACTANOS</section>
             <section id="acercade">ACERCA DE</section>
-            @endguest            
+                -->         
         </div>        
     </body>    
 @endsection

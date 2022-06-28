@@ -13,14 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('horarios', function (Blueprint $table) {
-            $table->id('id');
-            $table->time('hora_ingreso', 1);
-            $table->time('hora_salida', 1);
-            $table->enum('turno', ['mañana', 'tarde', 'noche']);
-            $table->date('dia_libre')->nullable();
-            $table->timestamps();
-        });
+        Schema::table('users', function (Blueprint $table) {
+            $table->id()->unique();
+            $table->foreign('id')->references('CODIGO')->on('empleados');
+        }); 
     }
 
     /**
@@ -30,6 +26,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('horario');
+        //
     }
 };
