@@ -19,8 +19,9 @@ return new class extends Migration
             $table->date('FECHA_FIN');
             $table->STRING('ASUNTO',100);
             $table->unsignedBigInteger('DIAS');
-            $table->unsignedBigInteger('ID_permiso_emp');
+            $table->BigInteger('ID_permiso_emp')->unsigned();
             $table->timestamps();
+           
         });
     }
 

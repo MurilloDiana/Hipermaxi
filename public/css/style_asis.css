@@ -50,3 +50,11 @@ label {
     color: initial;
     background-color: white;
 }
+
+input:invalid+span::after {
+    content: "✖";
+}
+
+input:valid+span::after {
+    content: "✓";
+}
