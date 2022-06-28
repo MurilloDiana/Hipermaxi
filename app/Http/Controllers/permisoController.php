@@ -26,8 +26,9 @@ class permisoController extends Controller
         //return response()->json($datos);
     }
     public function store(request $variable){
+        $fechaActual=date('Y-m-d');
         $this->validate($variable,[
-            'fecha_ini'=>'required',
+            'fecha_ini'=>'required|after:'.$fechaActual,
             'fecha_fin'=>'required|after:'.$date1 = Carbon::parse($variable->input('fecha_ini'))
         ]);
         $primera= new permiso;
@@ -43,4 +44,11 @@ class permisoController extends Controller
         $primera->save();
         return redirect(route('permiso.index'));
     }
+    public function update (){
+        $empleados = empleado::all();
+        return view('updatepermiso',compact('empleados'));
+
+        //return response()->json($datos);
+    }
+
 }

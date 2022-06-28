@@ -72,6 +72,7 @@ Route::group(['namespace' => 'App\Http\Controllers'], function(){
         Route::get('/permiso',[PermisoController::class, 'listar'])->name('permiso.index');
         Route::GET('/Genpermiso',[PermisoController::class, 'mostr'])->name('Genpermiso.index');
         Route::post('/Genpermiso',[PermisoController::class, 'store'])->name('registra');
+        Route::GET('/updatepermiso',[PermisoController::class, 'update'])->name('updatepermiso.index');
         
 
         Route::get('/pagoadicional',[PagoadicionaController::class, 'listar'])->name('pagoadicional.index');
