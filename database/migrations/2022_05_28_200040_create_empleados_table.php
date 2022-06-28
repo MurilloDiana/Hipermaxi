@@ -34,6 +34,7 @@ return new class extends Migration
             $table->string('ANTIGUEDAD')->nullable();
             $table->unsignedInteger('USUARIO');
             $table->string('PASSWORD');
+            $table->string('AREA',100);         
             $table->unsignedInteger('NIVEL');/*1=RH;2=ADM;3=TRAB*/
             $table->rememberToken();
             $table->timestamps();

@@ -7,7 +7,6 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use App\Http\Controllers\Post;
 use Illuminate\Support\Facades\DB;
-
 use Carbon\Carbon;
 
 class EmpleadoController extends Controller
