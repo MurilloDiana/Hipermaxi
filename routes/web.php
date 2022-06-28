@@ -65,7 +65,8 @@ Route::group(['namespace' => 'App\Http\Controllers'], function(){
         Route::get('/bar-chart', [ChartController::class,'barChart'])->name('bar-char.index');
         Route::get('/circular', [ChartController::class,'circular'])->name('circular.index');
 
-        Route::get('/antiguedad', [AntiguedadController::class, 'index'])->name('antiguedad.index');
+        /*CRUD ANTIGUEDADES*/
+        Route::get('/antiguedad', [AntiguedadController::class, 'antiguedad_index'])->name('antiguedad.index');
 
 Route::get('/', function () {
     return view('/home/index');
@@ -128,4 +129,5 @@ Route::middleware(['auth', 'user-access:manager'])->group(function () {
   
     Route::get('/manager/home', [HomeController::class, 'managerHome'])->name('manager.home');
 });
+
 

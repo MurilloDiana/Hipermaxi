@@ -164,10 +164,6 @@ class DatabaseSeeder extends Seeder
             'TELEFONO'=>'69008945',
             'DIRECCION'=>'radial 17/2',
 
-            'FECHA_ING'=>'2015-05-10',
-            'AREA'=>'Cajero'            
-        ]);
-       
             'FECHA_ING'=>'2020-05-10',
             'AREA'=>'Cajero',
             'ANTIGUEDAD'=>'2 años',
@@ -175,6 +171,8 @@ class DatabaseSeeder extends Seeder
             'PASSWORD'=>Hash::make('carlos1'),
             'NIVEL'=>'3'
         ]);
+       
+           
 
         Empleado::create([            
             'NOMBRE'=>'mario',
@@ -183,11 +181,7 @@ class DatabaseSeeder extends Seeder
             'CI'=>'14525241',
             'EMAIL'=>'mario@gmail.com',
             'TELEFONO'=>'67808952',
-            'DIRECCION'=>'Av. Irala',
-
-            'FECHA_ING'=>'2014-06-05',
-            'AREA'=>'3'            
-
+            'DIRECCION'=>'Av. Irala',           
             'FECHA_ING'=>'2021-06-11',
             'AREA'=>NULL,
             'ANTIGUEDAD'=>'1 año',
@@ -205,10 +199,6 @@ class DatabaseSeeder extends Seeder
             'EMAIL'=>'carla@gmail.com',
             'TELEFONO'=>'77008945',
             'DIRECCION'=>'Av.Paurito',
-
-            'FECHA_ING'=>'2013-05-11',
-            'AREA'=>'3'            
-
             'FECHA_ING'=>'2021-05-11',
             'AREA'=>NUll,
             'ANTIGUEDAD'=>'1 año',
@@ -236,11 +226,6 @@ class DatabaseSeeder extends Seeder
             'EMAIL'=>'luis@gmail.com',
             'TELEFONO'=>'77688945',
             'DIRECCION'=>'Av.Paraguay',
-            'FECHA_ING'=>'2012-05-15',
-            'AREA'=>'Panaderia'            
-        ]);
-
-
             'FECHA_ING'=>'2019-05-11',
             'AREA'=>NUll,
             'ANTIGUEDAD'=>'3 años',
@@ -248,6 +233,9 @@ class DatabaseSeeder extends Seeder
             'PASSWORD'=>Hash::make('daniel1'),
             'NIVEL'=>'1'
         ]);
+
+
+           
         Empleado::create([            
             'NOMBRE'=>'luis',
             'FECHA_NAC'=>'1999-08-11',
@@ -272,10 +260,6 @@ class DatabaseSeeder extends Seeder
             'EMAIL'=>'daniela@gmail.com',
             'TELEFONO'=>'75788945',
             'DIRECCION'=>'Av.Cañoto',
-
-            'FECHA_ING'=>'2011-08-11',
-            'AREA'=>'Panaderia'            
-
             'FECHA_ING'=>'2020-08-11',
             'AREA'=>'Panaderia',
             'ANTIGUEDAD'=>NULL,
@@ -316,13 +300,6 @@ class DatabaseSeeder extends Seeder
             'email'=>'user@gmail.com', 
             'type'=>0,
             'password'=>'123456789'            
-
-            'FECHA_ING'=>'2020-04-21',
-            'AREA'=>'Recepcion',
-            'ANTIGUEDAD'=>'2 años',
-            'USUARIO'=>'306',
-            'PASSWORD'=>Hash::make('marta1'),
-            'NIVEL'=>'3'
 
         ]);
     }
