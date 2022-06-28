@@ -67,9 +67,11 @@ Route::group(['namespace' => 'App\Http\Controllers'], function(){
 
         /*CRUD ASISTENCIAS */
         Route::get('/asistencia',[AsistenciaController::class, 'listar'])->name('asistencias.index');
-
+  
+        /*CRUD PERMISO */
+        
         Route::get('/permiso',[PermisoController::class, 'listar'])->name('permiso.index');
-        Route::get('/Genpermiso',[PermisoController::class, 'index'])->name('Genpermiso.index');
+        Route::get('/Genpermiso',[PermisoController::class, 'store'])->name('Genpermiso.index');
 
         Route::get('/pagoadicional',[PagoadicionaController::class, 'listar'])->name('pagoadicional.index');
         Route::get('/registrarPagoAdiciona',[PagoadicionaController::class, 'registro'])->name('registrarPagoAdciona.index');

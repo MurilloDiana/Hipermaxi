@@ -2,7 +2,8 @@
 @section('content')
 <link rel="stylesheet" type="text/css" href="css/style_asis.css">
 <h3>HOJA DE SOLICITUD DE PERMISO</h3>
-            <form class="form-horizontal" role="form">
+            <form  method="POST" class="form-horizontal" role="form" >
+              {{ csrf_field() }} 
                <div class="form-group">
                 <label class="col-lg-3 control-label">Nombre Empleado:</label>
                           <div class="col-lg-8">
@@ -14,27 +15,27 @@
                <div class="form-group">
                   <label class="col-lg-3 control-label">Celula Identidad:</label>
                     <div class="col-lg-8">
-                        <input class="form-control" type="text" value=" ">
+                       <input class="form-control" type="text" value=" ">
                             </div>
                     </div>
 
                     <div class="form-group">
                        <label class="col-lg-3 control-label">Rol:</label>
                         <div class="col-lg-8">
-                            <input class="form-control" type="text" value="RRHH-ADM-EMP">
+                            <input class="form-control" type="text" value="">
                         </div>
                     </div>
                     <div class="form-group">
                             <label class="col-lg-3 control-label">Fecha Inicio:</label>
                         <div class="col-lg-8">
-                            <input class="form-control" type="text" value="DD-MM-YYYY">
+                            <input class="form-control" type="text" value="">
                         </div>
                     </div>
 
                     <div class="form-group">
                         <label class="col-lg-3 control-label">Fecha Fin:</label>
                             <div class="col-lg-8">
-                                <input class="form-control" type="text" value="DD-MM-YYYY">
+                               <input class="form-control" type="text" value="">
                             </div>
                     </div>
             </form>

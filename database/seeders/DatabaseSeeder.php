@@ -230,11 +230,9 @@ class DatabaseSeeder extends Seeder
             'FECHA_INI'=>'2021-05-10',
             'FECHA_FIN'=>'2021-05-11',
             'ASUNTO'=>'BAJA MEDICA',
-            'DIAS'=>'2'
+            'DIAS'=>'2',
+            'id_permiso_emp'=>'5'
         ]);
-        fkpide::create([
-            'ID_EMP'=>'5',
-            'ID_PERM'=>'1'
-        ]);
+
     }
 }
