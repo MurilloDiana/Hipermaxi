@@ -12,10 +12,10 @@
 
             @guest 
             <div class="gallery">
-              <a href="#"><img src="{{asset('img/img1.jpg')}}"  alt=""/>  </a>
-                <img src="{{asset('img/img1.jpg')}}"  alt=""/>
-                <img src="{{asset('img/img1.jpg')}}"  alt=""/>
-                <img src="{{asset('img/img1.jpg')}}" alt="" />
+              <a href="#blog"><img src="{{asset('img/img1.jpg')}}"  alt=""/>  </a>
+              <a href="#contactanos"><img src="{{asset('img/img1.jpg')}}"  alt=""/>  </a>
+              <a href="#acerca"><img src="{{asset('img/img1.jpg')}}"  alt=""/>  </a>
+              <a href="#desarrolladores"><img src="{{asset('img/img1.jpg')}}"  alt=""/>  </a>
             </div>
             @endguest
 
@@ -60,10 +60,11 @@
            <!-- </header> -->
         
             <!---->   
-           <!-- <section id="blog">BLOG</section>
+            <section id="blog">BLOG</section>
             <section id="contactanos">CONTACTANOS</section>
-            <section id="acercade">ACERCA DE</section>
-                -->         
+            <section id="acerca">ACERCA DE</section>
+            <section id="desarrolladores">DESARROLLADORES</section>
+                        
         </div>        
     </body>    
 @endsection
