@@ -44,11 +44,4 @@ class permisoController extends Controller
         $primera->save();
         return redirect(route('permiso.index'));
     }
-    public function update (){
-        $empleados = empleado::all();
-        return view('updatepermiso',compact('empleados'));
-
-        //return response()->json($datos);
-    }
-
 }

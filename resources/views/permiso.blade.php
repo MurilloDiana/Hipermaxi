@@ -48,5 +48,5 @@
 </div>
 
 <input type ='button' class="btn1 btn-warning"  value = 'GenerarPermiso' onclick="location.href = '{{ route('Genpermiso.index') }}'"/>
-<input type ='button' class="btn1 btn-warning"  value = 'updatePermiso' onclick="location.href = '{{ route('updatepermiso.index') }}'" />
+
 @endsection 
