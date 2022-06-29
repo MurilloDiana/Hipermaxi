@@ -22,60 +22,10 @@ use App\Http\Controllers\ContratoController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/retiro', function () {
-    return view('retiro');
-});
-Route::group(['namespace' => 'App\Http\Controllers'], function(){   
-    /**
-     * Home Routes
-     */
-    Route::get('/', 'HomeController@index')->name('home.index');
-    
-    Route::get('/falta', function () {
-        return view('falta');
-    });
-
-    Route::group(['middleware' => ['guest']], function() {
-        /**
-         * Register Routes
-         */
-        Route::get('/register', 'RegisterController@show')->name('register.show');
-        Route::post('/register', 'RegisterController@register')->name('register.perform');
-
-        /**
-         * Login Routes
-         */
-        Route::get('/login', 'LoginController@show')->name('login.show');
-        Route::post('/login', 'LoginController@login')->name('login.perform');    
-    });
-
-    Route::group(['middleware' => ['auth']], function() {
-        /**
-         * Logout Routes
-         */
-        Route::get('/logout', 'LogoutController@perform')->name('logout.perform');
-        
-        Route::get('/saludo', function () {
-            return 'Hello World';
-        });
-
-        Route::get('/empleado', [EmpleadoController::class, 'listarEmpleados'])->name('empleado.index');        
-
-        Route:: get('/chart', [ChartController::class,'index'])->name('chart.index');        
-        Route::get('/bar-chart', [ChartController::class,'barChart'])->name('bar-char.index');
-        Route::get('/circular', [ChartController::class,'circular'])->name('circular.index');
-
-        /*CRUD ANTIGUEDADES*/
-        Route::get('/antiguedad', [AntiguedadController::class, 'antiguedad_index'])->name('antiguedad.index');
-
-Route::get('/', function () {
-    return view('/home/index');
-});
-
-  
-    
+   
 Route::get('/hola', function () {
     return "hola mundo";
+});
 
 
 Auth::routes();  
@@ -118,6 +68,10 @@ Route::middleware(['auth', 'user-access:admin'])->group(function () {
     Route::get('/admin/asignarContrato', [ContratoController::class, 'asignarContrato'])->name('asignarContrato');
     Route::post('/admin/registrarContrato', [ContratoController::class, 'registrarContrato'])->name('registrarContrato');
     Route::delete('/admin/eliminarContrato/{CODIGO}', [ContratoController::class, 'eliminarContrato']);
+
+    /*CURD ANTIGUEDAD*/
+    Route::get('/admin/antiguedad', [AntiguedadController::class, 'index'])->name('antiguedad.index');
+
 });
   
 /*------------------------------------------
@@ -129,5 +83,4 @@ Route::middleware(['auth', 'user-access:manager'])->group(function () {
   
     Route::get('/manager/home', [HomeController::class, 'managerHome'])->name('manager.home');
 });
-
 
