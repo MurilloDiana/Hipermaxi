@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title','vacaciones')
+@section('title','retiro')
 @section('content')
 
 <div class="row wrapper border-bottom white-bg page-heading">
@@ -46,7 +46,9 @@
              
                             <label class="col-sm-4 col-form-label"><i class="text-danger">* </i> Motivo de la renuncia:</label>
                             <div class="col-sm-6">
-                                <input type="text" placeholder="Cite el motivo de la renuncia" name="txtPersona" id="txtPersona" value="" class="typeahead_2 form-control" />
+                                <input type="form-control" placeholder="Cite el motivo de la renuncia" name="txtPersona" id="txtPersona" value="" class="typeahead_2 form-control" />
+                                <textarea class="form-control" id="message" name="message" placeholder="Cite el motivo de la renuncia" rows="7"></textarea>
+                           
                                 <input type="hidden" name="id" id="id" value="">
                             </div>
 
