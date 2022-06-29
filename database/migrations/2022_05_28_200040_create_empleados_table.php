@@ -20,22 +20,12 @@ return new class extends Migration
             $table->date('FECHA_NAC');
             $table->char('GENERO',1);
             $table->unsignedInteger('CI');
-            $table->string('EMAIL',100);
+            $table->string('EMAIL');
             $table->unsignedInteger('TELEFONO');
-            $table->string('DIRECCION',100);
-
-            $table->date('FECHA_ING');    
-            $table->string('AREA');
-            $table->rememberToken();
-            $table->timestamps();       
+            $table->string('DIRECCION',100);     
 
             $table->date('FECHA_ING');
-            $table->string('AREA',100)->nullable();//nullable permite meter valores nulos
-            $table->string('ANTIGUEDAD')->nullable();
-            $table->unsignedInteger('USUARIO');
-            $table->string('PASSWORD');
-            $table->string('AREA',100);         
-            $table->unsignedInteger('NIVEL');/*1=RH;2=ADM;3=TRAB*/
+            $table->string('AREA',100)->nullable();//nullable permite meter valores nulos                                    
             $table->rememberToken();
             $table->timestamps();
 
@@ -54,6 +44,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('empleados');
+        Schema::dropIfExists('empleados'); 
     }
 };
