@@ -11,6 +11,7 @@ use App\Models\asistencia;
 use App\Models\fkpide;
 use App\Models\jornada_laboral;
 use App\Models\permiso;
+use App\Models\ingreso;
 use Faker\Factory as Faker;
 use Illuminate\Support\Facades\DB;
 
@@ -247,6 +248,18 @@ class DatabaseSeeder extends Seeder
             'DIAS'=>'10',
             'id_permiso_emp'=>'14'
         ]);
+        ingreso::create([    
+            'Sueldo'=>'2500',
+            'ID_permiso_emp'=>'5']);
+        ingreso::create([    
+            'Sueldo'=>'2000',
+        'ID_permiso_emp'=>'6']);
+        ingreso::create([    
+            'Sueldo'=>'2100',
+            'ID_permiso_emp'=>'7']);
+        ingreso::create([    
+            'Sueldo'=>'3000',
+            'ID_permiso_emp'=>'14']);
 
     }
 }

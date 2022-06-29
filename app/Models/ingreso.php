@@ -7,11 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class ingreso extends Model
 {
-          // use HasFactory;
-          protected $primaryKey = "id_ingreso";
-          protected $fillable = [      
-            'Sueldo',
-            'id_ingreso_emp'
-          ];
-       }
+    protected $primaryKey = "id_ingreso";
+
+    protected $fillable = [ 
+    'Sueldo',
+    'ID_permiso_emp'
+    ];
+}
 

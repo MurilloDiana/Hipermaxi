@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class pagoadicional extends Model
 {
+
     protected $primaryKey = "id_pagoadicional";
     protected $fillable = [      
       'horas_extras',
@@ -17,4 +18,5 @@ class pagoadicional extends Model
       'id_ingreso1',
       'id_emp'
     ];
+
 }
