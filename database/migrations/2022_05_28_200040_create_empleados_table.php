@@ -22,12 +22,7 @@ return new class extends Migration
             $table->unsignedInteger('CI');
             $table->string('EMAIL',100);
             $table->unsignedInteger('TELEFONO');
-            $table->string('DIRECCION',100);
-
-            $table->date('FECHA_ING');    
-            $table->string('AREA');
-            $table->rememberToken();
-            $table->timestamps();       
+            $table->string('DIRECCION',100);     
 
             $table->date('FECHA_ING');
             $table->string('AREA',100)->nullable();//nullable permite meter valores nulos
@@ -54,6 +49,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('empleados'); ddsa
+        Schema::dropIfExists('empleados'); 
     }
 };
