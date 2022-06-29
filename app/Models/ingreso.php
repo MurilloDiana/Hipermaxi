@@ -11,7 +11,6 @@ class ingreso extends Model
 
     protected $fillable = [ 
     'Sueldo',
-    'ID_permiso_emp'
+    'id_ingreso_emp'
     ];
 }
-

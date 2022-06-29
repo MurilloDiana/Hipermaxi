@@ -250,16 +250,16 @@ class DatabaseSeeder extends Seeder
         ]);
         ingreso::create([    
             'Sueldo'=>'2500',
-            'ID_permiso_emp'=>'5']);
+            'id_ingreso_emp'=>'5']);
         ingreso::create([    
             'Sueldo'=>'2000',
-        'ID_permiso_emp'=>'6']);
+        'ID_ingreso_emp'=>'6']);
         ingreso::create([    
             'Sueldo'=>'2100',
-            'ID_permiso_emp'=>'7']);
+            'ID_ingreso_emp'=>'7']);
         ingreso::create([    
             'Sueldo'=>'3000',
-            'ID_permiso_emp'=>'14']);
+            'ID_ingreso_emp'=>'14']);
 
     }
 }
