@@ -27,10 +27,10 @@ class permisoController extends Controller
     }
     public function store(request $variable){
         $fechaActual=date('Y-m-d');
-        /*$this->validate($variable,[
+        $this->validate($variable,[
             'fecha_ini'=>'required|after:'.$fechaActual,
-            /*'fecha_fin'=>'required|after:'.$date1 = Carbon::parse($variable->input('fecha_ini'))
-        ]);*/
+           'fecha_fin'=>'required|after:'.$fechaActual
+        ]);
         $primera= new permiso;
         $primera->FECHA_INI=$variable->input('fecha_ini');
         $primera->FECHA_FIN=$variable->input('fecha_fin');
