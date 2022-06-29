@@ -36,7 +36,6 @@ class DatabaseSeeder extends Seeder
             'TELEFONO'=>'12345678',
             'DIRECCION'=>'raiz',
             'FECHA_ING'=>'2022-05-11',
-
             'AREA'=>'raiz'            
         ]);    
         
@@ -112,16 +111,6 @@ class DatabaseSeeder extends Seeder
             'AREA'=>'raiz'            
         ]); 
 
-           
-
-        Empleado::create([            
-
-            'AREA'=>'raiz',
-            'ANTIGUEDAD'=>'2',
-            'USUARIO'=>'root',
-            'PASSWORD'=>Hash::make('123456789'),
-            'NIVEL'=>'1'
-        ]);
         Empleado::create([        
             'NOMBRE'=>'nelson',
             'FECHA_NAC'=>'2000-05-11',
@@ -131,11 +120,7 @@ class DatabaseSeeder extends Seeder
             'TELEFONO'=>'69008952',
             'DIRECCION'=>'radial 10',
             'FECHA_ING'=>'2020-05-11',
-            'AREA'=>'Cajero',
-            'ANTIGUEDAD'=>'2 años',
-            'USUARIO'=>'301',
-            'PASSWORD'=>Hash::make('miralonomas'),
-            'NIVEL'=>'3'
+            'AREA'=>'Cajero'
         ]);
 
         Empleado::create([            
@@ -147,31 +132,8 @@ class DatabaseSeeder extends Seeder
             'TELEFONO'=>'69008952',
             'DIRECCION'=>'radial 10',
             'FECHA_ING'=>'2020-05-11',
-            'AREA'=>'Cajero',
-            'ANTIGUEDAD'=>'2 años',
-            'USUARIO'=>'302',
-            'PASSWORD'=>Hash::make('maria2'),
-            'NIVEL'=>'3'
-        ]);
-        
-        Empleado::create([            
-
-            'NOMBRE'=>'carlos',
-            'FECHA_NAC'=>'1998-06-11',
-            'GENERO'=>'M',
-            'CI'=>'11325000',
-            'EMAIL'=>'carlos@gmail.com',
-            'TELEFONO'=>'69008945',
-            'DIRECCION'=>'radial 17/2',
-
-            'FECHA_ING'=>'2020-05-10',
-            'AREA'=>'Cajero',
-            'ANTIGUEDAD'=>'2 años',
-            'USUARIO'=>'303',
-            'PASSWORD'=>Hash::make('carlos1'),
-            'NIVEL'=>'3'
-        ]);
-       
+            'AREA'=>'Cajero'
+        ]);  
            
 
         Empleado::create([            
@@ -183,11 +145,7 @@ class DatabaseSeeder extends Seeder
             'TELEFONO'=>'67808952',
             'DIRECCION'=>'Av. Irala',           
             'FECHA_ING'=>'2021-06-11',
-            'AREA'=>NULL,
-            'ANTIGUEDAD'=>'1 año',
-            'USUARIO'=>'201',
-            'PASSWORD'=>Hash::make('mario1'),
-            'NIVEL'=>'2'
+            'AREA'=>NULL
 
         ]);
         
@@ -200,11 +158,7 @@ class DatabaseSeeder extends Seeder
             'TELEFONO'=>'77008945',
             'DIRECCION'=>'Av.Paurito',
             'FECHA_ING'=>'2021-05-11',
-            'AREA'=>NUll,
-            'ANTIGUEDAD'=>'1 año',
-            'USUARIO'=>'202',
-            'PASSWORD'=>Hash::make('carla1'),
-            'NIVEL'=>'2'
+            'AREA'=>NUll
 
         ]);
         Empleado::create([            
@@ -227,11 +181,7 @@ class DatabaseSeeder extends Seeder
             'TELEFONO'=>'77688945',
             'DIRECCION'=>'Av.Paraguay',
             'FECHA_ING'=>'2019-05-11',
-            'AREA'=>NUll,
-            'ANTIGUEDAD'=>'3 años',
-            'USUARIO'=>'101',
-            'PASSWORD'=>Hash::make('daniel1'),
-            'NIVEL'=>'1'
+            'AREA'=>NUll
         ]);
 
 
@@ -245,11 +195,7 @@ class DatabaseSeeder extends Seeder
             'TELEFONO'=>'77688945',
             'DIRECCION'=>'Av.Paraguay',
             'FECHA_ING'=>'2022-05-15',
-            'AREA'=>'Panaderia',
-            'ANTIGUEDAD'=>NULL,
-            'USUARIO'=>'304',
-            'PASSWORD'=>Hash::make('luis1'),
-            'NIVEL'=>'3'
+            'AREA'=>'Panaderia'
         ]);
 
         Empleado::create([            
@@ -261,12 +207,7 @@ class DatabaseSeeder extends Seeder
             'TELEFONO'=>'75788945',
             'DIRECCION'=>'Av.Cañoto',
             'FECHA_ING'=>'2020-08-11',
-            'AREA'=>'Panaderia',
-            'ANTIGUEDAD'=>NULL,
-            'USUARIO'=>'305',
-            'PASSWORD'=>Hash::make('daniela1'),
-            'NIVEL'=>'3'
-
+            'AREA'=>'Panaderia'
         ]);
         Empleado::create([            
             'NOMBRE'=>'marta',
@@ -276,7 +217,6 @@ class DatabaseSeeder extends Seeder
             'EMAIL'=>'marta@gmail.com',
             'TELEFONO'=>'77118945',
             'DIRECCION'=>'Av.Palmasola',
-
             'FECHA_ING'=>'2010-04-21',
             'AREA'=>'Recepcion'            
         ]);
@@ -299,8 +239,7 @@ class DatabaseSeeder extends Seeder
             'username'=>'user',
             'email'=>'user@gmail.com', 
             'type'=>0,
-            'password'=>'123456789'            
-
+            'password'=>'123456789'
         ]);
     }
 }
