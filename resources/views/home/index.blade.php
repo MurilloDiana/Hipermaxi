@@ -11,8 +11,8 @@
         <div class="bg-light m-0 row justify-content-center">
             @auth
             <h1>Dashboard</h1>
-            <p class="lead">Only authenticated users can access this section.</p>
-                
+            
+            <a href="#blog"><img src="{{asset('img/img1.jpg')}}"  alt=""/>  </a>  
             @endauth
 
             @guest 

@@ -27,7 +27,7 @@ Route::get('/', function () {
     return view('/home/index');
 });
 
-  
+
     
 Route::get('/hola', function () {
     return "hola mundo";
@@ -73,6 +73,10 @@ Route::middleware(['auth', 'user-access:admin'])->group(function () {
     Route::get('/admin/asignarContrato', [ContratoController::class, 'asignarContrato'])->name('asignarContrato');
     Route::post('/admin/registrarContrato', [ContratoController::class, 'registrarContrato'])->name('registrarContrato');
     Route::delete('/admin/eliminarContrato/{CODIGO}', [ContratoController::class, 'eliminarContrato']);
+
+
+    /* GRAFICAS*/
+    Route::get('admin/chart', [ChartController::class, 'index'])->name('chart');
 });
   
 /*------------------------------------------
