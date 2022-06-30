@@ -58,7 +58,7 @@ Route::group(['namespace' => 'App\Http\Controllers'], function(){
         Route::delete('/eliminar/{CODIGO}', [EmpleadoController::class, 'eliminar']);
 
         /*VITACORAS*/
-        Route::get('/chart', [ChartController::class,'index'])->name('chart.index');        
+        Route::get('/chart', [ChartController::class,'index'])->name('chart.index');   22     
         Route::get('/bar-chart', [ChartController::class,'barChart'])->name('bar-char.index');
         Route::get('/circular', [ChartController::class,'circular'])->name('circular.index');
 
