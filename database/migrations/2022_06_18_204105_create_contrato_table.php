@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('contratos', function (Blueprint $table) {              
             $table->unsignedBigInteger('id')->nullable()->unique();           
             $table->date('inicio_contrato');
-            $table->date('final_contrato');
+            $table->date('final_contrato')->nullable();
             $table->timestamps();
         });
     }
