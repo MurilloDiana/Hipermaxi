@@ -20,14 +20,64 @@
               <a href="#blog"><img src="{{asset('img/img1.jpg')}}"  alt=""/>  </a>
               <a href="#contactanos"><img src="{{asset('img/img1.jpg')}}"  alt=""/>  </a>
               <a href="#acerca"><img src="{{asset('img/img1.jpg')}}"  alt=""/>  </a>
-              <a href="#desarrolladores"><img src="{{asset('img/img1.jpg')}}"  alt=""/>  </a>
+              <a href="#desarrolladores"><img src="{{asset('img/desarrolladores.jpg')}}"  alt=""/>  </a>
             </div>
 
             
             <section id="blog">BLOG</section>
             <section id="contactanos">CONTACTANOS</section>
-            <section id="acerca">ACERCA DE</section>
-            <section id="desarrolladores">DESARROLLADORES</section>
+           
+            <section id="desarrolladores">DESARROLLADORES
+              <div class ="dropdown-menu">
+                 Diana Murillo Condori
+                   <ul class="dropdown">
+                    <li>Ing Informatica</li> 
+                    <li> ........</li> 
+                    <li>.........</li>
+                    <li>Fronted</li> 
+                   
+                   </ul> 
+              </div>
+              <div class ="dropdown-menu">
+                Nelson Fabian Galvan Vega
+                   <ul class="dropdown">
+                    <li>Ing Sistemas </li>
+                    <li>........</li> 
+                    <li>........</li>
+                    <li> FULL Developer</li>
+                   </ul> 
+              </div>  
+              <div class ="dropdown-menu">
+                Jorge Eduardo Cari Acara
+                   <ul class="dropdown">
+                    <li>Ing Sistemas </li>
+                    <li> ...........</li> 
+                    <li> ...........</li>
+                    <li> Backend</li>
+                   </ul> 
+              </div>  
+              <div class ="dropdown-menu">
+                Reny Rene Burgoa Aguilera
+                   <ul class="dropdown">
+                    <li>Ing Sistemas </li>
+                    <li> ............</li> 
+                    <li> ,,,,,,,</li>
+                    <li> Fronted</li>
+                   </ul> 
+              </div>  
+              <div class ="dropdown-menu">
+                Mauricio Daniel
+                   <ul class="dropdown">
+                    <li>Ing Sistemas </li>
+                    <li> ........</li> 
+                    <li>.........</li>
+                    <li>Backend </li>
+                   </ul> 
+              </div>       
+
+                                                                                                                                    
+            </section>
+            
             @endguest
 
            
