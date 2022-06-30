@@ -8,6 +8,7 @@ use Illuminate\Database\Seeder;
 use App\Models\empleado;//adiciona el models de la tabla
 use App\Models\User;
 use App\Models\Horario;
+use App\Models\permiso;
 use Faker\Factory as Faker;
 use Illuminate\Support\Facades\DB;
 
@@ -240,6 +241,28 @@ class DatabaseSeeder extends Seeder
             'email'=>'user@gmail.com', 
             'type'=>0,
             'password'=>'123456789'
+        ]);
+
+        permiso::create([
+            'FECHA_INI'=>'2021-05-10',
+            'FECHA_FIN'=>'2021-05-11',
+            'ASUNTO'=>'BAJA MEDICA',
+            'DIAS'=>'2',
+            'id_permiso_emp'=>'5'
+        ]);
+        permiso::create([
+            'FECHA_INI'=>'2021-05-20',
+            'FECHA_FIN'=>'2021-05-22',
+            'ASUNTO'=>'BAJA MEDICA',
+            'DIAS'=>'2',
+            'id_permiso_emp'=>'8'
+        ]);
+        permiso::create([
+            'FECHA_INI'=>'2021-06-20',
+            'FECHA_FIN'=>'2021-06-30',
+            'ASUNTO'=>'BAJA MEDICA',
+            'DIAS'=>'10',
+            'id_permiso_emp'=>'14'
         ]);
     }
 }

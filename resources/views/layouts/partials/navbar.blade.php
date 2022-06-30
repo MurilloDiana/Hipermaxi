@@ -11,9 +11,9 @@
       @auth
       <nav>
         <a href="{{route('empleado.index')}}">Inicio</a>        
-        <a href="{{ route('chart.index') }}">Vitacora</a>        
+        //<a href="{{ route('chart.index') }}">Vitacora</a>        
         <a href="{{route('antiguedad.index')}}">Antiguedad</a>
-        <a href="{{route('asistencias.index')}}">Asistencia</a>
+        //<a href="{{route('asistencias.index')}}">Asistencia</a>
         <div class="animation start-home"></div>
       </nav>
         {{auth()->user()->name}}

@@ -1,4 +1,4 @@
-@extends('layouts.app-master')
+@extends('layouts.app')
 @section('content')
 <link rel="stylesheet" type="text/css" href="css/style_asis.css">
 <link rel="stylesheet" type="text/css" href="css/style_asis.css">
@@ -47,6 +47,6 @@
        </div>
 </div>
 
-<input type ='button' class="btn1 btn-warning"  value = 'GenerarPermiso' onclick="location.href = '{{ route('Genpermiso.index') }}'"/>
+<input type ='button' class="btn1 btn-warning"  value = 'GenerarPermiso' onclick="location.href ='{{ route }}' "/>
 
 @endsection 
