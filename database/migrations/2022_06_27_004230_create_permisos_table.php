@@ -13,11 +13,15 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('contratos', function (Blueprint $table) {              
-            $table->unsignedBigInteger('id')->nullable()->unique();           
-            $table->date('inicio_contrato');
-            $table->date('final_contrato')->nullable();
+        Schema::create('permisos', function (Blueprint $table) {
+            $table->id('id_p');
+            $table->date('FECHA_INI');
+            $table->date('FECHA_FIN');
+            $table->STRING('ASUNTO',100);
+            $table->unsignedBigInteger('DIAS');
+            $table->BigInteger('ID_permiso_emp')->unsigned();
             $table->timestamps();
+           
         });
     }
 
@@ -28,6 +32,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('contrato');
+        Schema::dropIfExists('permisos');
     }
 };

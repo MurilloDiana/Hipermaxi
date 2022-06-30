@@ -10,6 +10,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\AsistenciaController;
 use App\Http\Controllers\HorarioController;
 use App\Http\Controllers\ContratoController;
+use App\Http\Controllers\JornadaLaboralController;
 
 
 /*
@@ -38,6 +39,9 @@ All Normal Users Routes List
 Route::middleware(['auth', 'user-access:user'])->group(function () {
   
     Route::get('/home', [HomeController::class, 'index'])->name('home');
+    Route::get('/usuario', function () {
+        return "usuario";
+    });    
 });
   
 /*------------------------------------------
@@ -80,7 +84,6 @@ All Admin Routes List
 --------------------------------------------
 --------------------------------------------*/
 Route::middleware(['auth', 'user-access:manager'])->group(function () {
-  
     Route::get('/manager/home', [HomeController::class, 'managerHome'])->name('manager.home');
 });
 
