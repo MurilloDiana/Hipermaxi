@@ -2,7 +2,7 @@
 @section('content')
 <link rel="stylesheet" type="text/css" href="css/style_asis.css">
 <h3>HOJA CONTROL DE ADICION DE PAGOS</h3>
-<form  action="{{ route('registrarPagoAdciona1') }}" method="POST" class="form-horizontal" role="form" >
+<form  action="{{ route('registrarPagoAdciona0') }}" method="POST" class="form-horizontal" role="form" >
     {{ csrf_field() }} 
     @method('POST')
     <div class="form-group">
@@ -30,7 +30,9 @@
     <label FOR="">BONO ANTIGUEDAD: </label>
     </div>
 
-
+    <div class="mb-3 mt-4">                                        
+        <button class="btn btn-light mt-3" type="submit" values="GENERAR">Registrar</button>        
+    </div>
 
 
 

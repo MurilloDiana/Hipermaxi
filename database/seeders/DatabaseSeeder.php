@@ -9,6 +9,7 @@ use App\Models\empleado;//adiciona el models de la tabla
 use App\Models\User;
 use App\Models\Horario;
 use App\Models\permiso;
+use App\Models\sueldo;
 use Faker\Factory as Faker;
 use Illuminate\Support\Facades\DB;
 
@@ -264,5 +265,18 @@ class DatabaseSeeder extends Seeder
             'DIAS'=>'10',
             'id_permiso_emp'=>'14'
         ]);
+
+        sueldo::create([    
+            'Sueldo'=>'2500',
+            'id_ingreso_emp'=>'5']);
+        sueldo::create([    
+            'Sueldo'=>'2000',
+        'id_ingreso_emp'=>'6']);
+        sueldo::create([    
+            'Sueldo'=>'2100',
+            'id_ingreso_emp'=>'7']);
+        sueldo::create([    
+            'Sueldo'=>'3000',
+            'id_ingreso_emp'=>'14']);
     }
 }

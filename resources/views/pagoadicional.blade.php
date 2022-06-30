@@ -38,5 +38,5 @@
 </div>
 
 </div>
-<input type ='button' class="btn1 btn-warning"  value = 'GenerarPago' onclick="location.href = '{{ route('registrarPagoAdciona.index') }}'"/>
+<input type ='button' class="btn1 btn-warning"  value = 'GenerarPago' onclick="location.href = '{{ route('registrarPagoAdciona0') }}'"/>
 @endsection 
