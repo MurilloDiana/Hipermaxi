@@ -12,20 +12,26 @@
             @auth
             <h1>Dashboard</h1>
             
-            <a href="#blog"><img src="{{asset('img/img1.jpg')}}"  alt=""/>  </a>  
+            <div class="cardi">
+                <img src="{{asset('img/img1.jpg')}}"  alt=""/>
+                <div class="details">
+                    <h4>Acerca de Nosotros</h4>
+                    <p>Prueba Prueba Prueba</p>
+                </div>
+            </div>
             @endauth
 
             @guest 
             <div class="gallery">
-              <a href="#blog"><img src="{{asset('img/img1.jpg')}}"  alt=""/>  </a>
-              <a href="#contactanos"><img src="{{asset('img/img1.jpg')}}"  alt=""/>  </a>
-              <a href="#acerca"><img src="{{asset('img/img1.jpg')}}"  alt=""/>  </a>
-              <a href="#desarrolladores"><img src="{{asset('img/desarrolladores.jpg')}}"  alt=""/>  </a>
+              <a href="#blog"><img src="{{asset('img/img2.jpg')}}"  alt=""/>  </a>
+              <a href="#contactanos"><img src="{{asset('img/img4.jpg')}}"  alt=""/>  </a>
+              <a href="#acerca"><img src="{{asset('img/img6.jpg')}}"  alt=""/>  </a>
+              <a href="#desarrolladores"><img src="{{asset('img/img9.webp')}}"  alt=""/>  </a>
             </div>
 
             
-            <section id="blog">BLOG</section>
-            <section id="contactanos">CONTACTANOS</section>
+           <!-- <section id="blog">BLOG</section>
+            <section id="contactanos">CONTACTANOS</section> -->
            
             <section id="desarrolladores">DESARROLLADORES
               <div class ="dropdown-menu">
