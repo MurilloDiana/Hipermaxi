@@ -2,21 +2,21 @@
 @section('content')
 <!--ASIGNAR HORARIO-->  
 
-    <div class="box">
-    <div class="container-1">     
+    <div class="middle-box text-center">
+    <div class="m-t">     
             <form action="{{route('asignarContrato')}}" method="GET">
                 @csrf                    
-                <input type="search" placeholder="Cuscar Codigo" name="CODIGO" requered/>
+                <input type="search" placeholder="Buscar Codigo" name="CODIGO" requered/>
                 <button type="submit" class="btn btn-success">Buscar</button>            
             </form>     
     </div>
 </div>
 
 <div class="py-4">
-    <table class="table table-hover bg-light text-center">
-        <thead class="bg-primary text-light">
+    <table class="table table-bordered border-white table-hover text-center">
+        <thead class="bg-dark text-white">
             <tr>
-            <th scope="col">Codigo Empleado</th>    
+            <th scope="col" >Codigo Empleado</th>    
             <th scope="col">Nombre</th>    
             <th scope="col">Fecha de Nacimiento</th>    
             <th scope="col">Cedula de Identidad</th>
