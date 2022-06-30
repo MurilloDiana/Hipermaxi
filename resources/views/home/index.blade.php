@@ -1,4 +1,4 @@
-@extends('layouts.app-master')
+@extends('layouts.app')
 @section('content')
 <link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
 <link rel="stylesheet" href="{{asset('assets/css/carrusel.css')}}">
@@ -11,6 +11,15 @@
             @endauth
 
             @guest 
+            <div class="gallery">
+              <a href="#blog"><img src="{{asset('img/img1.jpg')}}"  alt=""/>  </a>
+              <a href="#contactanos"><img src="{{asset('img/img1.jpg')}}"  alt=""/>  </a>
+              <a href="#acerca"><img src="{{asset('img/img1.jpg')}}"  alt=""/>  </a>
+              <a href="#desarrolladores"><img src="{{asset('img/img1.jpg')}}"  alt=""/>  </a>
+            </div>
+            @endguest
+
+           <!--  
             <div>
                 <h1 class="titulo-home">HIPERMAXI</h1>
                 <p class="texto-home">Por favor inicia sesion</p>            
@@ -40,7 +49,7 @@
                     <span class="punto" onclick="mostrar(1);"></span>
                     <span class="punto" onclick="mostrar(2);"></span>
                     <span class="punto" onclick="mostrar(3);"></span>
-                </div>
+                </div>  -->
                 <!-- BOTON DE PAUSA
                 <div class="boton">
                     <a href="#">
@@ -48,12 +57,14 @@
                     </a>
                 </div>
                 -->
-            </header>
+           <!-- </header> -->
+        
             <!---->   
             <section id="blog">BLOG</section>
             <section id="contactanos">CONTACTANOS</section>
-            <section id="acercade">ACERCA DE</section>
-            @endguest            
+            <section id="acerca">ACERCA DE</section>
+            <section id="desarrolladores">DESARROLLADORES</section>
+                        
         </div>        
     </body>    
 @endsection

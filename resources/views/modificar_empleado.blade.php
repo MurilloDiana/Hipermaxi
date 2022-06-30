@@ -1,6 +1,6 @@
-@extends('layouts.app-master')
+@extends('layouts.app')
 @section('content')
-<form action="{{ url('actualizar_empleado/'.$usuario->CODIGO) }}" method="POST">
+<form action="{{ url('/admin/actualizar_empleado/'.$usuario->CODIGO) }}" method="POST">
     {{csrf_field()}}
     @method('PUT')
     <div>
@@ -34,6 +34,7 @@
     <div>
         <input type="text" placeholder="area" name="AREA" value="{{$usuario->AREA}}">
     </div>
+    <!--
     <div>
         <select name="NIVEL" value="{{$usuario->NIVEL}}">
             <option value="1">RRHH</option>
@@ -41,8 +42,9 @@
             <option value="3">TRABAJADOR BASE</option>            
         </select>
     </div> 
+    -->
     <div>        
-        <a href="{{ url('empleado') }}" class="btn btn-danger float-end">CANCELAR</a>
+        <a href="{{route('empleado.index')}}" class="btn btn-danger float-end">CANCELAR</a>
         <button type="submit" class="btn btn-primary">ACTUALIZAR</button>       
     </div>
 </form>

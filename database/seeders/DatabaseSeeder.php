@@ -7,11 +7,7 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use App\Models\empleado;//adiciona el models de la tabla
 use App\Models\User;
-use App\Models\asistencia;
-use App\Models\fkpide;
-use App\Models\jornada_laboral;
-use App\Models\permiso;
-use App\Models\ingreso;
+use App\Models\Horario;
 use Faker\Factory as Faker;
 use Illuminate\Support\Facades\DB;
 
@@ -40,8 +36,7 @@ class DatabaseSeeder extends Seeder
             'TELEFONO'=>'12345678',
             'DIRECCION'=>'raiz',
             'FECHA_ING'=>'2022-05-11',
-            'AREA'=>'raiz',
-            'NIVEL'=>'1'
+            'AREA'=>'raiz'            
         ]);    
         
         Empleado::create([        
@@ -53,8 +48,7 @@ class DatabaseSeeder extends Seeder
             'TELEFONO'=>'78958461',
             'DIRECCION'=>'calle Ranchito',
             'FECHA_ING'=>'2021-10-15',
-            'AREA'=>'raiz',
-            'NIVEL'=>'1'
+            'AREA'=>'raiz'            
         ]);    
         
         Empleado::create([        
@@ -66,8 +60,7 @@ class DatabaseSeeder extends Seeder
             'TELEFONO'=>'78958461',
             'DIRECCION'=>'calle Ranchito',
             'FECHA_ING'=>'2021-10-12',
-            'AREA'=>'raiz',
-            'NIVEL'=>'1'
+            'AREA'=>'raiz'            
         ]);    
         
         Empleado::create([        
@@ -79,8 +72,7 @@ class DatabaseSeeder extends Seeder
             'TELEFONO'=>'70075184',
             'DIRECCION'=>'calle 9 av Apojeosin limite',
             'FECHA_ING'=>'2019-01-01',
-            'AREA'=>'raiz',
-            'NIVEL'=>'1'
+            'AREA'=>'raiz'            
         ]);         
 
         Empleado::create([        
@@ -92,8 +84,7 @@ class DatabaseSeeder extends Seeder
             'TELEFONO'=>'78005974',
             'DIRECCION'=>'barrio flor',
             'FECHA_ING'=>'2018-08-20',
-            'AREA'=>'raiz',
-            'NIVEL'=>'1'
+            'AREA'=>'raiz'            
         ]);         
         
         Empleado::create([        
@@ -105,8 +96,7 @@ class DatabaseSeeder extends Seeder
             'TELEFONO'=>'78958461',
             'DIRECCION'=>'calle Ranchito',
             'FECHA_ING'=>'2017-01-15',
-            'AREA'=>'raiz',
-            'NIVEL'=>'1'
+            'AREA'=>'raiz'            
         ]); 
         
         Empleado::create([        
@@ -118,25 +108,34 @@ class DatabaseSeeder extends Seeder
             'TELEFONO'=>'78958461',
             'DIRECCION'=>'calle Ranchito',
             'FECHA_ING'=>'2016-05-05',
-            'AREA'=>'raiz',
-            'NIVEL'=>'1'
+            'AREA'=>'raiz'            
         ]); 
 
-           
+        Empleado::create([        
+            'NOMBRE'=>'nelson',
+            'FECHA_NAC'=>'2000-05-11',
+            'GENERO'=>'M',
+            'CI'=>'11325240',
+            'EMAIL'=>'fabina@gmail.com',
+            'TELEFONO'=>'69008952',
+            'DIRECCION'=>'radial 10',
+            'FECHA_ING'=>'2020-05-11',
+            'AREA'=>'Cajero'
+        ]);
 
         Empleado::create([            
-            'NOMBRE'=>'carlos',
-            'FECHA_NAC'=>'1998-06-11',
-            'GENERO'=>'M',
-            'CI'=>'11325000',
-            'EMAIL'=>'carlos@gmail.com',
-            'TELEFONO'=>'69008945',
-            'DIRECCION'=>'radial 17/2',
-            'FECHA_ING'=>'2015-05-10',
-            'AREA'=>'Cajero',
-            'NIVEL'=>'3'
-        ]);
-        
+            'NOMBRE'=>'maria',
+            'FECHA_NAC'=>'1999-05-11',
+            'GENERO'=>'F',
+            'CI'=>'11325241',
+            'EMAIL'=>'fabina@gmail.com',
+            'TELEFONO'=>'69008952',
+            'DIRECCION'=>'radial 10',
+            'FECHA_ING'=>'2020-05-11',
+            'AREA'=>'Cajero'
+        ]);  
+           
+
         Empleado::create([            
             'NOMBRE'=>'mario',
             'FECHA_NAC'=>'1997-05-11',
@@ -144,10 +143,10 @@ class DatabaseSeeder extends Seeder
             'CI'=>'14525241',
             'EMAIL'=>'mario@gmail.com',
             'TELEFONO'=>'67808952',
-            'DIRECCION'=>'Av. Irala',
-            'FECHA_ING'=>'2014-06-05',
-            'AREA'=>'3',
-            'NIVEL'=>'2'
+            'DIRECCION'=>'Av. Irala',           
+            'FECHA_ING'=>'2021-06-11',
+            'AREA'=>NULL
+
         ]);
         
         Empleado::create([            
@@ -158,9 +157,9 @@ class DatabaseSeeder extends Seeder
             'EMAIL'=>'carla@gmail.com',
             'TELEFONO'=>'77008945',
             'DIRECCION'=>'Av.Paurito',
-            'FECHA_ING'=>'2013-05-11',
-            'AREA'=>'3',
-            'NIVEL'=>'2'
+            'FECHA_ING'=>'2021-05-11',
+            'AREA'=>NUll
+
         ]);
         Empleado::create([            
             'NOMBRE'=>'daniel',
@@ -171,8 +170,7 @@ class DatabaseSeeder extends Seeder
             'TELEFONO'=>'75808945',
             'DIRECCION'=>'Av.Cañoto',
             'FECHA_ING'=>'2011-05-11',
-            'AREA'=>'3',
-            'NIVEL'=>'1'
+            'AREA'=>'3'            
         ]);
         Empleado::create([            
             'NOMBRE'=>'luis',
@@ -182,9 +180,22 @@ class DatabaseSeeder extends Seeder
             'EMAIL'=>'luis@gmail.com',
             'TELEFONO'=>'77688945',
             'DIRECCION'=>'Av.Paraguay',
-            'FECHA_ING'=>'2012-05-15',
-            'AREA'=>'Panaderia',
-            'NIVEL'=>'3'
+            'FECHA_ING'=>'2019-05-11',
+            'AREA'=>NUll
+        ]);
+
+
+           
+        Empleado::create([            
+            'NOMBRE'=>'luis',
+            'FECHA_NAC'=>'1999-08-11',
+            'GENERO'=>'M',
+            'CI'=>'11378000',
+            'EMAIL'=>'luis@gmail.com',
+            'TELEFONO'=>'77688945',
+            'DIRECCION'=>'Av.Paraguay',
+            'FECHA_ING'=>'2022-05-15',
+            'AREA'=>'Panaderia'
         ]);
 
         Empleado::create([            
@@ -195,9 +206,8 @@ class DatabaseSeeder extends Seeder
             'EMAIL'=>'daniela@gmail.com',
             'TELEFONO'=>'75788945',
             'DIRECCION'=>'Av.Cañoto',
-            'FECHA_ING'=>'2011-08-11',
-            'AREA'=>'Panaderia',
-            'NIVEL'=>'3'
+            'FECHA_ING'=>'2020-08-11',
+            'AREA'=>'Panaderia'
         ]);
         Empleado::create([            
             'NOMBRE'=>'marta',
@@ -208,58 +218,28 @@ class DatabaseSeeder extends Seeder
             'TELEFONO'=>'77118945',
             'DIRECCION'=>'Av.Palmasola',
             'FECHA_ING'=>'2010-04-21',
-            'AREA'=>'Recepcion',
-            'NIVEL'=>'3'
+            'AREA'=>'Recepcion'            
         ]);
 
         User::create([                    
-            'username'=>'root',
-            'email'=>'root@gmail.com',            
+            'username'=>'RRHH',
+            'email'=>'rrhh@gmail.com', 
+            'type'=>1,
             'password'=>'123456789'            
-        ]);  
-
-        Asistencia::create([
-            'total_dias'=>'30',
-            'fecha'=>'2021-03-02'
-        ]);
-        Asistencia::create([
-            'total_dias'=>'30',
-            'fecha'=>'2021-03-02'
         ]);
 
-        permiso::create([
-            'FECHA_INI'=>'2021-05-10',
-            'FECHA_FIN'=>'2021-05-11',
-            'ASUNTO'=>'BAJA MEDICA',
-            'DIAS'=>'2',
-            'id_permiso_emp'=>'5'
+        User::create([                    
+            'username'=>'Administrador',
+            'email'=>'administrador@gmail.com', 
+            'type'=>2,
+            'password'=>'123456789'            
         ]);
-        permiso::create([
-            'FECHA_INI'=>'2021-05-20',
-            'FECHA_FIN'=>'2021-05-22',
-            'ASUNTO'=>'BAJA MEDICA',
-            'DIAS'=>'2',
-            'id_permiso_emp'=>'8'
-        ]);
-        permiso::create([
-            'FECHA_INI'=>'2021-06-20',
-            'FECHA_FIN'=>'2021-06-30',
-            'ASUNTO'=>'BAJA MEDICA',
-            'DIAS'=>'10',
-            'id_permiso_emp'=>'14'
-        ]);
-        ingreso::create([    
-            'Sueldo'=>'2500',
-            'id_ingreso_emp'=>'5']);
-        ingreso::create([    
-            'Sueldo'=>'2000',
-        'ID_ingreso_emp'=>'6']);
-        ingreso::create([    
-            'Sueldo'=>'2100',
-            'ID_ingreso_emp'=>'7']);
-        ingreso::create([    
-            'Sueldo'=>'3000',
-            'ID_ingreso_emp'=>'14']);
 
+        User::create([                    
+            'username'=>'user',
+            'email'=>'user@gmail.com', 
+            'type'=>0,
+            'password'=>'123456789'
+        ]);
     }
 }

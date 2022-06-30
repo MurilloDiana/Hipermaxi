@@ -2,4 +2,8 @@ guia de Carbon manipulacion del tiempo
 https://styde.net/componente-carbon-fechas-laravel-5/
 selec orderby
 https://stackoverflow.com/questions/17429427/laravel-eloquent-ordering-results-of-all
+creacion multiusuarios
+https://laratutorials.com/laravel-9-multiple-user-role-based-authentication-example/
+consultas de tablas relacionadas
+https://www.codegrepper.com/code-examples/php/join+multiple+tables+in+laravel+eloquent
 https://www.youtube.com/watch?v=HkfXZmM7jEU&t=553s(Buscar en Laravel)

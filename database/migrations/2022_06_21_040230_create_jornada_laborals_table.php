@@ -13,6 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
+
         Schema::create('jornada_laborals', function (Blueprint $table) {
             $table->id();
             $table->time('hora_entrada');

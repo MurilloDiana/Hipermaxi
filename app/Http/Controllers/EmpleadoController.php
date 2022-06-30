@@ -37,7 +37,7 @@ class EmpleadoController extends Controller
             );
 
         empleado::create($datos);
-        return $this->listarEmpleados();
+        return redirect()->route('empleado.index');
     } 
 
     
@@ -55,10 +55,41 @@ class EmpleadoController extends Controller
         $dato->TELEFONO = $request->input('TELEFONO');
         $dato->DIRECCION = $request->input('DIRECCION');
         $dato->FECHA_ING = $request->input('FECHA_ING');
-        $dato->AREA = $request->input('AREA');        
-        $dato->NIVEL = $request->input('NIVEL');        
+        $dato->AREA = $request->input('AREA');
+
         $dato->update();                
-        return $this->listarEmpleados();
+        return redirect()->route('empleado.index');
+
+        $dato->ANTIGUEDAD = $request->input('ANTIGUEDAD');
+        $dato->USUARIO = $request->input('USUARIO');
+        $dato->PASSWORD = Hash::make( $request->input('PASSWORD'));
+        $dato->NIVEL = $request->input('NIVEL');        
+        $dato->update();
+        
+        $datos=empleado::get();
+        return view ('empleado', compact('datos'));  
+    }
+
+
+
+    public function antiguedad_index(){
+        //$datos=DB::table('empleados')->select('NOMBRE','ANTIGUEDAD')->WHERE('ANTIGUEDAD'!=Null)->get();
+        $datos= DB::table('empleados')->orderBy('ANTIGUEDAD')->select('NOMBRE','FECHA_ING','ANTIGUEDAD')->where('ANTIGUEDAD', '<>', NULL)->get();
+        //dd($datos);
+         return view('antiguedad', compact('datos'));
+    }
+    //Bibliografia
+    //https://www.oulub.com/es-ES/Laravel/queries
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
+        //
+
     }
 
     public function eliminar($CODIGO){        
@@ -66,6 +97,12 @@ class EmpleadoController extends Controller
         if($existe != null){
             $existe->delete();
         }
-        return $this->listarEmpleados();        
+        return redirect()->route('empleado.index');
+    }
+
+    public function buscarEmpleados(Request $request){
+        $datos = $request->input('CODIGO');
+        $datos = empleado::where('CODIGO',$datos)->get();        
+        return view('empleado', compact('datos'));
     }
 }
