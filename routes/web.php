@@ -22,6 +22,11 @@ use App\Http\Controllers\ContratoController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+/////VISTA FALTA JUSTIFICADA
+Route::get('/faltajustificada', function () {
+    return view('faltajustificada');
+});
+////
 Route::get('/retiro', function () {
     return view('retiro');
 });
@@ -30,11 +35,12 @@ Route::group(['namespace' => 'App\Http\Controllers'], function(){
      * Home Routes
      */
     Route::get('/', 'HomeController@index')->name('home.index');
-    
+    Route::get('/circular', 'ChartController@index')->name('chart.index');
     Route::get('/falta', function () {
         return view('falta');
     });
 });
+
 
     Route::group(['middleware' => ['guest']], function() {
         /**
@@ -68,6 +74,8 @@ Route::group(['namespace' => 'App\Http\Controllers'], function(){
 
         /*CRUD ANTIGUEDADES*/
         Route::get('/antiguedad', [AntiguedadController::class, 'antiguedad_index'])->name('antiguedad.index');
+       
+
 
     });
 
@@ -75,11 +83,7 @@ Route::get('/', function () {
     return view('/home/index');
 });
 
-  
     
-Route::get('/hola', function () {
-    return "hola mundo";
-});
 
 Auth::routes();  
   
@@ -121,7 +125,10 @@ Route::middleware(['auth', 'user-access:admin'])->group(function () {
     Route::get('/admin/asignarContrato', [ContratoController::class, 'asignarContrato'])->name('asignarContrato');
     Route::post('/admin/registrarContrato', [ContratoController::class, 'registrarContrato'])->name('registrarContrato');
     Route::delete('/admin/eliminarContrato/{CODIGO}', [ContratoController::class, 'eliminarContrato']);
+    
+    
 });
+
   
 /*------------------------------------------
 --------------------------------------------
