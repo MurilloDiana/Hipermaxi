@@ -10,6 +10,7 @@ use App\Http\Controllers\permisoController;
 use App\Http\Controllers\LoginController;
 //use App\Http\Controllers\AsistenciaController;
 use App\Http\Controllers\HorarioController;
+use App\Http\Controllers\PagoadicionaController;
 use App\Http\Controllers\ContratoController;
 use Illuminate\Support\Facades\Auth;
 
@@ -79,7 +80,7 @@ Route::middleware(['auth', 'user-access:admin'])->group(function () {
 
     Route::get('/admin/permiso',[permisoController::class, 'listar'])->name('permiso');
     Route::GET('/admin/Genpermiso',[PermisoController::class, 'mostr'])->name('Genpermiso.index');
-    //Route::post('/admin/Genpermiso',[PermisoController::class, 'store'])->name('registra');
+    Route::post('/admin/Genpermiso',[PermisoController::class, 'store'])->name('registra');
 });
   
 /*------------------------------------------
@@ -90,4 +91,7 @@ All Admin Routes List
 Route::middleware(['auth', 'user-access:manager'])->group(function () {
   
     Route::get('/manager/home', [HomeController::class, 'managerHome'])->name('manager.home');
+    Route::get('/manager/pagoadicional',[PagoadicionaController::class, 'listar'])->name('pagoadicional.index');
+    Route::get('/manager/registrarPagoAdiciona',[PagoadicionaController::class, 'registro'])->name('registrarPagoAdciona0');
+    Route::POST('/manager/registrarPagoAdiciona',[PagoadicionaController::class, 'registro1'])->name('registrarPagoAdciona1');
 });

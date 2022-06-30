@@ -47,6 +47,6 @@
        </div>
 </div>
 
-<input type ='button' class="btn1 btn-warning"  value = 'GenerarPermiso' onclick="location.href ='{{ route }}' "/>
+<input type ='button' class="btn1 btn-warning"  value = 'GenerarPermiso' onclick="location.href ='{{ route('Genpermiso.index') }}' "/>
 
 @endsection 
