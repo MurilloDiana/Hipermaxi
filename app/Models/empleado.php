@@ -20,7 +20,6 @@ class empleado extends Model
         'TELEFONO',
         'DIRECCION',
         'FECHA_ING',
-        'AREA',
-        'NIVEL'
+        'AREA'
     ];
 }

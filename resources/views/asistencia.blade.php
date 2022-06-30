@@ -1,6 +1,6 @@
 @extends('layouts.app-master')
 @section('content')
-<link rel="stylesheet" type="text/css" href="css/style_asis.css">
+<link rel="stylesheet" type="text/css" href="css/tablita.css">
 <div class="row wrapper border-bottom white-bg page-heading">
     <div class="col-lg-6">
     <h2>Asistencia de Empleados</h2>

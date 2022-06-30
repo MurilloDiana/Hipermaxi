@@ -1,13 +1,16 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\EmpleadoController;
 use App\Http\Controllers\AntiguedadController;
 use App\Http\Controllers\ChartController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\AsistenciaController;
-use App\Http\Controllers\permisoController;
-use App\Http\Controllers\PagoadicionaController;
+use App\Http\Controllers\HorarioController;
+use App\Http\Controllers\ContratoController;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,13 +22,19 @@ use App\Http\Controllers\PagoadicionaController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Route::get('/retiro', function () {
+    return view('retiro');
+});
 Route::group(['namespace' => 'App\Http\Controllers'], function(){   
     /**
      * Home Routes
      */
     Route::get('/', 'HomeController@index')->name('home.index');
     
+    Route::get('/falta', function () {
+        return view('falta');
+    });
+});
 
     Route::group(['middleware' => ['guest']], function() {
         /**
@@ -42,57 +51,85 @@ Route::group(['namespace' => 'App\Http\Controllers'], function(){
     });
 
     Route::group(['middleware' => ['auth']], function() {
-        /*FINALIZAR SESSION*/
+        /**
+         * Logout Routes
+         */
         Route::get('/logout', 'LogoutController@perform')->name('logout.perform');
-
-        /*MENSAJE POR ROUTE*/
+        
         Route::get('/saludo', function () {
             return 'Hello World';
         });
 
-        /*CRUD EMPLEADOS*/
-        Route::get('/empleado', [EmpleadoController::class, 'listarEmpleados'])->name('empleado.index');
-        Route::post('/registrar', [EmpleadoController::class, 'registrarEmpleado'])->name("registrar");
-        Route::get('editar_empleado/{CODIGO}', [EmpleadoController::class, 'edit']);//manda los datos a editar
-        Route::put('actualizar_empleado/{CODIGO}', [EmpleadoController::class, 'update'])->name('actualizarEmpleado');//actualiza los datos*/
-        Route::delete('/eliminar/{CODIGO}', [EmpleadoController::class, 'eliminar']);
+        Route::get('/empleado', [EmpleadoController::class, 'listarEmpleados'])->name('empleado.index');        
 
         /*VITACORAS*/
-        Route::get('/chart', [ChartController::class,'index'])->name('chart.index');   22     
+        Route::get('/chart', [ChartController::class,'index'])->name('chart.index');       
         Route::get('/bar-chart', [ChartController::class,'barChart'])->name('bar-char.index');
         Route::get('/circular', [ChartController::class,'circular'])->name('circular.index');
 
         /*CRUD ANTIGUEDADES*/
         Route::get('/antiguedad', [AntiguedadController::class, 'antiguedad_index'])->name('antiguedad.index');
 
-        /*CRUD ASISTENCIAS */
-        Route::get('/asistencia',[AsistenciaController::class, 'listar'])->name('asistencias.index');
-  
-        /*CRUD PERMISO */
-        Route::get('/permiso',[PermisoController::class, 'listar'])->name('permiso.index');
-        Route::GET('/Genpermiso',[PermisoController::class, 'mostr'])->name('Genpermiso.index');
-        Route::post('/Genpermiso',[PermisoController::class, 'store'])->name('registra');
-
-
-        
-
-        Route::get('/pagoadicional',[PagoadicionaController::class, 'listar'])->name('pagoadicional.index');
-        Route::get('/registrarPagoAdiciona',[PagoadicionaController::class, 'registro'])->name('registrarPagoAdciona.index');
     });
+
+Route::get('/', function () {
+    return view('/home/index');
 });
 
+  
+    
+Route::get('/hola', function () {
+    return "hola mundo";
+});
 
-/*
+Auth::routes();  
+  
+/*------------------------------------------
+--------------------------------------------
+All Normal Users Routes List
+--------------------------------------------
+--------------------------------------------*/
+Route::middleware(['auth', 'user-access:user'])->group(function () {
+  
+    Route::get('/home', [HomeController::class, 'index'])->name('home');
+});
+  
+/*------------------------------------------
+--------------------------------------------
+All Admin Routes List
+--------------------------------------------
+--------------------------------------------*/
+Route::middleware(['auth', 'user-access:admin'])->group(function () {
+  
+    Route::get('/admin/home', [HomeController::class, 'adminHome'])->name('admin.home');
 
-Route::get('login', [LoginController::class, 'index'])->name('login');
 
-Route::post('login', [LoginCOntroller::class, 'store']);
+    /*CRUD EMPLEADO*/
+    Route::get('/admin/empleado', [EmpleadoController::class, 'listarEmpleados'])->name('empleado.index');
+    Route::post('/admin/registrar', [EmpleadoController::class, 'registrarEmpleado'])->name("registrar");
+    Route::get('/admin/editar_empleado/{CODIGO}', [EmpleadoController::class, 'edit']);//manda los datos a editar
+    Route::put('/admin/actualizar_empleado/{CODIGO}', [EmpleadoController::class, 'update'])->name('actualizarEmpleado');//actualiza los datos*/
+    Route::get('/admin/buscar', [EmpleadoController::class, 'buscarEmpleados'])->name("buscar");
+    Route::delete('/admin/eliminar/{CODIGO}', [EmpleadoController::class, 'eliminar']);
 
-Route::post('logout', [LoginController::class, 'destroy'])->name('logout');*/
+    /*CRUD HORARIO*/
+    Route::get('/admin/horario', [HorarioController::class, 'listarHorarios'])->name('horario.index');
+    Route::get('/admin/asignar', [HorarioController::class, 'asignarHorarios'])->name("asignar");
+    Route::put('/admin/actualizar_horario/{CODIGO}', [HorarioController::class, 'update'])->name('actualizarHorario');
 
-
-
-
-
-//});
-
+    /*CRUD CONTRATO*/
+    Route::get('/admin/contrato', [ContratoController::class, 'listarContratos'])->name('contrato.index');
+    Route::get('/admin/asignarContrato', [ContratoController::class, 'asignarContrato'])->name('asignarContrato');
+    Route::post('/admin/registrarContrato', [ContratoController::class, 'registrarContrato'])->name('registrarContrato');
+    Route::delete('/admin/eliminarContrato/{CODIGO}', [ContratoController::class, 'eliminarContrato']);
+});
+  
+/*------------------------------------------
+--------------------------------------------
+All Admin Routes List
+--------------------------------------------
+--------------------------------------------*/
+Route::middleware(['auth', 'user-access:manager'])->group(function () {
+  
+    Route::get('/manager/home', [HomeController::class, 'managerHome'])->name('manager.home');
+});

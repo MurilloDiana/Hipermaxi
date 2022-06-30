@@ -13,12 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('retrasos', function (Blueprint $table) {
-            $table->id();
+        Schema::create('contratos', function (Blueprint $table) {              
+            $table->unsignedBigInteger('id')->nullable()->unique();           
+            $table->date('inicio_contrato');
+            $table->date('final_contrato');
             $table->timestamps();
-            $table->datetime('tiempo');
-            $table->datetime('fecha');
-            $table->integer('descuento');
         });
     }
 
@@ -29,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('retrasos');
+        Schema::dropIfExists('contrato');
     }
 };

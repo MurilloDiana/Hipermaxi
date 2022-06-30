@@ -14,20 +14,21 @@ return new class extends Migration
     public function up()
     {
         Schema::create('empleados', function (Blueprint $table) {    
-            $table->id('CODIGO');
+            $table->id('CODIGO');                 
+            $table->unsignedBigInteger('id_horario')->nullable();  
             $table->string('NOMBRE',50);
             $table->date('FECHA_NAC');
             $table->char('GENERO',1);
             $table->unsignedInteger('CI');
-            $table->string('EMAIL',100);
+            $table->string('EMAIL');
             $table->unsignedInteger('TELEFONO');
-            $table->string('DIRECCION',100);
+            $table->string('DIRECCION',100);     
+
             $table->date('FECHA_ING');
-            $table->string('AREA',100);         
-            $table->unsignedInteger('NIVEL');/*1=RH;2=ADM;3=TRAB*/
+            $table->string('AREA',100)->nullable();//nullable permite meter valores nulos                                    
             $table->rememberToken();
             $table->timestamps();
-          
+
             /*
             para hacer foreign key en casaca
             $table->foreign('id_cliente')->references('id')->on('clientes')->onDelete('cascade')->onUpdate('cascade');
@@ -43,6 +44,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('empleados'); ddsa
+        Schema::dropIfExists('empleados'); 
     }
 };

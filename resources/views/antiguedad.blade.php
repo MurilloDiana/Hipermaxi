@@ -31,7 +31,9 @@
         @foreach ($datos as $dato)
         <tr>
           <td>{{$dato->NOMBRE}}</td>
+
           <td>{{$dato->FECHA_ING}}</td>          
+
       </tr>
         @endforeach
         @endif
