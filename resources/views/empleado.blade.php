@@ -6,19 +6,20 @@
     <form action="{{route('registrar')}}" method="POST">
         {{csrf_field()}}
         @method('POST')
-        <div class="mb-3 mt-4">
-            <label for="exampleInputEmail1" class="form-label">NOMBRE COMPLETO</label>
-            <input type="text" class="form-control" name="NOMBRE">
+        <div class="middle-box ">
+        <div class="input-group">
+            <label for="name" class="form-label">NOMBRE COMPLETO</label>
+            <input type="text" name="NOMBRE" id="name">
         </div>    
-        <div class="mb-3 mt-4">
+        <div class="form-group">
             <label for="exampleInputEmail1" class="form-label">FECHA DE NACIMIENTO</label>
             <input type="date" class="form-control" name="FECHA_NAC" >
         </div>    
-        <div class="mb-3 mt-4">
+        <div class="form-group">
             <label for="exampleInputEmail1" class="form-label">GENERO</label>
-            <select name="GENERO">                            
-                <option value="M">M</option>
-                <option value="F">F</option>
+            <select name="GENERO" class="form-control">                            
+                <option value="M">Masculino</option>
+                <option value="F">Femenino</option>
             </select>
         </div> 
         <div class="mb-3 mt-4">
@@ -42,39 +43,31 @@
             <label for="exampleInputEmail1" class="form-label">FECHA DE INGRESO</label>
             <input type="date" class="form-control" name="FECHA_ING">
         </div>    
-        <div class="mb-3 mt-4">
+        <div class="mb-2 mt-4">
             <label for="exampleInputEmail1" class="form-label">AREA</label>
             <input type="text" class="form-control" name="AREA">
         </div>
-        <!--
-        <div class="mb-3 mt-4">
-            <label for="exampleInputEmail1" class="form-label">NIVEL</label>
-            <select name="NIVEL">
-                <option value="1">RRHH</option>
-                <option value="2">ADMINISTRADOR</option>
-                <option value="3">TRABAJADOR BASE</option>            
-            </select>
-        </div> 
-        -->
+    </div>
         <div class="mb-3 mt-4">                                        
-            <button class="btn btn-light mt-3" type="submit">Registrar</button>        
+            <button class="btn btn-success mt-3" type="submit">Registrar</button>        
         </div>
     </form>
 </div>
 
-<div class="box">
-  <div class="container-1">     
+<div class="middle-box text-center">
+  <div class="m-t">     
+    <H2> TABLA DE USUARIOS</H2>
         <form action="{{route('buscar')}}" method="GET">
             @csrf                    
-            <input type="search" placeholder="Cuscar Codigo" name="CODIGO" requered/>
+            <input type="search" placeholder="Buscar Codigo" name="CODIGO" requered/>
             <button type="submit" class="btn btn-success">Buscar</button>            
         </form>     
   </div>
 </div>
 
 <div class="py-4">
-    <table class="table table-hover bg-light text-center">
-        <thead class="bg-primary text-light">
+    <table class="table table-bordered border-white table-hover text-center">
+        <thead class="bg-dark text-white">
             <tr>
             <th scope="col">Nombre</th>
             <th scope="col">Fecha de Nacimiento</th>

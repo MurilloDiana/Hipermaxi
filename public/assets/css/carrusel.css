@@ -24,7 +24,7 @@
 		.contenedor a{
 			position: absolute;
 			text-decoration: none;
-			color: white;
+			color: rgb(255, 255, 255);
 			font-size: 36px;
 			top : 50%;
 			transform: translateY(-50%);
