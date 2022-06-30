@@ -3,11 +3,16 @@
 <link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
 <link rel="stylesheet" href="{{asset('assets/css/carrusel.css')}}">
 <script src="{{asset('assets/js/carrusel.js')}}"></script>
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/export-data.js"></script>
+<script src="https://code.highcharts.com/modules/accessibility.js"></script>
     <body>
         <div class="bg-light m-0 row justify-content-center">
             @auth
             <h1>Dashboard</h1>
-            <p class="lead">Only authenticated users can access this section.</p>
+            
+            <a href="#blog"><img src="{{asset('img/img1.jpg')}}"  alt=""/>  </a>  
             @endauth
 
             @guest 
@@ -15,55 +20,67 @@
               <a href="#blog"><img src="{{asset('img/img1.jpg')}}"  alt=""/>  </a>
               <a href="#contactanos"><img src="{{asset('img/img1.jpg')}}"  alt=""/>  </a>
               <a href="#acerca"><img src="{{asset('img/img1.jpg')}}"  alt=""/>  </a>
-              <a href="#desarrolladores"><img src="{{asset('img/img1.jpg')}}"  alt=""/>  </a>
+              <a href="#desarrolladores"><img src="{{asset('img/desarrolladores.jpg')}}"  alt=""/>  </a>
             </div>
-            @endguest
 
-           <!--  
-            <div>
-                <h1 class="titulo-home">HIPERMAXI</h1>
-                <p class="texto-home">Por favor inicia sesion</p>            
-            </div>
-            <header class="contenedor">
-                <div class="imagen actual">
-                    <img src="{{asset('img/img1.jpg')}}" />                    
-                </div>
             
-                <div class="imagen">
-                    <img src="{{asset('img/img2.jpg')}}" />                    
-                </div>
-                
-                <div class="imagen">
-                    <img src="{{asset('img/img3.jpg')}}" />                    
-                </div>
-                
-                <div class="imagen">
-                    <img src="{{asset('img/img4.jpg')}}" />
-                </div>
-            
-                <a href="#" class="anterior" onclick="anterior();">&#10094;</a>
-                <a href="#" class="siguiente" onclick="siguiente();">&#10095;</a>
-                
-                <div class="puntos">
-                    <span class="punto activo" onclick="mostrar(0);"></span>
-                    <span class="punto" onclick="mostrar(1);"></span>
-                    <span class="punto" onclick="mostrar(2);"></span>
-                    <span class="punto" onclick="mostrar(3);"></span>
-                </div>  -->
-                <!-- BOTON DE PAUSA
-                <div class="boton">
-                    <a href="#">
-                        <img src="http://www.reciclay.com.ve/gio/pause.png" id="btn" onclick="playpause();" />
-                    </a>
-                </div>
-                -->
-           <!-- </header> -->
-        
-            <!---->   
             <section id="blog">BLOG</section>
             <section id="contactanos">CONTACTANOS</section>
-            <section id="acerca">ACERCA DE</section>
-            <section id="desarrolladores">DESARROLLADORES</section>
+           
+            <section id="desarrolladores">DESARROLLADORES
+              <div class ="dropdown-menu">
+                 Diana Murillo Condori
+                   <ul class="dropdown">
+                    <li>Ing Informatica</li> 
+                    <li> ........</li> 
+                    <li>.........</li>
+                    <li>Fronted</li> 
+                   
+                   </ul> 
+              </div>
+              <div class ="dropdown-menu">
+                Nelson Fabian Galvan Vega
+                   <ul class="dropdown">
+                    <li>Ing Sistemas </li>
+                    <li>........</li> 
+                    <li>........</li>
+                    <li> FULL Developer</li>
+                   </ul> 
+              </div>  
+              <div class ="dropdown-menu">
+                Jorge Eduardo Cari Acara
+                   <ul class="dropdown">
+                    <li>Ing Sistemas </li>
+                    <li> ...........</li> 
+                    <li> ...........</li>
+                    <li> Backend</li>
+                   </ul> 
+              </div>  
+              <div class ="dropdown-menu">
+                Reny Rene Burgoa Aguilera
+                   <ul class="dropdown">
+                    <li>Ing Sistemas </li>
+                    <li> ............</li> 
+                    <li> ,,,,,,,</li>
+                    <li> Fronted</li>
+                   </ul> 
+              </div>  
+              <div class ="dropdown-menu">
+                Mauricio Daniel
+                   <ul class="dropdown">
+                    <li>Ing Sistemas </li>
+                    <li> ........</li> 
+                    <li>.........</li>
+                    <li>Backend </li>
+                   </ul> 
+              </div>       
+
+                                                                                                                                    
+            </section>
+            
+            @endguest
+
+           
                         
         </div>        
     </body>    

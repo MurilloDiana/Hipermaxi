@@ -14,6 +14,7 @@ class ChartController extends Controller
     			->whereYear('FECHA_ING', date('Y'))
     			->groupBy(DB::raw("Month(FECHA_ING)"))
     			->pluck('count');
+                
 
     	$months = Empleado::select(DB::raw("Month(FECHA_ING) as month"))
     			->whereYear('FECHA_ING', date('Y'))
