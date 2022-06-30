@@ -58,3 +58,36 @@ input:invalid+span::after {
 input:valid+span::after {
     content: "✓";
 }
+
+/*VISTA DESARROLLADORES NOMBRES*/
+.wrapper {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.typing-demo{
+    width: 22ch;
+    animation: typing 2s steps(22),
+blink  .5s  step-end infinity alternate;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid;
+  font-family:monospace;
+  font-size: 2em;
+
+
+}
+
+@keyframes typing {
+form {
+    width:0
+}
+
+}
+@keyframes blink {
+    50%{
+        border-color: transparent
+    }
+}
+
