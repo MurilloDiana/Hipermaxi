@@ -13,10 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->id()->unique();
-            $table->foreign('id')->references('CODIGO')->on('empleados');
-        }); 
+        Schema::create('jornada_laborals', function (Blueprint $table) {
+            $table->unsignedBigInteger('id');            
+            $table->dateTime('datetime_marcado', 0);          
+            $table->timestamps();
+        });
     }
 
     /**
@@ -26,6 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('jornada_laboral');
     }
 };

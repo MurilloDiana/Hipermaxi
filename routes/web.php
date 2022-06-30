@@ -9,6 +9,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\AsistenciaController;
 use App\Http\Controllers\HorarioController;
 use App\Http\Controllers\ContratoController;
+use App\Http\Controllers\JornadaLaboralController;
 
 
 /*
@@ -83,6 +84,12 @@ Route::get('/', function () {
 });
 
     
+Route::get('/hola', function () {
+    return "hola mundo";
+});
+/*GESTINAR ASISTENCIA*/
+Route::get('/asistencia',[JornadaLaboralController::class, 'jornadaIndex'])->name('marcarjornada');
+Route::post('/marcar',[JornadaLaboralController::class, 'marcarJornada'])->name('registrarjornada');
 
 Auth::routes();  
   
@@ -94,6 +101,9 @@ All Normal Users Routes List
 Route::middleware(['auth', 'user-access:user'])->group(function () {
   
     Route::get('/home', [HomeController::class, 'index'])->name('home');
+    Route::get('/usuario', function () {
+        return "usuario";
+    });    
 });
   
 /*------------------------------------------
@@ -128,6 +138,7 @@ Route::middleware(['auth', 'user-access:admin'])->group(function () {
 
     /* GRAFICAS*/
     Route::get('admin/chart', [ChartController::class, 'index'])->name('chart');
+    
 });
 
   
@@ -137,6 +148,10 @@ All Admin Routes List
 --------------------------------------------
 --------------------------------------------*/
 Route::middleware(['auth', 'user-access:manager'])->group(function () {
-  
     Route::get('/manager/home', [HomeController::class, 'managerHome'])->name('manager.home');
+    Route::get('/manager/asistencia',[JornadaLaboralController::class, 'listarAsistencia'])->name('listar_index');    
+    
+    Route::get('/manager/saludo', function () {
+        return "soy administrador";
+    });
 });

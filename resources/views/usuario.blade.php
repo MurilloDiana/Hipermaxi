@@ -55,8 +55,7 @@
                     <td>Rene Burgoa</td>
                     <td>Atencion al Cliente</td>
                     <td>Mañana</td>
-                  </tr>
-               
+                  </tr>               
              </table>
            </div> 
     </div>
