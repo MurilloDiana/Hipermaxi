@@ -21,17 +21,21 @@ class PagoadicionaController extends Controller
         return view('registrarPagoAdiciona',compact('empleados'));
     }
 
-    public function registro1(request $v1){
+    public function registro1(Request $request){
         $empleados = new empleado;
         $sueldo = new sueldo;
         $bono = new pagoAdicional;
         //------------------------------------------------
         //$v2 = DB::table('sueldos')->select('Sueldo')->where('id_ingreso_emp',$sueldo)->get();
         //------------------------------------------------
-        $v2=db:: table('sueldos')->select('sueldos.Sueldo')->where('id_ingreso_emp',$v1->input('id_empleado'))->get();
-       
-        dd($v2);
-
+        //$v2=DB:: table('sueldos')->select('sueldos.Sueldo')->where('id_ingreso_emp',$request->input('id_empleado'))->get()->first();
+        //$v3 = $v2/30.00;
+        $v2 = sueldo::where("id_ingreso_emp","=",$request->id_empleado)->get()->first();
+        //dd($request, $v2->Sueldo);
+        $dato=$v2->Sueldo/30.25;
+        dd($dato);
+        
+        //$bono->tiempo_extra=$v1->input('TIEMPO_EXTRA');
         //return view();
     }
 }

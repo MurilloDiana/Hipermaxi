@@ -16,9 +16,16 @@
     </div>
     <div class = "form-group">
     <label FOR="">TIEMPO EXTRA: </label>
+    <div class="col-lg-8">
+        <input class="form-control" type="time" name="TIEMPO_EXTRA" required maxlength="100">
     </div>
+    </div>
+
     <div clas="form-group">
     <label FOR="">TOTAL DE HORAS EXTRAS: </label>
+    <div class="col-lg-8">
+        <input class="form-control" type="time" name="TIEMPO_EXTRA" required maxlength="100">
+    </div>
     </div>
     <div clas="form-group">
     <label FOR="">FECHA DE FERIADO: </label>
@@ -31,7 +38,7 @@
     </div>
 
     <div class="mb-3 mt-4">                                        
-        <button class="btn btn-light mt-3" type="submit" values="GENERAR">Registrar</button>        
+        <button class="btn btn-light mt-3" type="submit">Registrar</button>        
     </div>
 
 
