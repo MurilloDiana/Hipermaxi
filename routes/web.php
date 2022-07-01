@@ -36,6 +36,7 @@ Route::get('/hola', function () {
     return "hola mundo";
 });
 
+
 Auth::routes();  
   
 /*------------------------------------------
@@ -46,6 +47,9 @@ All Normal Users Routes List
 Route::middleware(['auth', 'user-access:user'])->group(function () {
   
     Route::get('/home', [HomeController::class, 'index'])->name('home');
+    Route::get('/usuario', function () {
+        return "usuario";
+    });    
 });
   
 /*------------------------------------------
@@ -89,7 +93,6 @@ All Admin Routes List
 --------------------------------------------
 --------------------------------------------*/
 Route::middleware(['auth', 'user-access:manager'])->group(function () {
-  
     Route::get('/manager/home', [HomeController::class, 'managerHome'])->name('manager.home');
     Route::get('/manager/pagoadicional',[PagoadicionaController::class, 'listar'])->name('pagoadicional.index');
     Route::get('/manager/registrarPagoAdiciona',[PagoadicionaController::class, 'registro'])->name('registrarPagoAdciona0');

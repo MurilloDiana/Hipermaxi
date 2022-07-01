@@ -23,9 +23,8 @@ return new class extends Migration
             $table->string('EMAIL');
             $table->unsignedInteger('TELEFONO');
             $table->string('DIRECCION',100);     
-
             $table->date('FECHA_ING');
-            $table->string('AREA',100)->nullable();//nullable permite meter valores nulos                                    
+            $table->string('AREA',100)->nullable();//nullable permite meter valores nulos
             $table->rememberToken();
             $table->timestamps();
 
