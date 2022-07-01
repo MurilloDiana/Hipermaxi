@@ -10,7 +10,8 @@
         <select name="id_empleado" id="inputid_empleado"  class="form-control" required="required">
             <option VALUE="">--------ESCOGA NOMBRE EMPLEADO--------<></option>
             @foreach ($empleados as $empleado )
-                <option value="{{ $empleado['CODIGO'] }}">"{{ $empleado['NOMBRE'] }}"></option>  
+                <option value="{{ $empleado['CODIGO'] }}">"{{ $empleado['NOMBRE'] }}"></option>
+                
             @endforeach
         </select>
     </div>

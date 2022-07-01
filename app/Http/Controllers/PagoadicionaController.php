@@ -31,9 +31,9 @@ class PagoadicionaController extends Controller
         //$v2=DB:: table('sueldos')->select('sueldos.Sueldo')->where('id_ingreso_emp',$request->input('id_empleado'))->get()->first();
         //$v3 = $v2/30.00;
         $v2 = sueldo::where("id_ingreso_emp","=",$request->id_empleado)->get()->first();
-        //dd($request, $v2->Sueldo);
-        $dato=$v2->Sueldo/30.25;
-        dd($dato);
+        //dd($v2->Sueldo);
+        $v2=(($v2->Sueldo/30.00)/8.00);
+        dd($v2);
         
         //$bono->tiempo_extra=$v1->input('TIEMPO_EXTRA');
         //return view();
