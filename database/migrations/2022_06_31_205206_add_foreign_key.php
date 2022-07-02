@@ -13,8 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->id('id')->unique();
+        Schema::table('users', function (Blueprint $table) {            
             $table->foreign('id')->references('CODIGO')->on('empleados');
         }); 
 
