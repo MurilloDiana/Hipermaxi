@@ -17,7 +17,7 @@ return new class extends Migration
                 $table->id('id_pago');
                 $table->time('tiempo_extra');
                 $table->float('totalHorasExtras');
-                $table->date('fecha_feriados');
+                $table->date('fecha_feriados')->nullable();
                 $table->float('totalFeriado');
                 $table->float('BonoAntiguedad');
                 $table->float('BonoTotal');
@@ -36,6 +36,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('pagoAdicionals');
+        Schema::dropIfExists('pagoadicionals');
     }
 };

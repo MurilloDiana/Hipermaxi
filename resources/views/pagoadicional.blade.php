@@ -30,7 +30,17 @@
     <div class="table100-body js-pscroll">
         <table>
             <tbody>
-
+                @foreach ($pess as $pe )
+                <tr class="row100 head">
+                    <td class="cell100 column1"> {{ $loop->iteration }} </td>
+                    <td class="cell100 column2">{{ $pe->tiempo_extra }}</td>
+                    <td class="cell100 column2">{{ $pe->totalHorasExtras }}</td>
+                    <td class="cell100 column2">{{ $pe->fecha_feriados }}</td>
+                    <td class="cell100 column2">{{ $pe->totalFeriado }}</td>
+                    <td class="cell100 column2">{{ $pe->BonoAntiguedad }}</td>
+                    <td class="cell100 column2">{{ $pe->BonoTotal }}</td>
+                </tr>
+                @endforeach
             </tbody>
         </table>
     </div>

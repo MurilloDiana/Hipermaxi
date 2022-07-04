@@ -16,16 +16,16 @@
         </select>
     </div>
     <div class = "form-group">
-    <label FOR="">TIEMPO EXTRA: </label>
+    <label FOR="">HORAS EXTRAS: </label>
     <div class="col-lg-8">
         <input class="form-control" type="time" name="TIEMPO_EXTRA" required maxlength="100">
     </div>
     </div>
 
     <div clas="form-group">
-    <label FOR="">TOTAL DE HORAS EXTRAS: </label>
+    <label FOR="">FECHA FERIADO: </label>
     <div class="col-lg-8">
-        <input class="form-control" type="time" name="TIEMPO_EXTRA" required maxlength="100">
+        <input class="form-control" type="text" name="FERIADOS" required maxlength="100">
     </div>
     </div>
     <div clas="form-group">

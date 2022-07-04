@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class pagoAdicional extends Model
 {
     use HasFactory;
+    protected $table="pagoadicionals";
     protected $primaryKey = "id_pago";
     protected $fillable = [      
         'tiempo_extra',
