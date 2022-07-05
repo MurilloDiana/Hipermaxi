@@ -8,6 +8,7 @@ use App\Http\Controllers\AntiguedadController;
 use App\Http\Controllers\permisoController;
 use App\Http\Controllers\LoginController;
 //use App\Http\Controllers\AsistenciaController;
+use App\Http\Controller\permiso;
 use App\Http\Controllers\HorarioController;
 use App\Http\Controllers\PagoadicionaController;
 use App\Http\Controllers\ContratoController;
@@ -138,6 +139,11 @@ Route::middleware(['auth', 'user-access:admin'])->group(function () {
 
     /* GRAFICAS*/
     Route::get('admin/chart', [ChartController::class, 'index'])->name('chart');
+
+    /*CRUD PERMISO */ 
+    Route::get('admin/permiso', [permisoController::class, 'listar'])->name('permiso.index');
+    Route::get('admin/Genpermiso', [permisoController::class, 'mostr'])->name('Genpermiso.index');
+    Route::post('admin/Genpermiso', [permisoController::class, 'store'])->name('registra');
     
 });
 

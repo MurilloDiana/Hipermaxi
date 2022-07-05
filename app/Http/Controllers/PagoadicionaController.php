@@ -14,8 +14,11 @@ use App\Http\Controllers\Str;
 class PagoadicionaController extends Controller
 {
     public function listar(){
-        $cuenta['pess']=pagoAdicional::select('pagoAdicionals.id_pago','pagoAdicionals.tiempo_extra','pagoAdicionals.totalHorasExtras','pagoAdicionals.fecha_feriados',
+        $cuenta['pess']=pagoAdicional::select('empleados.NOMBRE','pagoAdicionals.id_pago',
+        'pagoAdicionals.tiempo_extra','pagoAdicionals.totalHorasExtras',
+        'pagoAdicionals.fecha_feriados',
         'pagoAdicionals.totalFeriado','pagoAdicionals.BonoAntiguedad','pagoAdicionals.BonoTotal')
+        ->join('empleados','pagoAdicionals.id_pa_emp','=','empleados.codigo')
         ->get();
         
         return view('pagoadicional',$cuenta);

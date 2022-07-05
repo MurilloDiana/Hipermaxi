@@ -29,8 +29,10 @@ return new class extends Migration
         Schema::table('jornada_laborals', function (Blueprint $table) {            
             $table->foreign('id')->references('id')->on('users');
         });
-
-
+       /* Schema::table('faltajustificadas', function (Blueprint $table) {            
+            $table->foreign('cod_emp')->references('CODIGO')->on('empleados');
+        });
+*/
         
     }
 
