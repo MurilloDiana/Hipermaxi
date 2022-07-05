@@ -8,7 +8,7 @@ use App\Http\Controllers\AntiguedadController;
 use App\Http\Controllers\permisoController;
 use App\Http\Controllers\LoginController;
 //use App\Http\Controllers\AsistenciaController;
-use App\Http\Controller\permiso;
+use App\http\Controllers\JornadaLaboralController;
 use App\Http\Controllers\HorarioController;
 use App\Http\Controllers\PagoadicionaController;
 use App\Http\Controllers\ContratoController;
@@ -155,6 +155,8 @@ All Admin Routes List
 --------------------------------------------*/
 Route::middleware(['auth', 'user-access:manager'])->group(function () {
     Route::get('/manager/home', [HomeController::class, 'managerHome'])->name('manager.home');
+    Route::get('/manager/asistencia',[JornadaLaboralController::class, 'listarAsistencia'])->name('listar_index'); 
+    
     Route::get('/manager/pagoadicional',[PagoadicionaController::class, 'listar'])->name('pagoadicional.index');
     Route::get('/manager/registrarPagoAdiciona',[PagoadicionaController::class, 'registro'])->name('registrarPagoAdciona0');
     Route::POST('/manager/registrarPagoAdiciona',[PagoadicionaController::class, 'registro1'])->name('registrarPagoAdciona1');
