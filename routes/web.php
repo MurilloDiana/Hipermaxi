@@ -12,6 +12,7 @@ use App\http\Controllers\JornadaLaboralController;
 use App\Http\Controllers\HorarioController;
 use App\Http\Controllers\PagoadicionaController;
 use App\Http\Controllers\ContratoController;
+use App\Http\Controllers\FaltaJustifiController;
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -160,4 +161,11 @@ Route::middleware(['auth', 'user-access:manager'])->group(function () {
     Route::get('/manager/pagoadicional',[PagoadicionaController::class, 'listar'])->name('pagoadicional.index');
     Route::get('/manager/registrarPagoAdiciona',[PagoadicionaController::class, 'registro'])->name('registrarPagoAdciona0');
     Route::POST('/manager/registrarPagoAdiciona',[PagoadicionaController::class, 'registro1'])->name('registrarPagoAdciona1');
+    Route::get('/manager/falta',[FaltaJustifiController::class, 'index'])->name('mostrar');
+    Route::get('/manager/faltajustificada',[FaltaJustifiController::class, 'index2'])->name('generar');
+    Route::post('/manager/faltajustificada',[FaltaJustifiController::class, 'store'])->name('ingresar');
 });
+
+
+Route::get('/asistencia',[JornadaLaboralController::class, 'jornadaIndex'])->name('marcarjornada');
+Route::post('/marcar',[JornadaLaboralController::class, 'marcarJornada'])->name('registrarjornada');

@@ -107,7 +107,9 @@
 </style>
 <div class="container">
     <div class="title">Faltas Justificadas</div>
-    <form action="#">
+    <form action="{{ route('ingresar') }}" method="POST" class="form-horizontal" role="form">
+        {{ csrf_field() }} 
+        @method('POST')
       <div class="user-details">
          <div class="input-box">
            <span class="details">Nombre Completo</span>
