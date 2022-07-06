@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Jornada_Laboral;
+use App\Models\JornadaLaboral;
 use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
 
@@ -38,7 +38,7 @@ class JornadaLaboralController extends Controller
             'id'=>$request->id,
             'datetime_marcado'=>$tomorrow
         ]);        
-        Jornada_Laboral::create($datos);
+        JornadaLaboral::create($datos);
         return redirect()->route('marcarjornada');
     }
 }
