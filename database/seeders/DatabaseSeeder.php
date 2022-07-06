@@ -259,6 +259,13 @@ class DatabaseSeeder extends Seeder
             'email'=>'fabian@gmail.com', 
             'type'=>2,
             'password'=>'123456789'
-        ]);
+        ]);       
+        
+        //datos del horario
+        $this->call(CreateHorarioSeeder::class);  
+        //datos del contrato
+        $this->call(CreateContratoSeeder::class);
+        //datos de falta
+        $this->call(FaltaSeeder::class);
     }
 }

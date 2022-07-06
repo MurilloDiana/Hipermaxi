@@ -15,6 +15,9 @@
 
                             <div class="col-md-6">
                                 <input id="id" type="number" class="form-control @error('id') is-invalid @enderror" name="id" value="{{ old('id') }}" required autocomplete="id" autofocus>
+                                @if($errors->has('id'))
+                                    <div class="error">{{ $errors->first('id') }}</div>
+                                @endif
                             </div>
                         </div>
 

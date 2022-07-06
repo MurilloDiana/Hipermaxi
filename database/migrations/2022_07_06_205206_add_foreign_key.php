@@ -29,8 +29,9 @@ return new class extends Migration
             $table->foreign('id')->references('id')->on('users');
         });
 
-
-        
+        Schema::table('faltas', function (Blueprint $table) {            
+            $table->foreign('id_empleado')->references('CODIGO')->on('empleados');
+        });    
     }
 
     /**

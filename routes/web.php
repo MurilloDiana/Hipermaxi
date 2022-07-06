@@ -11,6 +11,7 @@ use App\Http\Controllers\AsistenciaController;
 use App\Http\Controllers\HorarioController;
 use App\Http\Controllers\ContratoController;
 use App\Http\Controllers\JornadaLaboralController;
+use App\Http\Controllers\FaltaController;
 
 
 /*
@@ -95,5 +96,12 @@ All Admin Routes List
 Route::middleware(['auth', 'user-access:manager'])->group(function () {
     Route::get('/manager/home', [HomeController::class, 'managerHome'])->name('manager.home');    
     Route::get('/manager/asistencia',[JornadaLaboralController::class, 'listarAsistencia'])->name('listar_index');     
+    
+    /*ADMINISTRAR ASISTENCIAS*/
+    Route::get('/registrarfalta', function(){
+        return view('registrarFaltas');
+    });
+    Route::post('/asignarFalta', [FaltaController::class, 'registrarFaltas'])->name('asignarFalta');
+    Route::get('/falta', [FaltaController::class, 'listarFaltas'])->name('faltas');
 });
 

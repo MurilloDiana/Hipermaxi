@@ -8,6 +8,7 @@ use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Exception;
 
 class RegisterController extends Controller
 {
@@ -65,14 +66,17 @@ class RegisterController extends Controller
      * @return \App\Models\User
      */
     protected function create(array $data)
-    {
-        //dd($data);
-        return User::create([
-            'id' => $data['id'],
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' =>  $data['password'],
-            'type' => $data['type'],
-        ]);
+    {        
+        if (User::where('id', $data['id'] )->exists()) {
+            return redirect('register');
+        }else{
+            return User::create([
+                'id' => $data['id'],
+                'name' => $data['name'],
+                'email' => $data['email'],
+                'password' =>  $data['password'],
+                'type' => $data['type'],
+            ]);
+        }
     }
 }
