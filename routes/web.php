@@ -8,7 +8,7 @@ use App\Http\Controllers\AntiguedadController;
 use App\Http\Controllers\permisoController;
 use App\Http\Controllers\LoginController;
 //use App\Http\Controllers\AsistenciaController;
-use App\http\Controllers\JornadaLaboralController;
+//use App\http\Controllers\JornadaLaboralController;
 use App\Http\Controllers\HorarioController;
 use App\Http\Controllers\PagoadicionaController;
 use App\Http\Controllers\ContratoController;
