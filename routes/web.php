@@ -8,12 +8,15 @@ use App\Http\Controllers\AntiguedadController;
 use App\Http\Controllers\permisoController;
 use App\Http\Controllers\LoginController;
 //use App\Http\Controllers\AsistenciaController;
-use App\http\Controllers\JornadaLaboralController;
+//use App\http\Controllers\JornadaLaboralController;
 use App\Http\Controllers\HorarioController;
 use App\Http\Controllers\PagoadicionaController;
 use App\Http\Controllers\ContratoController;
 use App\Http\Controllers\FaltaJustifiController;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\JornadaLaboralController;
+use App\Http\Controllers\FaltaController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -92,8 +95,16 @@ Route::get('/hola', function () {
     return "hola mundo";
 });
 
+/*GESTINAR ASISTENCIA*/
+Route::get('/asistencia',[JornadaLaboralController::class, 'jornadaIndex'])->name('marcarjornada');
+Route::post('/marcar',[JornadaLaboralController::class, 'marcarJornada'])->name('registrarjornada');
+
 
 Auth::routes();  
+
+Route::get('/', function () {
+    return view('welcome');
+});
   
 /*------------------------------------------
 --------------------------------------------
@@ -102,10 +113,11 @@ All Normal Users Routes List
 --------------------------------------------*/
 Route::middleware(['auth', 'user-access:user'])->group(function () {
   
-    Route::get('/home', [HomeController::class, 'index'])->name('home');
+    Route::get('/home', [HomeController::class, 'index'])->name('home');    
     Route::get('/usuario', function () {
         return "usuario";
     });    
+
 });
   
 /*------------------------------------------
@@ -164,6 +176,15 @@ Route::middleware(['auth', 'user-access:manager'])->group(function () {
     Route::get('/manager/falta',[FaltaJustifiController::class, 'index'])->name('mostrar');
     Route::get('/manager/faltajustificada',[FaltaJustifiController::class, 'index2'])->name('generar');
     Route::post('/manager/faltajustificada',[FaltaJustifiController::class, 'store'])->name('ingresar');
+    Route::get('/manager/home', [HomeController::class, 'managerHome'])->name('manager.home');    
+    Route::get('/manager/asistencia',[JornadaLaboralController::class, 'listarAsistencia'])->name('listar_index');     
+    
+    /*ADMINISTRAR ASISTENCIAS*/
+    Route::get('/registrarfalta', function(){
+        return view('registrarFaltas');
+    });
+    Route::post('/asignarFalta', [FaltaController::class, 'registrarFaltas'])->name('asignarFalta');
+    Route::get('/falta', [FaltaController::class, 'listarFaltas'])->name('faltas');
 });
 
 

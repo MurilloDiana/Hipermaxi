@@ -224,22 +224,25 @@ class DatabaseSeeder extends Seeder
             'AREA'=>'Recepcion'            
         ]);
 
-        User::create([                    
-            'username'=>'RRHH',
+        User::create([   
+            'id'=>1,
+            'name'=>'RRHH',
             'email'=>'rrhh@gmail.com', 
             'type'=>1,
             'password'=>'123456789'            
         ]);
 
         User::create([                    
-            'username'=>'Administrador',
+            'id'=>2,
+            'name'=>'administrador',
             'email'=>'administrador@gmail.com', 
             'type'=>2,
             'password'=>'123456789'            
         ]);
 
         User::create([                    
-            'username'=>'user',
+            'id'=>3,
+            'name'=>'usuario',
             'email'=>'user@gmail.com', 
             'type'=>0,
             'password'=>'123456789'
@@ -760,5 +763,27 @@ class DatabaseSeeder extends Seeder
             'datetime_marcado'=>'2022-06-30 12:00'
         ]);
 
+        User::create([                    
+            'id'=>4,
+            'name'=>'jorge',
+            'email'=>'jorge@gmail.com', 
+            'type'=>1,
+            'password'=>'123456789'
+        ]);
+
+        User::create([                    
+            'id'=>5,
+            'name'=>'fabian',
+            'email'=>'fabian@gmail.com', 
+            'type'=>2,
+            'password'=>'123456789'
+        ]);       
+        
+        //datos del horario
+        $this->call(CreateHorarioSeeder::class);  
+        //datos del contrato
+        $this->call(CreateContratoSeeder::class);
+        //datos de falta
+        $this->call(FaltaSeeder::class);
     }
 }

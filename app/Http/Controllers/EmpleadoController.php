@@ -11,8 +11,9 @@ use Carbon\Carbon;
 
 class EmpleadoController extends Controller
 {
-    public function listarEmpleados(){    
-        $datos = empleado::all()->sortBy("NOMBRE");        
+    public function listarEmpleados(){  
+        //$datos=empelado::all();  
+        $datos = empleado::paginate(15);        
         return view ('empleado', compact('datos'));
     }
 
