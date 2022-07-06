@@ -15,7 +15,6 @@
             </div>
         </div>
     </div>
-</div>dd
-
+</div>
 @endsection
 
