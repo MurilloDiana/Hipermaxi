@@ -13,10 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('contratos', function (Blueprint $table) {              
-            $table->unsignedBigInteger('id')->unique();           
-            $table->date('inicio_contrato');
-            $table->date('final_contrato')->nullable();
+        Schema::create('faltas', function (Blueprint $table) {
+            $table->id('id');
+            $table->unsignedBigInteger('id_empleado');
+            $table->string('motivo');
+            $table->date('dia_faltado');
+            $table->enum('tipo_falta', ['justificada', 'injustificada']);
+            $table->date('comprobante')->nullable();            
             $table->timestamps();
         });
     }
@@ -28,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('contrato');
+        Schema::dropIfExists('faltas');
     }
 };
