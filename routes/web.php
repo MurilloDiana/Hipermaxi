@@ -177,6 +177,7 @@ Route::middleware(['auth', 'user-access:manager'])->group(function () {
     Route::get('/manager/faltajustificada',[FaltaJustifiController::class, 'index2'])->name('generar');
     Route::post('/manager/faltajustificada',[FaltaJustifiController::class, 'store'])->name('ingresar');
     Route::get('/manager/home', [HomeController::class, 'managerHome'])->name('manager.home');    
+    //Route::get('/manager/home', [HomeController::class, 'managerHome'])->name('manager.home');    
     Route::get('/manager/asistencia',[JornadaLaboralController::class, 'listarAsistencia'])->name('listar_index');     
     
     /*ADMINISTRAR ASISTENCIAS*/
