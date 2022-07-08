@@ -16,7 +16,7 @@ use App\Http\Controllers\FaltaJustifiController;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\JornadaLaboralController;
 use App\Http\Controllers\FaltaController;
-
+ 
 
 /*
 |--------------------------------------------------------------------------
