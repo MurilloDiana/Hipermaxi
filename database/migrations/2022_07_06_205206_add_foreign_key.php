@@ -13,8 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->id('id')->unique();
+        Schema::table('users', function (Blueprint $table) {            
             $table->foreign('id')->references('CODIGO')->on('empleados');
         }); 
 
@@ -30,8 +29,9 @@ return new class extends Migration
             $table->foreign('id')->references('id')->on('users');
         });
 
-
-        
+        Schema::table('faltas', function (Blueprint $table) {            
+            $table->foreign('id_empleado')->references('CODIGO')->on('empleados');
+        });    
     }
 
     /**
