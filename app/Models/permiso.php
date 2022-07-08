@@ -16,6 +16,6 @@ class permiso extends Model
             'FECHA_FIN',
             'ASUNTO',
             'DIAS',
-            'id_permiso_emp'
+            'ID_permiso_emp'
     ];
 }
