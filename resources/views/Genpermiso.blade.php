@@ -1,4 +1,4 @@
-@extends('layouts.app-master')
+@extends('layouts.app')
 @section('content')
 <link rel="stylesheet" type="text/css" href="css/style_asis.css">
 <h3>HOJA DE SOLICITUD DE PERMISO</h3>

@@ -13,11 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('contratos', function (Blueprint $table) {              
-            $table->unsignedBigInteger('id')->unique();           
-            $table->date('inicio_contrato');
-            $table->date('final_contrato')->nullable();
-            $table->timestamps();
+        Schema::table('pagoadicionals', function (Blueprint $table) {
+                $table->foreign('id_ig')->references('id_ingreso')->on('sueldos');
+                $table->foreign('id_pa_emp')->references('CODIGO')->on('empleados');
         });
     }
 
@@ -28,6 +26,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('contrato');
+        //
     }
 };

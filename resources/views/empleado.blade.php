@@ -105,5 +105,8 @@
         </tr>
         @endforeach
     </table>
+    <div>
+        {{ $datos->links() }}
+    </div>
 </div>
 @endsection

@@ -13,9 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('jornada_laborals', function (Blueprint $table) {
-            $table->unsignedBigInteger('id');            
-            $table->dateTime('datetime_marcado', 0);          
+        Schema::create('faltas', function (Blueprint $table) {
+            $table->id('id');
+            $table->unsignedBigInteger('id_empleado');
+            $table->string('motivo');
+            $table->date('dia_faltado');
+            $table->enum('tipo_falta', ['justificada', 'injustificada']);
+            $table->date('comprobante')->nullable();            
             $table->timestamps();
         });
     }
@@ -27,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('jornada_laboral');
+        Schema::dropIfExists('faltas');
     }
 };

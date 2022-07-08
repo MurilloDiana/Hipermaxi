@@ -5,12 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class JornadaLaboral extends Model
+class sueldo extends Model
 {
     use HasFactory;
+    protected $primaryKey = "id_ingreso";
 
     protected $fillable = [ 
-        'id',       
-        'datetime_marcado'
+    'Sueldo',
+    'id_ingreso_emp'
     ];
 }

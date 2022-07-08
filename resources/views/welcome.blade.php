@@ -1,3 +1,5 @@
+@extends('layouts.app')
+@section('content')
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
@@ -21,7 +23,8 @@
         </style>
     </head>
     <body class="antialiased">
-        @include ('partials.nav')
+        @include ('layouts.partials.nav')
         <h1> home</h1>
     </body>
 </html>
+@endsection

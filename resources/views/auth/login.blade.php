@@ -1,9 +1,10 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+
+<div >
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-6">
             <div class="card">
                 <div class="card-header">{{ __('Login') }}</div>
 
@@ -11,8 +12,8 @@
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
 
-                        <div class="row mb-3">
-                            <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}</label>
+                        <div class="row mb-5">
+                            <label for="email" class="col-md-4 col-form-label ">{{ __('Email Address') }}</label>
 
                             <div class="col-md-6">
                                 <input type="text" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
@@ -71,4 +72,5 @@
         </div>
     </div>
 </div>
+
 @endsection

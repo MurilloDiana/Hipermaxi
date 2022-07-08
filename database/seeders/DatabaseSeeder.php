@@ -8,6 +8,9 @@ use Illuminate\Database\Seeder;
 use App\Models\empleado;//adiciona el models de la tabla
 use App\Models\User;
 use App\Models\Horario;
+use App\Models\permiso;
+use App\Models\sueldo;
+use App\Models\JornadaLaboral;
 use Faker\Factory as Faker;
 use Illuminate\Support\Facades\DB;
 
@@ -221,25 +224,86 @@ class DatabaseSeeder extends Seeder
             'AREA'=>'Recepcion'            
         ]);
 
-        User::create([                    
-            'username'=>'RRHH',
+        User::create([   
+            'id'=>1,
+            'name'=>'RRHH',
             'email'=>'rrhh@gmail.com', 
             'type'=>1,
             'password'=>'123456789'            
         ]);
 
         User::create([                    
-            'username'=>'Administrador',
+            'id'=>2,
+            'name'=>'administrador',
             'email'=>'administrador@gmail.com', 
             'type'=>2,
             'password'=>'123456789'            
         ]);
 
         User::create([                    
-            'username'=>'user',
+            'id'=>3,
+            'name'=>'usuario',
             'email'=>'user@gmail.com', 
             'type'=>0,
             'password'=>'123456789'
         ]);
+
+        permiso::create([
+            'FECHA_INI'=>'2021-05-10',
+            'FECHA_FIN'=>'2021-05-11',
+            'ASUNTO'=>'BAJA MEDICA',
+            'DIAS'=>'2',
+            'id_permiso_emp'=>'5'
+        ]);
+        permiso::create([
+            'FECHA_INI'=>'2021-05-20',
+            'FECHA_FIN'=>'2021-05-22',
+            'ASUNTO'=>'BAJA MEDICA',
+            'DIAS'=>'2',
+            'id_permiso_emp'=>'8'
+        ]);
+        permiso::create([
+            'FECHA_INI'=>'2021-06-20',
+            'FECHA_FIN'=>'2021-06-30',
+            'ASUNTO'=>'BAJA MEDICA',
+            'DIAS'=>'10',
+            'id_permiso_emp'=>'14'
+        ]);
+
+        sueldo::create([    
+            'Sueldo'=>'2500',
+            'id_ingreso_emp'=>'5']);
+        sueldo::create([    
+            'Sueldo'=>'2000',
+        'id_ingreso_emp'=>'6']);
+        sueldo::create([    
+            'Sueldo'=>'2100',
+            'id_ingreso_emp'=>'7']);
+        sueldo::create([    
+            'Sueldo'=>'3000',
+            'id_ingreso_emp'=>'14']);
+       
+        User::create([                    
+            'id'=>4,
+            'name'=>'jorge',
+            'email'=>'jorge@gmail.com', 
+            'type'=>1,
+            'password'=>'123456789'
+        ]);
+
+        User::create([                    
+            'id'=>5,
+            'name'=>'fabian',
+            'email'=>'fabian@gmail.com', 
+            'type'=>2,
+            'password'=>'123456789'
+        ]);       
+        
+        //datos del horario
+        $this->call(CreateHorarioSeeder::class);  
+        //datos del contrato
+        $this->call(CreateContratoSeeder::class);
+        //datos de falta
+        $this->call(FaltaSeeder::class);
     }
 }
