@@ -36,15 +36,15 @@ Route::get('/hola', function () {
 Route::get('/asistencia',[JornadaLaboralController::class, 'jornadaIndex'])->name('marcarjornada');
 Route::post('/marcar',[JornadaLaboralController::class, 'marcarJornada'])->name('registrarjornada');
 Route::get('/marcar1',[JornadaLaboralController::class, 'listarAsistencia'])->name('listar_index');
-
+/* CRUD PERMISO*/
 Route::get('/permiso',[permisoController::class,'listar'])->name('lista.index');
 Route::get('/Genpermiso',[permisoController::class, 'mostr'])->name('Genpermiso.index');
 Route::post('/Genpermiso',[permisoController::class, 'store'])->name('registra');
-
+/*CRUD DE DESCUENTO*/
 Route::get('/vistaDescuento',[DescuentoController::class, 'index'])->name('mostrar.index');
 Route::get('/generarDescuento',[DescuentoController::class, 'mostrar'])->name('registrardescuento');
 Route::post('/generarDescuento',[DescuentoController::class, 'store'])->name('geenrardescuento');
-
+/*PAGOADICIONAL*/
 Route::get('/vistaPago',[PagoadicionaController::class, 'listar'])->name('pagoadicional.index');
 Route::get('/generarpagoadicional',[PagoadicionaController::class, 'registro'])->name('registrarPagoAdciona0');
 Route::post('/generarpagoadicional',[PagoadicionaController::class, 'registro1'])->name('registrarPagoAdciona0');
