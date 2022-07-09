@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class JornadaLaboral extends Model
 {
     use HasFactory;
-
+    protected $table="jornada_laborals";
     protected $fillable = [ 
         'id',       
         'datetime_marcado'
