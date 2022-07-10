@@ -34,6 +34,15 @@ class FaltaSeeder extends Seeder
                 'dia_faltado'=>'2022-08-20',
                 'tipo_falta'=>'justificada',                
             ],
+
+            [             
+                'id_empleado'=>5,
+                'motivo'=>'resfriado',
+                'dia_faltado'=>'2022-06-20',
+                'tipo_falta'=>'justificada',                
+            ],
+
+            
         ];
     
         foreach ($faltas as $key => $falta) {

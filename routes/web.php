@@ -1,22 +1,21 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\EmpleadoController;
 use App\Http\Controllers\AntiguedadController;
-//use App\Http\Controllers\ChartController;
-use App\Http\Controllers\permisoController;
+use App\Http\Controllers\ChartController;
 use App\Http\Controllers\LoginController;
-//use App\Http\Controllers\AsistenciaController;
-//use App\http\Controllers\JornadaLaboralController;
+use App\Http\Controllers\AsistenciaController;
 use App\Http\Controllers\HorarioController;
-use App\Http\Controllers\PagoadicionaController;
 use App\Http\Controllers\ContratoController;
-use App\Http\Controllers\FaltaJustifiController;
-use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\JornadaLaboralController;
 use App\Http\Controllers\FaltaController;
-
+use App\Http\Controllers\permisoController;
+use App\Http\Controllers\PagoadicionaController;
+use App\Http\Controllers\DescuentoController;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,7 +35,19 @@ Route::get('/hola', function () {
 /*GESTINAR ASISTENCIA*/
 Route::get('/asistencia',[JornadaLaboralController::class, 'jornadaIndex'])->name('marcarjornada');
 Route::post('/marcar',[JornadaLaboralController::class, 'marcarJornada'])->name('registrarjornada');
-
+Route::get('/marcar1',[JornadaLaboralController::class, 'listarAsistencia'])->name('listar_index');
+/* CRUD PERMISO*/
+Route::get('/permiso',[permisoController::class,'listar'])->name('lista.index');
+Route::get('/Genpermiso',[permisoController::class, 'mostr'])->name('Genpermiso.index');
+Route::post('/Genpermiso',[permisoController::class, 'store'])->name('registra');
+/*CRUD DE DESCUENTO*/
+Route::get('/vistaDescuento',[DescuentoController::class, 'index'])->name('mostrar.index');
+Route::get('/generarDescuento',[DescuentoController::class, 'mostrar'])->name('registrardescuento');
+Route::post('/generarDescuento',[DescuentoController::class, 'store'])->name('geenrardescuento');
+/*PAGOADICIONAL*/
+Route::get('/vistaPago',[PagoadicionaController::class, 'listar'])->name('pagoadicional.index');
+Route::get('/generarpagoadicional',[PagoadicionaController::class, 'registro'])->name('registrarPagoAdciona0');
+Route::post('/generarpagoadicional',[PagoadicionaController::class, 'registro1'])->name('registrarPagoAdciona0');
 
 Auth::routes();  
 
@@ -87,13 +98,12 @@ Route::middleware(['auth', 'user-access:admin'])->group(function () {
     Route::post('/admin/registrarContrato', [ContratoController::class, 'registrarContrato'])->name('registrarContrato');
     Route::delete('/admin/eliminarContrato/{CODIGO}', [ContratoController::class, 'eliminarContrato']);
 
+    /*CURD ANTIGUEDAD*/
+    Route::get('/admin/antiguedad', [AntiguedadController::class, 'index'])->name('antiguedad.index');
 
     /* GRAFICAS*/
     Route::get('admin/chart', [ChartController::class, 'index'])->name('chart');
     
-    /*CURD ANTIGUEDAD*/
-    Route::get('/admin/antiguedad', [AntiguedadController::class, 'index'])->name('antiguedad.index');
-
 
     /*CRUD PERMISO */ 
     Route::get('admin/permiso', [permisoController::class, 'listar'])->name('permiso.index');
@@ -101,7 +111,6 @@ Route::middleware(['auth', 'user-access:admin'])->group(function () {
     Route::post('admin/Genpermiso', [permisoController::class, 'store'])->name('registra');
     
 });
-
   
 /*------------------------------------------
 --------------------------------------------
@@ -109,18 +118,8 @@ All Admin Routes List
 --------------------------------------------
 --------------------------------------------*/
 Route::middleware(['auth', 'user-access:manager'])->group(function () {
-    Route::get('/manager/home', [HomeController::class, 'managerHome'])->name('manager.home');
-    Route::get('/manager/asistencia',[JornadaLaboralController::class, 'listarAsistencia'])->name('listar_index'); 
-    
-    Route::get('/manager/pagoadicional',[PagoadicionaController::class, 'listar'])->name('pagoadicional.index');
-    Route::get('/manager/registrarPagoAdiciona',[PagoadicionaController::class, 'registro'])->name('registrarPagoAdciona0');
-    Route::POST('/manager/registrarPagoAdiciona',[PagoadicionaController::class, 'registro1'])->name('registrarPagoAdciona1');
-    Route::get('/manager/falta',[FaltaJustifiController::class, 'index'])->name('mostrar');
-    Route::get('/manager/faltajustificada',[FaltaJustifiController::class, 'index2'])->name('generar');
-    Route::post('/manager/faltajustificada',[FaltaJustifiController::class, 'store'])->name('ingresar');
     Route::get('/manager/home', [HomeController::class, 'managerHome'])->name('manager.home');    
-    //Route::get('/manager/home', [HomeController::class, 'managerHome'])->name('manager.home');    
-    Route::get('/manager/asistencia',[JornadaLaboralController::class, 'listarAsistencia'])->name('listar_index');     
+    Route::get('/manager/asistencia',[JornadaLaboralController::class, 'jornadaLaboral'])->name('listar_index');     
     
     /*ADMINISTRAR ASISTENCIAS*/
     Route::get('/registrarfalta', function(){
@@ -130,6 +129,3 @@ Route::middleware(['auth', 'user-access:manager'])->group(function () {
     Route::get('/falta', [FaltaController::class, 'listarFaltas'])->name('faltas');
 });
 
-
-Route::get('/asistencia',[JornadaLaboralController::class, 'jornadaIndex'])->name('marcarjornada');
-Route::post('/marcar',[JornadaLaboralController::class, 'marcarJornada'])->name('registrarjornada');

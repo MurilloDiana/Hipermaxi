@@ -24,7 +24,7 @@
         @foreach ($datos as $dato)
         <tr>
             <td>{{$dato->id}}</td>
-            <td>{{$dato->username}}</td>            
+            <td>{{$dato->name}}</td>            
             <td>{{$dato->datetime_marcado}}</td>            
         </tr>
         @endforeach
