@@ -1,4 +1,5 @@
 @extends('layouts.master')
+@section('title', 'usuario')
 @section('content')
     <div >
         <h2>Gestion de Trabajadores Activos</h2>
@@ -46,16 +47,13 @@
                 <td>Tarde</td>
               </tr>
 
-              <tr>
-                <td >005</th>
-                <td>Rene Burgoa</td>
-                <td>Atencion al Cliente</td>
-                <td>Mañana</td>
-              </tr>
-            </tbody>
-            </table>
-        </div> 
-          
-        </div>
+                  <tr>
+                    <td >005</th>
+                    <td>Rene Burgoa</td>
+                    <td>Atencion al Cliente</td>
+                    <td>Mañana</td>
+                  </tr>               
+             </table>
+           </div> 
     </div>
 @endsection

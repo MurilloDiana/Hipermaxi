@@ -1,112 +1,57 @@
-@extends('layouts.master')
+@extends('layouts.app')
 @section('content')
-<div class="row wrapper border-bottom white-bg page-heading">
-    <div class="col-lg-6">
-        <h2>Contrato Laboral</h2>
+<!--ASIGNAR HORARIO-->  
+
+    <div class="middle-box text-center">
+    <div class="m-t">     
+            <form action="{{route('asignarContrato')}}" method="GET">
+                @csrf                    
+                <input type="search" placeholder="Buscar Codigo" name="CODIGO" requered/>
+                <button type="submit" class="btn btn-success">Buscar</button>            
+            </form>     
     </div>
 </div>
-<div class="wrapper wrapper-content animated fadeInCenter">
-    <div class="row">
-        <div class="col-lg-8">
-            <div class="ibox ">
-                <div class="ibox-title">
-                    
-                    <div class="ibox-tools"><a class="collapse-link"><i class="fa fa-chevron-up"></i></a></div>
-                </div>
-                <div class="ibox-content">
-                    <form  method="post">
-                        @csrf
 
-                        <div class="form-group row">
-                            <label class="col-sm-4 col-form-label"><i class="text-danger">* </i> Nombre Completo:</label>
-                            <div class="col-sm-6">
-                                <input type="text" placeholder="Introduzca Nombre Completo" name="txtPersona" id="txtPersona" value="" class="typeahead_2 form-control" />
-                                <input type="hidden" name="id" id="id" value="">
-                            </div>
-                        
-                            <label class="col-sm-4 col-form-label"><i class="text-danger">* </i> Fecha de Nacimiento:</label>
-                            <div class="col-sm-6">
-                                <input type="date" placeholder="Introduzca Nombre Completo" name="txtPersona" id="txtPersona" value="" class="typeahead_2 form-control" />
-                                <input type="hidden" name="id" id="id" value="">
-                            </div>
-
-                            <label class="col-sm-4 col-form-label"><i class="text-danger">* </i> Carnet de Identidad:</label>
-                            <div class="col-sm-6">
-                                <input type="text" placeholder="Introduzca Carnet de Identidad" name="txtPersona" id="txtPersona" value="" class="typeahead_2 form-control" />
-                                <input type="hidden" name="id" id="id" value="">
-                            </div>
-
-                            <label class="col-sm-4 col-form-label"><i class="text-danger">* </i> Genero</label>
-                            <div class="col-sm-6">
-                                <div class="i-checks">
-                                    <label> <input type="radio" value="1" name="activo" > <i></i>F</label>&nbsp;&nbsp;
-                                    <label> <input type="radio" value="0" name="activo" > <i></i>M</label>
-                                </div>
-                            </div>
-
-                            <label class="col-sm-4 col-form-label"><i class="text-danger">* </i> Email:</label>
-                            <div class="col-sm-6">
-                                <input type="email" placeholder="Introduzca Correo Electronico" name="txtPersona" id="txtPersona" value="" class="typeahead_2 form-control" />
-                                <input type="hidden" name="id" id="id" value="">
-                            </div>
-
-                            <label class="col-sm-4 col-form-label"><i class="text-danger">* </i> Direccion:</label>
-                            <div class="col-sm-6">
-                                <input type="text" placeholder="Introduzca Direccion" name="txtPersona" id="txtPersona" value="" class="typeahead_2 form-control" />
-                                <input type="hidden" name="id" id="id" value="">
-                            </div>
-
-                            <label class="col-sm-4 col-form-label"><i class="text-danger">* </i> Telefono:</label>
-                            <div class="col-sm-6">
-                                <input type="text" placeholder="Introduzca Telefono" name="txtPersona" id="txtPersona" value="" class="typeahead_2 form-control" />
-                                <input type="hidden" name="id" id="id" value="">
-                            </div>
-
-                            <label class="col-sm-4 col-form-label"><i class="text-danger">*</i> Tipo de Contrato:</label>
-                            <div class="col-sm-6">
-                                <select class="form-control"  name="perfil_id"  id="perfil_id">
-                                    <option value="" > Indefinido</option>
-                                    <option value="" > Por Obra</option>
-                                    <option value="" > 3 meses</option>
-                                </select>
-                            </div>
-                            
-
-                            <label class="col-sm-4 col-form-label"><i class="text-danger">*</i> Area Laboral:</label>
-                            <div class="col-sm-6">
-                                <select class="form-control"  name="perfil_id"  id="perfil_id">
-                                    <option value="" > Panaderia</option>
-                                    <option value="" > Cajero</option>
-                                    <option value="" > Fiambreria</option>
-                                    <option value="" > Carniceria</option>
-                                </select>
-                            </div>
-                            
-                            <label class="col-sm-4 col-form-label"><i class="text-danger">* </i> Foto del Contrato:</label>
-                            <div class="col-sm-6">
-                                <input type="file"  name="imagen"   />
-                                
-                            </div>
-                            
-                        </div>
-                       
-        
-
-
-                        <div class="form-group row">
-                            <div class="col-sm-4 col-sm-offset-2">
-                                <button class="btn btn-success " type="submit">Guardar</button>
-                                <button class="btn btn-danger " type="button" >Cancelar</button>
-                                
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-</div>
-   @endsection 
-
-
+<div class="py-4">
+    <table class="table table-bordered border-white table-hover text-center">
+        <thead class="bg-dark text-white">
+            <tr>
+            <th scope="col" >Codigo Empleado</th>    
+            <th scope="col">Nombre</th>    
+            <th scope="col">Fecha de Nacimiento</th>    
+            <th scope="col">Cedula de Identidad</th>
+            <th scope="col">Genero</th>
+            <th scope="col">Direccion</th>
+            <th scope="col">Area</th>
+            <th scope="col">Inicio del contrato</th>
+            <th scope="col">Final del contrato</th>            
+            <th scope="col">Modificar Contrato</th>            
+            <th scope="col">Eliminar Contrato</th>            
+            </tr>
+        </thead>
+    <tbody>
+        @foreach ($datos as $dato)
+        <tr>
+            <td>{{$dato->CODIGO}}</td>
+            <td>{{$dato->NOMBRE}}</td>
+            <td>{{$dato->FECHA_NAC}}</td>
+            <td>{{$dato->CI}}</td>
+            <td>{{$dato->GENERO}}</td>            
+            <td>{{$dato->DIRECCION}}</td>
+            <td>{{$dato->AREA}}</td>
+            <td>{{$dato->inicio_contrato}}</td>
+            <td>{{$dato->final_contrato}}</td>
+            <td>            
+                <a type="submit"  class="btn btn-success" href="{{ url('/admin/editar_empleado/'.$dato->CODIGO) }}"> Editar</a>
+            </td>  
+            <td>           
+                <form method="POST" action="{{  url('/admin/eliminarContrato/'.$dato->CODIGO)}}">                
+                @csrf
+                @method('DELETE')                
+                <button type="submit" class="btn btn-danger">Eliminar</button>
+                </form>                
+            </td>
+        </tr>
+        @endforeach
+    </table>
+@endsection 

@@ -1,0 +1,93 @@
+table {
+    background-color: white;
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+th,
+td {
+    padding: 25px;
+    text-align: center;
+}
+
+thead {
+    background-color: #000000;
+    color: white;
+    border-bottom: solid 5px #0f362d;
+}
+
+tr:nth-child(even) {
+    background-color: #ddd;
+}
+
+tr:hover {
+    background-color: #369681;
+    color: white;
+}
+
+h3 {
+    margin-top: 5px;
+    background-color: white;
+    border: white 5px solid;
+    border-radius: 20px;
+}
+
+form.elegante input {
+    padding: .2em;
+}
+
+label {
+    display: block;
+    margin: .5em 0 0 0;
+}
+
+.btn1 {
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+    text-decoration: none;
+    color: initial;
+    background-color: white;
+}
+
+input:invalid+span::after {
+    content: "✖";
+}
+
+input:valid+span::after {
+    content: "✓";
+}
+
+/*VISTA DESARROLLADORES NOMBRES*/
+.wrapper {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.typing-demo{
+    width: 22ch;
+    animation: typing 2s steps(22),
+blink  .5s  step-end infinity alternate;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid;
+  font-family:monospace;
+  font-size: 2em;
+
+
+}
+
+@keyframes typing {
+form {
+    width:0
+}
+
+}
+@keyframes blink {
+    50%{
+        border-color: transparent
+    }
+}
+

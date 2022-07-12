@@ -1,0 +1,37 @@
+<?php
+
+namespace Database\Seeders;
+
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Illuminate\Database\Seeder;
+
+class EmpleadoTableSeeder extends Seeder
+{
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {        
+//select * from EMPLEADO
+/*ADMIN*/
+/*
+INSERT INTO EMPLEADO VALUES(2001,'ALBERTO MURRILO','1996/01/08','M',16900641,'albrMurillo@gmail.com',70075184,'calle 9 av Apojeosin limite','2015/10/15',NULL,'2 AÑO',202001,'Adm2001',NULL,2,NULL);
+INSERT INTO EMPLEADO VALUES(2002,'JORGE CARI','1995/10/02','M',13959642,'jorgecs@gmail.com',78005974,'Barrio flor c#1','2016/10/15',NULL,'3 AÑO',202002,'Adm2002',NULL,2,NULL);
+*/
+/*TRABAJADOR*/
+/*
+INSERT INTO EMPLEADO VALUES(3001,'RICARDO GEM','1998/02/22','M',15789645,'gemric@gmail.com',78715454,'calle 2 Av Banzer','2019/10/15','EMBUTIDOS','3 AÑO',303001,'Emp3001',NULL,NULL,3);
+INSERT INTO EMPLEADO VALUES(3002,'ROBERTO PEÑA','1999/01/12','M',15578966,'robertp@gmail.com',7512454,'calle 0 barrio El Apojeo','2019/10/15','PANADERIA','3 AÑO',303002,'Emp3002',NULL,NULL,3);
+INSERT INTO EMPLEADO VALUES(3003,'JOSE GALVAN','1999/11/20','M',78941538,'joseglv@gmail.com',73202454,'calle 7 barrio josesito','2019/10/15','CAJERO','3 AÑO',303003,'Emp3003',NULL,NULL,3);
+INSERT INTO EMPLEADO VALUES(3004,'DANIEL CORTILLO','2000/09/08','M',11259845,'dancor@gmail.com',77905454,'barrio ETM c#5','2019/10/15','REPONEDOR','3 AÑO',303004,'Emp3004',NULL,NULL,3);
+INSERT INTO EMPLEADO VALUES(3005,'ALEJANDRA TERRAZAS','2003/06/05','F',35698744,'aletr@gmail.com',71202454,'calle 1 Av chanchito','2020/11/05','ATENCION AL CLIENTE','2 AÑO',303005,'Emp3005',NULL,NULL,3);
+INSERT INTO EMPLEADO VALUES(3006,'BISMAR ANTELOR','2002/05/23','M',89455612,'bisant@gmail.com',70335454,'calle S/N av Atp','2020/11/05','CAJERO','2 AÑO',303006,'Emp3006',NULL,NULL,3);
+INSERT INTO EMPLEADO VALUES(3007,'GABRIELA ANTERLO','2001/03/15','F',11865712,'gabiant@gmail.com',75002454,'calle 1 Av el Ranchito c#0','2020/11/05','PANADERIA','2 AÑO',303007,'Emp3007',NULL,NULL,3);
+INSERT INTO EMPLEADO VALUES(3008,'MAITE TORREZ','1999/12/11','F',45978401,'maitrrez@gmail.com',77005454,'calle 2 av El Apojeo c#3','2021/03/08','LIMPIEZA','1 AÑO',303008,'Emp3008',NULL,NULL,3);
+INSERT INTO EMPLEADO VALUES(3009,'PAOLA GARCIA','1998/11/17','F',15048746,'pao_cia@gmail.com',68202454,'Av el Ranchito c#2','2021/03/08','SEGURIDAD','1 AÑO',303009,'Emp3009',NULL,NULL,3);
+INSERT INTO EMPLEADO VALUES(3010,'RUTH COLQUE','1999/01/09','F',15688740,'rut_col@gmail.com',78200123,'av.Bolivar calle 5','2021/03/08','CAJERO','1 AÑO',303010,'Emp3010',NULL,NULL,3);
+*/
+    }
+}
