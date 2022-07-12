@@ -253,21 +253,21 @@ class DatabaseSeeder extends Seeder
             'FECHA_FIN'=>'2021-05-11',
             'ASUNTO'=>'BAJA MEDICA',
             'DIAS'=>'2',
-            'id_permiso_emp'=>'5'
+            'ID_permiso_emp'=>'5'
         ]);
         permiso::create([
             'FECHA_INI'=>'2021-05-20',
             'FECHA_FIN'=>'2021-05-22',
             'ASUNTO'=>'BAJA MEDICA',
             'DIAS'=>'2',
-            'id_permiso_emp'=>'8'
+            'ID_permiso_emp'=>'8'
         ]);
         permiso::create([
             'FECHA_INI'=>'2021-06-20',
             'FECHA_FIN'=>'2021-06-30',
             'ASUNTO'=>'BAJA MEDICA',
             'DIAS'=>'10',
-            'id_permiso_emp'=>'14'
+            'ID_permiso_emp'=>'14'
         ]);
 
         permiso::create([

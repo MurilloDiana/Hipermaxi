@@ -17,6 +17,7 @@ use App\Http\Controllers\PagoadicionaController;
 use App\Http\Controllers\DescuentoController;
 use Illuminate\Support\Facades\Auth;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
