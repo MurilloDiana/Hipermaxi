@@ -1,15 +1,31 @@
 @extends('layouts.app')
 
 @section('content')
-
+<link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <title>Inicio</title>
 <div >
-    <div class="row justify-content-center">
-        <div class="col-md-6">
+    <div class="container-form sign-in">
+       <!-- <div class="col-md-6">
             <div class="card">
                 <div class="card-header">{{ __('Login') }}</div>
 
-                <div class="card-body">
-                    <form method="POST" action="{{ route('login') }}">
+                <div class="card-body"> -->
+                    <form class="formulario" method="POST" action="{{ route('login') }}">
+                        <h2 class="create-account">Iniciar Sesion</h2>
+                        <div class="iconos">
+                            <div class="border-icon">
+                                <i class='bx bxl-instagram'></i>
+                            </div>
+                            <div class="border-icon">
+                                <i class='bx bxl-linkedin' ></i>
+                            </div>
+                            <div class="border-icon">
+                                <i class='bx bxl-facebook-circle' ></i>
+                            </div>
+                        </div>
                         @csrf
 
                         <div class="row mb-5">

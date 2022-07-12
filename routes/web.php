@@ -54,7 +54,9 @@ Auth::routes();
 Route::get('/', function () {
     return view('welcome');
 });
-  
+Route::get('/login2', function () {
+    return view('login2');
+}); 
 /*------------------------------------------
 --------------------------------------------
 All Normal Users Routes List
