@@ -13,8 +13,7 @@
                                             th,
                                             td {
                                                 border: solid 1px black;
-                                                padding: 0;
-                                                TEX
+                                                padding: 0;                                                
                                             }
                                             
                                             thead {
@@ -30,3 +29,4 @@
                                             tr:hover td {
                                                 background-color: orange;
                                                 color: white;
+                                            }
