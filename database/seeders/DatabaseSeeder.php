@@ -305,8 +305,6 @@ class DatabaseSeeder extends Seeder
         //datos del contrato
         $this->call(CreateContratoSeeder::class);
         //datos de falta
-        $this->call(FaltaSeeder::class);        
-        //datos de jornada laboral
-        $this->call(JornadaLaboralSeeder::class);
+        $this->call(FaltaSeeder::class);
     }
 }
