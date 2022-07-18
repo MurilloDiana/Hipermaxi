@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('jornada_laborals', function (Blueprint $table) {
-            $table->unsignedBigInteger('id');            
+            $table->unsignedBigInteger('id_user');            
             $table->dateTime('datetime_marcado', 0);          
             $table->timestamps();
         });

@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@extends('layouts.partials.navbar_recusos_humanos')
 @section('content')
 <body>
   <div class="py-4">

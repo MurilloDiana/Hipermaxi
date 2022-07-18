@@ -1,5 +1,5 @@
-@extends('layouts.app')
-  
+@extends('layouts.app')  
+@extends('layouts.partials.navbar_recusos_humanos')
 @section('content')
 
 <div class="container">
@@ -9,11 +9,8 @@
             <div class="card">
                 <div class="card-header">{{ __('Dashboard') }}</div>
   
-                <div class="card-body">
-                    
-                    You are a Admin User,
-
-                    Entraste como RRHH.
+                <div class="card-body">                    
+                    Tu eres de Recursos Humanos
                 </div>
                 
             </div>

@@ -10,7 +10,7 @@ class JornadaLaboral extends Model
     use HasFactory;
 
     protected $fillable = [ 
-        'id',       
+        'id_user',       
         'datetime_marcado'
     ];
 }
