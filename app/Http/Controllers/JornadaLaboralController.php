@@ -10,9 +10,10 @@ use Carbon\Carbon;
 
 class JornadaLaboralController extends Controller
 {
-    public function jornadaIndex(){        
-        return view ('jornadaLaboral');        
+    public function marcarAsistencia(){
+        return view('jornadaLaboral');
     }
+
 
     public function listarAsistencia(Request $request){        
         if($request->id == null){                      
@@ -29,17 +30,16 @@ class JornadaLaboralController extends Controller
             ->where('jornada_laborals.id', '=', $request->id)
             ->get();  
             //SELECT CODIGO, NOMBRE, turno FROM empleados, horarios where id=id_horario
-            return view ('listaJornada', compact('datos'));
-        }
+            return view ('listaJornada', compact('datos'));        
     }
 
-    public function marcarJornada(Request $request){
+    public function marcarJornada(Request $request){            
         $tomorrow = Carbon::now();
         $datos=([
-            'id'=>$request->id,
+            'id_user'=>$request->id_user,
             'datetime_marcado'=>$tomorrow
         ]);        
         JornadaLaboral::create($datos);
-        return redirect()->route('marcarjornada');
+        return redirect()->route('marcar_asistencia');
     }
 }

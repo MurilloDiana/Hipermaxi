@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@extends('layouts.partials.navbar_recusos_humanos')
 @section('content')
     <div>
     <div id="chart-container"></div>

@@ -17,6 +17,10 @@ class EmpleadoController extends Controller
         return view ('empleado', compact('datos'));
     }
 
+    public function registrarEmpleadoFormulario(){
+        return view('registrarEmpleado');
+    }
+
     public function registrarEmpleado(Request $request){
         $datos=( 
             [
@@ -29,11 +33,7 @@ class EmpleadoController extends Controller
                 'TELEFONO'=>$request->TELEFONO,
                 'DIRECCION'=>$request->DIRECCION,
                 'FECHA_ING'=>$request->FECHA_ING,
-                'AREA'=>$request->AREA,
-                'ANTIGUEDAD'=>$request->ANTIGUEDAD,
-                'USUARIO'=>$request->USUARIO,
-                'PASSWORD'=>Hash::make($request->PASSWORD),
-                'NIVEL'=>$request->NIVEL
+                'AREA'=>$request->AREA                
             ]
             );
 
@@ -102,8 +102,8 @@ class EmpleadoController extends Controller
     }
 
     public function buscarEmpleados(Request $request){
-        $datos = $request->input('CODIGO');
-        $datos = empleado::where('CODIGO',$datos)->get();        
+        $datos = $request->input('CODIGO');        
+        $datos = empleado::where('CODIGO',$datos)->get();          
         return view('empleado', compact('datos'));
     }
 }

@@ -1,68 +1,16 @@
 @extends('layouts.app')
-
+@extends('layouts.partials.navbar_administracion')
 @section('content')
-<div class="container">
-    <h1 class="text-center">FORMULARIO DE REGISTRO</h1>                                
-    <form action="{{route('registrar')}}" method="POST">
-        {{csrf_field()}}
-        @method('POST')
-        <div class="middle-box ">
-        <div class="input-group">
-            <label for="name" class="form-label">NOMBRE COMPLETO</label>
-            <input type="text" name="NOMBRE" id="name">
-        </div>    
-        <div class="form-group">
-            <label for="exampleInputEmail1" class="form-label">FECHA DE NACIMIENTO</label>
-            <input type="date" class="form-control" name="FECHA_NAC" >
-        </div>    
-        <div class="form-group">
-            <label for="exampleInputEmail1" class="form-label">GENERO</label>
-            <select name="GENERO" class="form-control">                            
-                <option value="M">Masculino</option>
-                <option value="F">Femenino</option>
-            </select>
-        </div> 
-        <div class="mb-3 mt-4">
-            <label for="exampleInputEmail1" class="form-label">CEDULA DE IDENTIDAD</label>
-            <input type="number" class="form-control" name="CI">
-        </div>    
-        
-        <div class="mb-3 mt-4">
-            <label for="exampleInputEmail1" class="form-label">CORREO ELECTRONICO</label>
-            <input type="email" class="form-control" name="EMAIL">
-        </div>    
-        <div class="mb-3 mt-4">
-            <label for="exampleInputEmail1" class="form-label">TELEFONO</label>
-            <input type="number" class="form-control" name="TELEFONO">
-        </div>    
-        <div class="mb-3 mt-4">
-            <label for="exampleInputEmail1" class="form-label">DIRECCION</label>
-            <input type="text" class="form-control" name="DIRECCION">
-        </div>    
-        <div class="mb-3 mt-4">
-            <label for="exampleInputEmail1" class="form-label">FECHA DE INGRESO</label>
-            <input type="date" class="form-control" name="FECHA_ING">
-        </div>    
-        <div class="mb-2 mt-4">
-            <label for="exampleInputEmail1" class="form-label">AREA</label>
-            <input type="text" class="form-control" name="AREA">
-        </div>
-    </div>
-        <div class="mb-3 mt-4">                                        
-            <button class="btn btn-success mt-3" type="submit">Registrar</button>        
-        </div>
-    </form>
-</div>
-
 <div class="middle-box text-center">
   <div class="m-t">     
-    <H2> TABLA DE USUARIOS</H2>
+    <H2> LISTA DE EMPLEADOS</H2>
         <form action="{{route('buscar')}}" method="GET">
             @csrf                    
             <input type="search" placeholder="Buscar Codigo" name="CODIGO" requered/>
-            <button type="submit" class="btn btn-success">Buscar</button>            
-        </form>     
-  </div>
+            <button type="submit" class="btn btn-success">Buscar</button>                        
+            <a type="submit"  class="btn btn-success" href="{{route('formulario.index')}}"> Registrar Empleado</a>
+        </form>                             
+  </div>  
 </div>
 
 <div class="py-4">

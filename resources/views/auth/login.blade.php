@@ -1,11 +1,12 @@
 @extends('layouts.app')
-
 @section('content')
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
     <title>Inicio</title>
+
 <div >
     <div class="container-form sign-in">
        <!-- <div class="col-md-6">

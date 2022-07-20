@@ -1,11 +1,12 @@
 @extends('layouts.app')
+@extends('layouts.partials.navbar_administracion')
 @section('content')
 
 <div class="box">
     <div class="container-1">     
-          <form action="{{route('listar_index')}}" method="GET">
+          <form action="{{route('buscar_index')}}" method="GET">
               @csrf                    
-              <input type="search" placeholder="Cuscar Codigo" name="id" requered/>
+              <input type="search" placeholder="Cuscar Codigo" name="id_user" requered/>
               <button type="submit" class="btn btn-success">Buscar</button>            
           </form>     
     </div>
@@ -16,7 +17,7 @@
         <thead class="bg-primary text-light">
             <tr>
             <th scope="col">Codigo</th>
-            <th scope="col">Nombre</th>                        
+            <th scope="col">Usuario</th>                        
             <th scope="col">Hora Marcada</th>
             </tr>
         </thead>
