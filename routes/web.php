@@ -16,6 +16,7 @@ use App\Http\Controllers\permisoController;
 use App\Http\Controllers\PagoadicionaController;
 use App\Http\Controllers\DescuentoController;
 USE App\Http\Controllers\BoletaPagoController;
+USE App\Http\Controllers\GeneradorController;
 use Illuminate\Support\Facades\Auth;
 
 
@@ -137,3 +138,5 @@ Route::middleware(['auth', 'user-access:manager'])->group(function () {
     Route::get('/falta', [FaltaController::class, 'listarFaltas'])->name('faltas');
 });
 
+Route::get('/boletas', [BoletaPagoController::class, 'index'])->name('boleta.index');
+Route::get('/boleta/pdf', [GeneradorController::class, 'createPDF'])->name('boleta.pdf');
