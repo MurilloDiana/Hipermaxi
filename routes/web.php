@@ -15,6 +15,7 @@ use App\Http\Controllers\FaltaController;
 use App\Http\Controllers\permisoController;
 use App\Http\Controllers\PagoadicionaController;
 use App\Http\Controllers\DescuentoController;
+USE App\Http\Controllers\BoletaPagoController;
 use Illuminate\Support\Facades\Auth;
 
 
@@ -32,6 +33,10 @@ use Illuminate\Support\Facades\Auth;
 Route::get('/hola', function () {
     return "hola mundo";
 });
+Route::get('/pago',[BoletaPagoController::class,'index'])->name('solicita');
+Route::post('/pago',[BoletaPagoController::class,'store'])->name('generapago');
+
+
 
 /*GESTINAR ASISTENCIA*/
 Route::get('/asistencia',[JornadaLaboralController::class, 'jornadaIndex'])->name('marcarjornada');
