@@ -160,3 +160,4 @@ Route::middleware(['auth', 'user-access:manager'])->group(function () {
     Route::post('/asignarFalta', [FaltaController::class, 'registrarFaltas'])->name('asignarFalta');
     Route::get('/falta', [FaltaController::class, 'listarFaltas'])->name('faltas');
 });
+}
