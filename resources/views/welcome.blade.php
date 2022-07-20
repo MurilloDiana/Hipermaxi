@@ -23,8 +23,8 @@
         </style>
     </head>
     <body class="antialiased">
-        @include ('layouts.partials.nav')
-        <h1> home</h1>
+        <!--@include ('layouts.partials.nav')-->
+        <div class="scene"> </div>
     </body>
 </html>
 @endsection
