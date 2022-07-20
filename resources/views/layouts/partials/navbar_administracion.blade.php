@@ -1,46 +1,31 @@
-<!--
 <link rel="stylesheet" href="{{asset('assets/css/navbar.css')}}">
 <header class="p-3 text-white">
   <div class="container">
-    <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start"> 
-      <!--<form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
-        <input type="search" class="form-control form-control-dark" placeholder="Search..." aria-label="Search">
-      </form>-->
-
-<!--
-      @auth
-      <nav>
-        <a href="{{route('empleado.index')}}">Inicio</a>        
-        <a href="{{ route('chart.index') }}">Vitacora</a>        
-        <a href="{{route('antiguedad.index')}}">Antiguedad</a>
-        <a href="{{route('asistencias.index')}}">Asistencia</a>
-        <div class="animation start-home"></div>
-      </nav>
-        {{auth()->user()->name}}
-        <div class="text-end">
-          <a href="{{ route('logout.perform') }}" class="btn btn-outline-light me-2">Salir</a>
-        </div>
-      @endauth
-
+    <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">        
+        @auth            
+            <nav>                        
+            <a class="btn btn-primary" href="{{route('manager.home')}}">Inicio</a>
+            <a class="btn btn-primary" href="{{route('horario.index')}}">Horarios</a>  
+            <a class="btn btn-primary" href="{{route('listar_index')}}">Asistencias</a>
+            <a class="btn btn-primary" href="{{route('pagoadicional.index')}}">Pago Adicional</a>            
+            <a class="btn btn-primary" href="{{route('faltas')}}">Faltas</a>            
+            </nav>            
+        @endauth                             
+      
       @guest
       <nav>
-        <a href="{{route('home.index')}}">Inicio</a>        
+        <a href="{{ url('/') }}">Inicio</a>        
         <a href="#blog">Blog</a>        
         <a href="#contactanos">Contactanos</a>
         <a href="#acercade">acerca de...</a>
         <div class="animation start-home"></div>
       </nav>
-        <div class="text-end">
-          <a href="{{ route('login.perform') }}" class="btn btn-outline-light me-2">Inicia sesión</a>
-          <!--<a href="{{ route('register.perform') }}" class="btn btn-warning">Sign-up</a>-->
-<!--
-        </div>
       @endguest
     </div>
   </div>
 </header>
--->
 
+<!--
 <div class="container-fluid">
     <div class="row flex-nowrap">
         <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark">
@@ -109,3 +94,4 @@
         </div>
     </div>
 </div>
+-->

@@ -1,4 +1,4 @@
-@extends('layouts.app-master')
+@extends('layouts.app')
 @section('content')
 <link rel="stylesheet" type="text/css" href="css/style_asis.css">
 <h3>HOJA DE SOLICITUD DE PERMISO</h3>
@@ -11,7 +11,6 @@
                             <input class="form-control" type="date" name="fecha_ini" required maxlength="100">
                         </div>
                     </div>
-
                     <div class="form-group">
                         <label class="col-lg-3 control-label">Fecha Fin:</label>
                             <div class="col-lg-8">

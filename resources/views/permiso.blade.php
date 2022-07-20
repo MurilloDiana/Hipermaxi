@@ -1,6 +1,6 @@
-@extends('layouts.app-master')
+@extends('layouts.app')
+@extends('layouts.partials.navbar_recusos_humanos')
 @section('content')
-<link rel="stylesheet" type="text/css" href="css/style_asis.css">
 <link rel="stylesheet" type="text/css" href="css/style_asis.css">
 <div class="row wrapper border-bottom white-bg page-heading">
     <div class="col-lg-6">
@@ -47,6 +47,6 @@
        </div>
 </div>
 
-<input type ='button' class="btn1 btn-warning"  value = 'GenerarPermiso' onclick="location.href = '{{ route('Genpermiso.index') }}'"/>
+<input type ='button' class="btn1 btn-warning"  value = 'GenerarPermiso' onclick="location.href ='{{ route('Genpermiso.index') }}' "/>
 
 @endsection 
