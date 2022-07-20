@@ -21,11 +21,10 @@ class JornadaLaboralController extends Controller
         ->get();          
         return view ('listaJornada', compact('datos'));
     }
-    
-    public function buscarAsistencia(Request $request){        }
 
-    
-    public function marcarJornada(Request $request){            
+    }
+     function marcarJornada(Request $request){            
+
         $tomorrow = Carbon::now();
         $datos=([
             'id_user'=>$request->id_user,

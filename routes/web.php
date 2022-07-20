@@ -18,6 +18,7 @@ use App\Http\Controllers\permisoController;
 use App\Http\Controllers\PagoadicionaController;
 use App\Http\Controllers\DescuentoController;
 USE App\Http\Controllers\BoletaPagoController;
+USE App\Http\Controllers\GeneradorController;
 use Illuminate\Support\Facades\Auth;
 
 
@@ -132,8 +133,8 @@ Route::middleware(['auth', 'user-access:manager'])->group(function () {
     Route::get('/manager/home', [HomeController::class, 'managerHome'])->name('manager.home');    
     Route::get('/manager/asistencia',[JornadaLaboralController::class, 'jornadaLaboral'])->name('listar_index');     
 
-Route::middleware(['auth', 'user-access:manager'])->group(function () {    
-    Route::get('/manager/home', [HomeController::class, 'managerHome'])->name('manager.home');
+/*Route::middleware(['auth', 'user-access:manager'])->group(function () {    
+    Route::get('/manager/home', [HomeController::class, 'managerHome'])->name('manager.home');*/
     
     /*CRUD HORARIO*/
     Route::get('/manager/horario', [HorarioController::class, 'listarHorarios'])->name('horario.index');
@@ -160,4 +161,3 @@ Route::middleware(['auth', 'user-access:manager'])->group(function () {
     Route::post('/asignarFalta', [FaltaController::class, 'registrarFaltas'])->name('asignarFalta');
     Route::get('/falta', [FaltaController::class, 'listarFaltas'])->name('faltas');
 });
-}
