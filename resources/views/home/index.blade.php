@@ -9,7 +9,7 @@
 <script src="https://code.highcharts.com/modules/accessibility.js"></script>
     <body>
         <div class="bg-light m-0 row justify-content-center">
-            @auth
+            <!--@auth
             <h1>Dashboard</h1>
             
             <div class="cardi">
@@ -19,9 +19,7 @@
                     <p>Prueba Prueba Prueba</p>
                 </div>
             </div>
-            @endauth
-
-            @guest 
+            @endauth-->
             <div class="gallery">
               <a href="#blog"><img src="{{asset('img/img2.jpg')}}"  alt=""/>  </a>
               <a href="#contactanos"><img src="{{asset('img/img4.jpg')}}"  alt=""/>  </a>
@@ -79,15 +77,8 @@
                     <li>.........</li>
                     <li>Backend </li>
                    </ul> 
-              </div>       
-
-                                                                                                                                    
-            </section>
-            
-            @endguest
-
-           
-                        
+              </div>                                                                                                              
+            </section>  
         </div>        
     </body>    
 @endsection

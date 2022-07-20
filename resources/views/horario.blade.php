@@ -1,7 +1,6 @@
 @extends('layouts.app')
-
+@extends('layouts.partials.navbar_administracion')
 @section('content')
-
 <!--MOSTRAR HORARIO-->
 <div class="py-4 container">
     <table class="table table-hover bg-light text-center">

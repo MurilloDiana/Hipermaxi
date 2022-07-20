@@ -224,30 +224,6 @@ class DatabaseSeeder extends Seeder
             'AREA'=>'Recepcion'            
         ]);
 
-        User::create([   
-            'id'=>1,
-            'name'=>'RRHH',
-            'email'=>'rrhh@gmail.com', 
-            'type'=>1,
-            'password'=>'123456789'            
-        ]);
-
-        User::create([                    
-            'id'=>2,
-            'name'=>'administrador',
-            'email'=>'administrador@gmail.com', 
-            'type'=>2,
-            'password'=>'123456789'            
-        ]);
-
-        User::create([                    
-            'id'=>3,
-            'name'=>'usuario',
-            'email'=>'user@gmail.com', 
-            'type'=>0,
-            'password'=>'123456789'
-        ]);
-
         permiso::create([
             'FECHA_INI'=>'2021-05-10',
             'FECHA_FIN'=>'2021-05-11',
@@ -290,6 +266,31 @@ class DatabaseSeeder extends Seeder
         sueldo::create([    
             'Sueldo'=>'3000',
             'id_ingreso_emp'=>'14']);
+
+            
+        User::create([   
+            'id'=>1,
+            'name'=>'RRHH',
+            'email'=>'rrhh@gmail.com', 
+            'type'=>1,
+            'password'=>'123456789'            
+        ]);
+
+        User::create([                    
+            'id'=>2,
+            'name'=>'administrador',
+            'email'=>'administrador@gmail.com', 
+            'type'=>2,
+            'password'=>'123456789'            
+        ]);
+
+        User::create([                    
+            'id'=>3,
+            'name'=>'usuario',
+            'email'=>'user@gmail.com', 
+            'type'=>0,
+            'password'=>'123456789'
+        ]);
        
         User::create([                    
             'id'=>4,

@@ -1,3 +1,4 @@
+
 * {
     margin: 0;
     padding: 0;
@@ -161,3 +162,276 @@ body {
     visibility: hidden;
 }
 /*login - register final*/
+
+body {
+    background-color: #8FB9AB;
+    font-style: normal;
+}
+
+
+/* inicio de galeria de home */
+
+.gallery {
+    width: 85vw;
+    height: 85vmin;
+    display: flex;
+    gap: 5px;
+}
+
+.gallery img {
+    height: 100%;
+    flex: 1;
+    object-fit: cover;
+    overflow: hidden;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: all 0.3s;
+}
+
+.gallery a {
+    height: 100%;
+    flex: 1;
+    object-fit: cover;
+    overflow: hidden;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: all 0.3s;
+}
+
+.gallery:hover .con-text p {
+    margin-bottom: 0px;
+}
+
+.gallery .con-text {
+    z-index: 30;
+    position: absolute;
+    bottom: 0px;
+    color: #fff;
+    padding: 20px;
+    padding-bottom: 30px;
+}
+
+.gallery img:hover {
+    flex: 4;
+}
+
+.gallery p:hover {
+    flex: 4;
+}
+
+.gallery h2:hover {
+    flex: 4;
+}
+
+.gallery a:hover {
+    flex: 4;
+}
+
+
+/*fin de galeria de home */
+
+
+/*prueba de card para que se vea chido*/
+
+.cardi {
+    width: 15rem;
+    height: 15rem;
+    background: #000;
+    border-radius: 30px;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all .25s ease;
+    backface-visibility: hidden;
+}
+
+.cardi:hover {
+    transform: scale(.9);
+}
+
+.cardi:hover:after {
+    height: 280px;
+}
+
+.cardi:hover .details {
+    opacity: 1;
+    height: 100%;
+}
+
+.cardi:hover img {
+    transform: scale(1.25);
+}
+
+.cardi:hover .ul {
+    transform: translate(0);
+    opacity: 1;
+}
+
+.details {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 0%;
+    background: rgba(0, 0, 0, 0.9);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 0;
+    opacity: 0;
+    transition: 0.5s ease;
+}
+
+.cardi:after {
+    width: 100%;
+    content: '';
+    left: 0px;
+    bottom: 0px;
+    height: 150px;
+    position: absolute;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%);
+    z-index: 20;
+    transition: all .25s ease;
+}
+
+.cardi img {
+    height: 100%;
+    width: 100%;
+    flex: 1;
+    object-fit: cover;
+    overflow: hidden;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: all 0.3s;
+}
+
+
+/*ff*/
+
+.titulo-home {
+    font-size: 100px;
+    text-align: center;
+}
+
+.texto-home {
+    font-size: 30px;
+    text-align: center;
+}
+
+#blog,
+#contactanos,
+#acerca #desarrolladores {
+    margin-top: 0%;
+    padding-bottom: 50%;
+}
+
+
+/*login*/
+
+.logoSI {
+    border-radius: 50%;
+    width: 450px;
+}
+
+.padre {
+    display: flex;
+    justify-content: center;
+}
+
+table {
+    background-color: white;
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+th,
+td {
+    padding: 25px;
+    text-align: center;
+}
+
+thead {
+    background-color: #000000;
+    color: white;
+    border-bottom: solid 5px #0f362d;
+}
+
+tr:nth-child(even) {
+    background-color: #ddd;
+}
+
+tr:hover {
+    background-color: #369681;
+    color: white;
+}
+
+h3 {
+    margin-top: 5px;
+    background-color: white;
+    border: white 5px solid;
+    border-radius: 20px;
+}
+
+form.elegante input {
+    padding: .2em;
+}
+
+label {
+    display: block;
+    margin: .5em 0 0 0;
+}
+
+.btn1 {
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+    text-decoration: none;
+    color: initial;
+    background-color: white;
+}
+
+input:invalid+span::after {
+    content: "✖";
+}
+
+input:valid+span::after {
+    content: "✓";
+}
+
+table th {
+    background-color: #365055;
+}
+
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700");
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,300,500,700");
+
+/*
+ *
+ *   INSPINIA - Responsive Admin Theme
+ *   version 2.8
+ *
+*/
+
+@font-face {
+    font-family: 'Glyphicons Halflings';
+    src: url('../fonts/glyphicons-halflings-regular.eot');
+    src: url('../fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/glyphicons-halflings-regular.woff2') format('woff2'), url('../fonts/glyphicons-halflings-regular.woff') format('woff'), url('../fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('../fonts/glyphicons-halflings-regular.svg') format('svg');
+}
+
+.glyphicon {
+    position: relative;
+    top: 1px;
+    display: inline-block;
+    font-family: 'Glyphicons Halflings';
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
