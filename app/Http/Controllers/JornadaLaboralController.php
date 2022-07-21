@@ -19,7 +19,7 @@ class JornadaLaboralController extends Controller
         ->join('users', 'jornada_laborals.id_user', '=', 'users.id')
         ->select('users.name','users.id', 'jornada_laborals.datetime_marcado')        
         ->get();          
-        return view ('listaJornada', compact('datos'));        
+        return view ('listaJornada', compact('datos'));
     }
     
     public function buscarAsistencia(Request $request){        
