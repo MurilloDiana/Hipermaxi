@@ -49,13 +49,16 @@ class BoletaPagoController extends Controller
         $pago->fecha_recibido = Carbon::now();
         $pago->dias_trabajados = $request->dias;
         $pago->id_emp = $request->id_empleado;
-        $pago->id_pagoadicional=pagoAdicional::select('id_pago')->where("pagoAdicionals.id_pa_emp","=",$request->id_empleado)->get()->first();
-        $pago->id_descuent=descuento::select('id_descuento')->where("descuentos.id_emp_desc","=",$request->id_empleado)->get()->first();
+        $aux1=pagoAdicional::where("pagoAdicionals.id_pa_emp","=",$request->id_empleado)->get()->first();
+        $pago->id_pagoadicional=$aux1->id_pago;
+        $auxi2=descuento::where("descuentos.id_emp_desc","=",$request->id_empleado)->get()->first();
+        $pago->id_descuent=$auxi2->id_descuento;
         $v1 = 0.00;
         if(
         pagoAdicional::select('BonoTotal')->where("pagoAdicionals.id_pa_emp","=",$request->id_empleado)->get()->first()
         !=null){
-            $v1 = pagoAdicional::select('BonoTotal')->where("pagoAdicionals.id_pa_emp","=",$request->id_empleado)->get()->first();
+            $v1 = pagoAdicional::where("pagoAdicionals.id_pa_emp","=",$request->id_empleado)->get()->first();
+            $v1=$v1->BonoTotal;
         }
         /**$v1=$v1->BonoTotal;*/
         $pago->monto_pagoAdic = $v1;
@@ -63,15 +66,17 @@ class BoletaPagoController extends Controller
         if(
         descuento::select('Total_descuento')->where("descuentos.id_emp_desc","=",$request->id_empleado)->get()->first()
         !=null){
-            $v2 = descuento::select('Total_descuento')->where("descuentos.id_emp_desc","=",$request->id_empleado)->get()->first();
+            $v2 = descuento::where("descuentos.id_emp_desc","=",$request->id_empleado)->get()->first();
+            $v2=$v2->Total_descuento;
         }
         $pago->monto_desc = $v2;
-        $v3 = sueldo::where("sueldos.id_ingreso_emp","=",$request->id_empleado)->get()->first();
-        $v3 = $v3->Sueldo +$v1+$v2;
-        $pago->monto_total = $v3;
+        $v3 = sueldo::where("id_ingreso_emp","=",$request->id_empleado)->get()->first();
+        $v3 = $v3->Sueldo*1;
+        $v4 = $v3+$v1+$v2;
+        $pago->monto_total = $v4;
        //dd($v3);
         $pago->save();
-        
+        return redirect(route('generapago'));
     }
 
     /**
@@ -80,10 +85,15 @@ class BoletaPagoController extends Controller
      * @param  \App\Models\boletaPago  $boletaPago
      * @return \Illuminate\Http\Response
      */
-    /**public function show(boletaPago $boletaPago)
+    public function show(request $request)
     {
-        //
-    }*/
+        $pagoadicional=pagoAdicional::where("pagoAdicionals.id_pa_emp","=",$request->CODIGO)->first();
+        $descuento=descuento::where("descuentos.id_emp_desc","=",$request->CODIGO)->first();
+        $empleado=empleado::find($request->CODIGO);
+        $sueldo=sueldo::where("id_ingreso_emp",'=',$request->CODIGO)->first();
+        $boleta=boletaPago::where("id_emp",'=',$request->CODIGO)->first();
+        return view('npruebapago', compact('boleta','empleado','pagoadicional','sueldo','descuento'));
+    }
 
     /**
      * Show the form for editing the specified resource.

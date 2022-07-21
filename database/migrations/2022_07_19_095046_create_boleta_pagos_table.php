@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('boleta_pagos', function (Blueprint $table) {
             $table->id('IDboleta_pago');
-            $table->dateTime('fecha_emision');
+            $table->date('fecha_emision');
             $table->dateTime('fecha_recibido');
             $table->bigInteger('dias_trabajados');
             $table->float('monto_pagoAdic');
