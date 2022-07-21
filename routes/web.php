@@ -15,7 +15,8 @@ use App\Http\Controllers\FaltaController;
 use App\Http\Controllers\permisoController;
 use App\Http\Controllers\PagoadicionaController;
 use App\Http\Controllers\DescuentoController;
-USE App\Http\Controllers\BoletaPagoController;
+use App\Http\Controllers\BoletaPagoController;
+use App\Http\Controllers\memorandumController;
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -35,6 +36,8 @@ Route::get('/hola', function () {
 Route::get('/pago',[BoletaPagoController::class,'index'])->name('solicita');
 Route::post('/pago',[BoletaPagoController::class,'store'])->name('generapago');
 
+Route::get('/memorandum',[memorandumController::class,'index'])->name('vista');
+Route::post('/memorandum',[memorandumController::class,'store'])->name('memorandumregistro');
 
 
 /*GESTINAR ASISTENCIA*/
