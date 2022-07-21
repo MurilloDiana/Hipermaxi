@@ -27,6 +27,7 @@
         </div>
 <div>
     <button class="btn btn-light mt-3" type="submit" values="GENERAR">Registrar</button>  
+    <button class="btn btn-light mt-3" onclick="window.print()">Imprimir</button>
 </div>
     </form>
 
