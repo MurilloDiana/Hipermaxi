@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@extends('layouts.partials.navbar_recusos_humanos')
 @section('content')
 <link rel="stylesheet" type="text/css" href="css/style_asis.css">
 <h2>BOLETA PAGO</h2>
