@@ -7,8 +7,8 @@
             <a class="btn btn-primary" href="{{route('manager.home')}}">Inicio</a>
             <a class="btn btn-primary" href="{{route('horario.index')}}">Horarios</a>  
             <a class="btn btn-primary" href="{{route('listar_index')}}">Asistencias</a>
-            <a class="btn btn-primary" href="{{route('pagoadicional.index')}}">Pago Adicional</a>            
             <a class="btn btn-primary" href="{{route('faltas')}}">Faltas</a>            
+            <a class="btn btn-primary" href="{{route('lista.index')}}">Permisos</a>            
             </nav>            
         @endauth                             
       
