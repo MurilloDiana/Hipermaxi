@@ -50,7 +50,6 @@ Route::get('/', function () {
     return view('home.index');
 });
 
-
 /*GESTINAR ASISTENCIA*/
 Route::get('/marcar_asistencia',[JornadaLaboralController::class, 'marcarAsistencia'])->name('marcar_asistencia');
 Route::post('/marcar',[JornadaLaboralController::class, 'marcarJornada'])->name('registrarjornada');
