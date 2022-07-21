@@ -143,16 +143,6 @@
                 $('#sidebar').toggleClass('active');
             });
         });
-    </script>
-   
-    <div class="footer">
-        <div class="float-right">
-            UAGRM - FICCT
-        </div>
-        <div>
-            <strong>Copyright</strong> GRUPO 3  &copy; 2022
-        </div>
-    </div>
-    
+    </script>    
 </body>
 

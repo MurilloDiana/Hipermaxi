@@ -8,9 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class JornadaLaboral extends Model
 {
     use HasFactory;
-    protected $table="jornada_laborals";
+   protected $table="jornada_laborals";
     protected $fillable = [ 
-        'id',       
+        'id_user',       
         'datetime_marcado'
     ];
 }

@@ -1,4 +1,5 @@
 @extends('layouts.app-master')
+@extends('layouts.partials.navbar_administracion')
 @section('content')
 <link rel="stylesheet" type="text/css" href="css/tablita.css">
 <div class="row wrapper border-bottom white-bg page-heading">
