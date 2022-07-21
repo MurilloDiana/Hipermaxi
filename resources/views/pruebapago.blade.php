@@ -6,7 +6,7 @@
         {{ csrf_field() }} 
         @method('POST')
         <div class="form-group">
-            <h3>Buscar Nombres de Empleados</h3>
+            <h5>Buscar Nombres de Empleados</h5>
             <label FOR=""></label>
                         <select name="id_empleado" id="inputid_empleado"  class="form-control" required="required">
                             <option VALUE="">--------ESCOGA NOMBRE EMPLEADO--------<></option>
@@ -27,6 +27,7 @@
         </div>
 <div>
     <button class="btn btn-light mt-3" type="submit" values="GENERAR">Registrar</button>  
+    <button class="btn btn-light mt-3" onclick="window.print()">Imprimir</button>
 </div>
     </form>
 

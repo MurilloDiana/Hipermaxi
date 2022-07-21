@@ -1,11 +1,12 @@
-@extends('layouts.app-master')
+@extends('layouts.app')
 @section('content')
 <script src="https://code.highcharts.com/highcharts.js"></script>
 <script src="https://code.highcharts.com/modules/exporting.js"></script>
 <script src="https://code.highcharts.com/modules/export-data.js"></script>
 <script src="https://code.highcharts.com/modules/accessibility.js"></script>
 <figure class="highcharts-figure">
-<a class="btn btn-primary" href="{{ url('chart') }}" role="button">Gráfico de Líneas</a>
+<a class="btn btn-primary" href="{{ url('admin/chart') }}" role="button">Gráfico de Líneas</a>
+<a class="btn btn-primary" href="{{ url('admin/bar-chart') }}" role="button">Gráfico de Barras</a>
 <div id="container"></div>
 <script> 
 Highcharts.chart('container', {
@@ -19,7 +20,7 @@ Highcharts.chart('container', {
         text: 'nuevo usuarios, 2020'
     },
     tooltip: {
-        pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+       
     },
     accessibility: {
         point: {
@@ -31,8 +32,7 @@ Highcharts.chart('container', {
             allowPointSelect: true,
             cursor: 'pointer',
             dataLabels: {
-                enabled: true,
-                format: '<b>{point.name}</b>: {point.percentage:.1f} %'
+                enabled: true
             }
         }
     },

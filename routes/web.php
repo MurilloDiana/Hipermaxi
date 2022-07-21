@@ -111,7 +111,7 @@ Route::middleware(['auth', 'user-access:admin'])->group(function () {
 
     /* GRAFICAS*/
     Route::get('admin/chart', [ChartController::class, 'index'])->name('chart');
-
+    Route::get('admin/bar-chart', [ChartController::class, 'barChart'])->name('bar-chart');
 
     /*CRUD PERMISO */ 
     Route::get('/admin/permiso', [permisoController::class, 'listar'])->name('permiso.index');
