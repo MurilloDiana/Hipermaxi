@@ -11,7 +11,7 @@ return new class extends Migration
      *
      * @return void
      */
-    public function up()
+   public function up()
     {
         Schema::create('jornada_laborals', function (Blueprint $table) {
             $table->id('id');
@@ -19,15 +19,16 @@ return new class extends Migration
             $table->dateTime('datetime_marcado', 0);          
             $table->timestamps();
         });
-    }
+    } 
 
     /**
      * Reverse the migrations.
      *
      * @return void
      */
-    public function down()
+   public function down()
     {
-        Schema::dropIfExists('jornada_laborals');
+       Schema::dropIfExists('jornada_laborals');
     }
+
 };
