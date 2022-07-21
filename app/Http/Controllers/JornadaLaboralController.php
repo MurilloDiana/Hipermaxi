@@ -22,7 +22,6 @@ class JornadaLaboralController extends Controller
         return view ('listaJornada', compact('datos'));
     }
 
-    }
      function marcarJornada(Request $request){            
 
         $tomorrow = Carbon::now();
