@@ -22,9 +22,16 @@ class JornadaLaboralController extends Controller
         return view ('listaJornada', compact('datos'));
     }
 
+    public function buscarAsistencia(Request $request){
+        $datos = DB::table('jornada_laborals')
+        ->join('users', 'jornada_laborals.id_user', '=', 'users.id')
+        ->select('users.name','users.id', 'jornada_laborals.datetime_marcado')
+        ->where('jornada_laborals.id_user', '=', $request->id_user)        
+        ->get();          
+        return view ('listaJornada', compact('datos'));
     }
-     function marcarJornada(Request $request){            
 
+     function marcarJornada(Request $request){
         $tomorrow = Carbon::now();
         $datos=([
             'id_user'=>$request->id_user,

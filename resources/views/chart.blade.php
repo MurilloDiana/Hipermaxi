@@ -4,7 +4,8 @@
     <div>
     <div id="chart-container"></div>
         
-    <a class="btn btn-primary" href="{{ url('bar-chart') }}" role="button">Gráfico de Barras</a>
+    <a class="btn btn-primary" href="{{ url('admin/bar-chart') }}" role="button">Gráfico de Faltas</a>
+    
     
 
     <script src="https://code.highcharts.com/highcharts.js"></script>
@@ -16,7 +17,7 @@
                 text: 'Incremento de nuevos usuarios, 2022'
             },
             subtitle: {
-                text: 'Fuente: medios de TI'
+                text: 'Hipermaxi'
             },
             xAxis: {
                 categories: ['Ene', 'Feb', 'Mzo', 'Abr', 'May', 'Jun', 'Jul', 'Agt', 'Sep', 'Oct', 'Nov', 'Dic']
@@ -59,6 +60,7 @@
         })
 
     </script>
+
     </div>
 
 @endsection

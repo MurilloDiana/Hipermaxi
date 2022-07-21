@@ -37,27 +37,11 @@ use Illuminate\Support\Facades\Auth;
 Route::get('/hola', function () {
     return "hola mundo";
 });
-Route::get('/pago',[BoletaPagoController::class,'index'])->name('solicita');
-Route::post('/pago',[BoletaPagoController::class,'store'])->name('generapago');
-
-
 
 /*GESTINAR ASISTENCIA*/
 Route::get('/asistencia',[JornadaLaboralController::class, 'jornadaIndex'])->name('marcarjornada');
 Route::post('/marcar',[JornadaLaboralController::class, 'marcarJornada'])->name('registrarjornada');
 Route::get('/marcar1',[JornadaLaboralController::class, 'listarAsistencia'])->name('listar_index');
-/* CRUD PERMISO*/
-Route::get('/permiso',[permisoController::class,'listar'])->name('lista.index');
-Route::get('/Genpermiso',[permisoController::class, 'mostr'])->name('Genpermiso.index');
-Route::post('/Genpermiso',[permisoController::class, 'store'])->name('registra');
-/*CRUD DE DESCUENTO*/
-Route::get('/vistaDescuento',[DescuentoController::class, 'index'])->name('mostrar.index');
-Route::get('/generarDescuento',[DescuentoController::class, 'mostrar'])->name('registrardescuento');
-Route::post('/generarDescuento',[DescuentoController::class, 'store'])->name('geenrardescuento');
-/*PAGOADICIONAL*/
-Route::get('/vistaPago',[PagoadicionaController::class, 'listar'])->name('pagoadicional.index');
-Route::get('/generarpagoadicional',[PagoadicionaController::class, 'registro'])->name('registrarPagoAdciona0');
-Route::post('/generarpagoadicional',[PagoadicionaController::class, 'registro1'])->name('registrarPagoAdciona0');
 
 
 Auth::routes();  
@@ -65,7 +49,6 @@ Auth::routes();
 Route::get('/', function () {
     return view('home.index');
 });
-
 
 /*GESTINAR ASISTENCIA*/
 Route::get('/marcar_asistencia',[JornadaLaboralController::class, 'marcarAsistencia'])->name('marcar_asistencia');
@@ -115,12 +98,25 @@ Route::middleware(['auth', 'user-access:admin'])->group(function () {
 
     /* GRAFICAS*/
     Route::get('admin/chart', [ChartController::class, 'index'])->name('chart');
-
+    Route::get('admin/bar-chart', [ChartController::class, 'barChart'])->name('bar-chart');
 
     /*CRUD PERMISO */ 
-    Route::get('admin/permiso', [permisoController::class, 'listar'])->name('permiso.index');
-    Route::get('admin/Genpermiso', [permisoController::class, 'mostr'])->name('Genpermiso.index');
-    Route::post('admin/Genpermiso', [permisoController::class, 'store'])->name('registra');
+    Route::get('/admin/permiso', [permisoController::class, 'listar'])->name('permiso.index');
+    Route::get('/admin/Genpermiso', [permisoController::class, 'mostr'])->name('Genpermiso.index');
+    Route::post('/admin/Genpermiso', [permisoController::class, 'store'])->name('registra');
+
+    Route::get('/admin/pago',[BoletaPagoController::class,'index'])->name('solicita');
+    Route::post('/admin/pago',[BoletaPagoController::class,'store'])->name('generapago');
+
+    /*CRUD DE DESCUENTO*/
+    Route::get('/admin/vistaDescuento',[DescuentoController::class, 'index'])->name('mostrar.index');
+    Route::get('/admin/generarDescuento',[DescuentoController::class, 'mostrar'])->name('registrardescuento');
+    Route::post('/admin/generarDescuento',[DescuentoController::class, 'store'])->name('geenrardescuento');
+
+    /*PAGOADICIONAL*/
+    Route::get('/admin/vistaPago',[PagoadicionaController::class, 'listar'])->name('pagoadicional.index');
+    Route::get('/admin/generarpagoadicional',[PagoadicionaController::class, 'registro'])->name('registrarPagoAdciona0');
+    Route::post('/admin/generarpagoadicional',[PagoadicionaController::class, 'registro1'])->name('registrarPagoAdciona0');
 });
   
 /*------------------------------------------
@@ -145,19 +141,22 @@ Route::middleware(['auth', 'user-access:manager'])->group(function () {
     Route::get('/manager/buscar_asistencia',[JornadaLaboralController::class, 'buscarAsistencia'])->name('buscar_index'); 
     Route::get('/manager/lista_asistencia',[JornadaLaboralController::class, 'listarAsistencia'])->name('listar_index');    
 
-    Route::get('/manager/pagoadicional',[PagoadicionaController::class, 'listar'])->name('pagoadicional.index');
-    Route::get('/manager/registrarPagoAdiciona',[PagoadicionaController::class, 'registro'])->name('registrarPagoAdciona0');
-    Route::POST('/manager/registrarPagoAdiciona',[PagoadicionaController::class, 'registro1'])->name('registrarPagoAdciona1');
-
+    /* FALTAS */
     Route::get('/manager/falta',[FaltaJustifiController::class, 'index'])->name('mostrar');
     Route::get('/manager/faltajustificada',[FaltaJustifiController::class, 'index2'])->name('generar');
     Route::post('/manager/faltajustificada',[FaltaJustifiController::class, 'store'])->name('ingresar');        
-
     
     /*ADMINISTRAR ASISTENCIAS*/
-    Route::get('/registrarfalta', function(){
+    Route::get('/manager/registrarfalta', function(){
         return view('registrarFaltas');
     });
-    Route::post('/asignarFalta', [FaltaController::class, 'registrarFaltas'])->name('asignarFalta');
-    Route::get('/falta', [FaltaController::class, 'listarFaltas'])->name('faltas');
+    Route::post('/manager/asignarFalta', [FaltaController::class, 'registrarFaltas'])->name('asignarFalta');
+    Route::get('/manager/falta', [FaltaController::class, 'listarFaltas'])->name('faltas');
+
+    /* CRUD PERMISO*/
+    Route::get('/manager/permiso',[permisoController::class,'listar'])->name('lista.index');
+    Route::get('/manager/Genpermiso',[permisoController::class, 'mostr'])->name('Genpermiso.index');
+    Route::post('/manager/Genpermiso',[permisoController::class, 'store'])->name('registra');
 });
+
+
