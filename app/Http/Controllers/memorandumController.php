@@ -16,4 +16,18 @@ class memorandumController extends Controller
         return view('pruebamemo',compact('empleados'));
     }
 
+    public function store(Request $request)
+    {
+        $empleados = new empleado();
+        $falta = new falta();
+        $memo = new memorandum();
+        $memo->fecha=$request->fecha;
+        $memo->descripcion=$request->desc;
+        $memo->id_emp=$request->id_empleado;
+        $v1=falta::join('faltas.id_usuario',$request->id_empleado)->select('faltas.id');
+        $memo->id_falta=$v1;
+        $memo->get();
+
+    }
+
 }
