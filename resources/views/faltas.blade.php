@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@extends('layouts.partials.navbar_administracion')
 @section('content')
 <div class="py-4">
     <table class="table table-hover bg-light text-center">
