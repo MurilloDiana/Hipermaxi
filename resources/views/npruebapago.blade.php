@@ -20,7 +20,6 @@
                             <div class="col-sm-6">
                                 <input type="text"  name="CODIGO" value="{{$empleado->CODIGO}}" readonly>
                             </div>
-
                             <label class="col-sm-4 col-form-label"><i class="text-danger">* </i> Nombre Completo:</label>
                             <div class="col-sm-6">
                                 <input type="text" value="{{$empleado->NOMBRE}}" disabled>

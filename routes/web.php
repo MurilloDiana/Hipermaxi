@@ -19,6 +19,8 @@ use App\Http\Controllers\PagoadicionaController;
 use App\Http\Controllers\DescuentoController;
 USE App\Http\Controllers\BoletaPagoController;
 USE App\Http\Controllers\GeneradorController;
+
+use App\Http\Controllers\memorandumController;
 use Illuminate\Support\Facades\Auth;
 
 
@@ -42,6 +44,13 @@ Route::get('/hola', function () {
 Route::get('/asistencia',[JornadaLaboralController::class, 'jornadaIndex'])->name('marcarjornada');
 Route::post('/marcar',[JornadaLaboralController::class, 'marcarJornada'])->name('registrarjornada');
 Route::get('/marcar1',[JornadaLaboralController::class, 'listarAsistencia'])->name('listar_index');
+
+
+/*MEMORANDUM AUXI BEBE*/ /* ---> BORRAR */
+route::get('/memorandum',[memorandumController::class,'index'])->name('memorandum');
+route::post('/memorandum',[memorandumController::class,'store'])->name('memorandumregistro');
+route::get('/PDFmemorandum',[memorandumController::class,'show'])->name('memo');
+
 
 
 Auth::routes();  
