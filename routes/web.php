@@ -160,5 +160,4 @@ Route::middleware(['auth', 'user-access:manager'])->group(function () {
     Route::post('/manager/Genpermiso',[permisoController::class, 'store'])->name('registra');
 });
 
-Route::get('/boletas', [BoletaPagoController::class, 'index'])->name('boleta.index');
-Route::get('/boleta/pdf', [GeneradorController::class, 'createPDF'])->name('boleta.pdf');
+
