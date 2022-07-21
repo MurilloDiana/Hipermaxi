@@ -246,6 +246,14 @@ class DatabaseSeeder extends Seeder
             'ID_permiso_emp'=>'14'
         ]);
 
+        permiso::create([
+            'FECHA_INI'=>'2022-06-26',
+            'FECHA_FIN'=>'2022-06-30',
+            'ASUNTO'=>'BAJA MEDICA',
+            'DIAS'=>'10',
+            'id_permiso_emp'=>'5'
+        ]);
+
         sueldo::create([    
             'Sueldo'=>'2500',
             'id_ingreso_emp'=>'5']);
@@ -298,8 +306,57 @@ class DatabaseSeeder extends Seeder
             'email'=>'fabian@gmail.com', 
             'type'=>2,
             'password'=>'123456789'
-        ]);       
+        ]);  
+        JornadaLaboral::create(['id'=>'5','datetime_marcado'=>'2022-06-01 08:00']);
+        JornadaLaboral::create(['id'=>'5','datetime_marcado'=>'2022-06-01 12:00']);
+        JornadaLaboral::create(['id'=>'5','datetime_marcado'=>'2022-06-02 08:00']);
+        JornadaLaboral::create(['id'=>'5','datetime_marcado'=>'2022-06-02 12:00']);
+        JornadaLaboral::create(['id'=>'5','datetime_marcado'=>'2022-06-03 08:00']);
+        JornadaLaboral::create(['id'=>'5','datetime_marcado'=>'2022-06-03 12:00']);
+        JornadaLaboral::create(['id'=>'5','datetime_marcado'=>'2022-06-04 08:00']);
+        JornadaLaboral::create(['id'=>'5','datetime_marcado'=>'2022-06-04 12:00']);
+        JornadaLaboral::create(['id'=>'5','datetime_marcado'=>'2022-06-06 08:00']);
+        JornadaLaboral::create(['id'=>'5','datetime_marcado'=>'2022-06-06 12:00']);
+        JornadaLaboral::create(['id'=>'5','datetime_marcado'=>'2022-06-07 08:00']);
+        JornadaLaboral::create(['id'=>'5','datetime_marcado'=>'2022-06-07 12:00']);
+        JornadaLaboral::create(['id'=>'5','datetime_marcado'=>'2022-06-08 08:00']);
+        JornadaLaboral::create(['id'=>'5','datetime_marcado'=>'2022-06-08 12:00']);
+        JornadaLaboral::create(['id'=>'5','datetime_marcado'=>'2022-06-09 08:00']);
+        JornadaLaboral::create(['id'=>'5','datetime_marcado'=>'2022-06-09 12:00']);
+
+        JornadaLaboral::create(['id'=>'5','datetime_marcado'=>'2022-06-10 08:00']);
+        JornadaLaboral::create(['id'=>'5','datetime_marcado'=>'2022-06-10 12:00']);
+        JornadaLaboral::create(['id'=>'5','datetime_marcado'=>'2022-06-11 08:00']);
+        JornadaLaboral::create(['id'=>'5','datetime_marcado'=>'2022-06-11 12:00']);
+        JornadaLaboral::create(['id'=>'5','datetime_marcado'=>'2022-06-12 08:00']);
+        JornadaLaboral::create(['id'=>'5','datetime_marcado'=>'2022-06-12 12:00']);
+        JornadaLaboral::create(['id'=>'5','datetime_marcado'=>'2022-06-13 08:00']);
+        JornadaLaboral::create(['id'=>'5','datetime_marcado'=>'2022-06-13 12:00']);
+        JornadaLaboral::create(['id'=>'5','datetime_marcado'=>'2022-06-14 08:00']);
+        JornadaLaboral::create(['id'=>'5','datetime_marcado'=>'2022-06-14 12:00']);
+        JornadaLaboral::create(['id'=>'5','datetime_marcado'=>'2022-06-15 08:00']);
+        JornadaLaboral::create(['id'=>'5','datetime_marcado'=>'2022-06-15 12:00']);
+        JornadaLaboral::create(['id'=>'5','datetime_marcado'=>'2022-06-16 08:00']);
+        JornadaLaboral::create(['id'=>'5','datetime_marcado'=>'2022-06-16 12:00']);
+        JornadaLaboral::create(['id'=>'5','datetime_marcado'=>'2022-06-17 08:00']);
+        JornadaLaboral::create(['id'=>'5','datetime_marcado'=>'2022-06-17 12:00']);
+
+        JornadaLaboral::create(['id'=>'5','datetime_marcado'=>'2022-06-18 08:00']);
+        JornadaLaboral::create(['id'=>'5','datetime_marcado'=>'2022-06-18 12:00']);
+        JornadaLaboral::create(['id'=>'5','datetime_marcado'=>'2022-06-19 08:00']);
+        JornadaLaboral::create(['id'=>'5','datetime_marcado'=>'2022-06-19 12:00']);
+
+        JornadaLaboral::create(['id'=>'5','datetime_marcado'=>'2022-06-21 08:00']);
+        JornadaLaboral::create(['id'=>'5','datetime_marcado'=>'2022-06-21 12:00']);
+        JornadaLaboral::create(['id'=>'5','datetime_marcado'=>'2022-06-22 08:00']);
+        JornadaLaboral::create(['id'=>'5','datetime_marcado'=>'2022-06-22 12:00']);
+        JornadaLaboral::create(['id'=>'5','datetime_marcado'=>'2022-06-23 08:00']);
+        JornadaLaboral::create(['id'=>'5','datetime_marcado'=>'2022-06-23 12:00']);
         
+        JornadaLaboral::create(['id'=>'5','datetime_marcado'=>'2022-06-25 08:00']);
+        JornadaLaboral::create(['id'=>'5','datetime_marcado'=>'2022-06-25 12:00']);
+        JornadaLaboral::create(['id'=>'5','datetime_marcado'=>'2022-06-26 08:00']);
+        JornadaLaboral::create(['id'=>'5','datetime_marcado'=>'2022-06-26 12:00']);
         //datos del horario
         $this->call(CreateHorarioSeeder::class);  
         //datos del contrato
