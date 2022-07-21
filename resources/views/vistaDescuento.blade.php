@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@extends('layouts.partials.navbar_administracion')
+@extends('layouts.partials.navbar_recusos_humanos')
 @section('content')
 <link rel="stylesheet" type="text/css" href="css/style_asis.css">
 <div class="row wrapper border-bottom white-bg page-heading">
