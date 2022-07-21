@@ -99,8 +99,13 @@ Route::middleware(['auth', 'user-access:admin'])->group(function () {
 
     /* GRAFICAS*/
     Route::get('admin/chart', [ChartController::class, 'index'])->name('chart');
+    Route::get('admin/bar-chart', [ChartController::class, 'barChart'])->name('bar-chart');
 
-    /* BOLETA DE PAGO */
+    /*CRUD PERMISO */ 
+    Route::get('/admin/permiso', [permisoController::class, 'listar'])->name('permiso.index');
+    Route::get('/admin/Genpermiso', [permisoController::class, 'mostr'])->name('Genpermiso.index');
+    Route::post('/admin/Genpermiso', [permisoController::class, 'store'])->name('registra');
+
     Route::get('/admin/pago',[BoletaPagoController::class,'index'])->name('solicita');
     Route::post('/admin/pago',[BoletaPagoController::class,'store'])->name('generapago');
 
@@ -155,5 +160,4 @@ Route::middleware(['auth', 'user-access:manager'])->group(function () {
     Route::post('/manager/Genpermiso',[permisoController::class, 'store'])->name('registra');
 });
 
-Route::get('/boletas', [BoletaPagoController::class, 'index'])->name('boleta.index');
-Route::get('/boleta/pdf', [GeneradorController::class, 'createPDF'])->name('boleta.pdf');
+

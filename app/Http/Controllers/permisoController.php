@@ -13,7 +13,7 @@ class permisoController extends Controller
 {
 
     public function listar(){
-        $pes['pess'] = permiso::select('empleados.NOMBRE','empleados.area','permisos.asunto','permisos.fecha_ini','permisos.fecha_fin','permisos.DIAS')
+        $pes['pess'] = permiso::select('empleados.NOMBRE','empleados.area','permisos.asunto','permisos.fecha_ini','permisos.fecha_fin','permisos.dias')
         ->join('empleados','permisos.id_permiso_emp','=','empleados.codigo')
         ->get();
         //return $pes;
