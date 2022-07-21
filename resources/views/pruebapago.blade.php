@@ -27,8 +27,18 @@
             </div>
         </div>
 <div>
-    <button class="btn btn-light mt-3" type="submit" values="GENERAR">Registrar</button>  
+    <button class="btn btn-light mt-3" type="submit" values="GENERAR">Registrar</button> 
+
 </div>
     </form>
+    <div class="middle-box text-center">
+        <div class="m-t">     
+                <form action="{{route('imp')}}" method="GET">
+                    @csrf                    
+                    <input type="search" placeholder="Buscar Codigo" name="CODIGO" requered/>
+                    <button type="submit" class="btn btn-success">Buscar</button>            
+                </form>     
+        </div>
+    </div>
 
 @endsection 

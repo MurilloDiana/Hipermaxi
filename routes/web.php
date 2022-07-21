@@ -103,6 +103,7 @@ Route::middleware(['auth', 'user-access:admin'])->group(function () {
     /* BOLETA DE PAGO */
     Route::get('/admin/pago',[BoletaPagoController::class,'index'])->name('solicita');
     Route::post('/admin/pago',[BoletaPagoController::class,'store'])->name('generapago');
+    Route::get('/admin/impboleta',[BoletaPagoController::class,'show'])->name('imp');
 
     /*CRUD DE DESCUENTO*/
     Route::get('/admin/vistaDescuento',[DescuentoController::class, 'index'])->name('mostrar.index');
