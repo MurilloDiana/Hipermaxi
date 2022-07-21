@@ -32,8 +32,8 @@ class JornadaLaboralController extends Controller
             //SELECT CODIGO, NOMBRE, turno FROM empleados, horarios where id=id_horario
             return view ('listaJornada', compact('datos'));        
     }
-
-    public function marcarJornada(Request $request){            
+    }
+     function marcarJornada(Request $request){            
         $tomorrow = Carbon::now();
         $datos=([
             'id_user'=>$request->id_user,

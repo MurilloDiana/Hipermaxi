@@ -9,24 +9,11 @@
 
 <div >
     <div class="container-form sign-in">
-       <!-- <div class="col-md-6">
+        <div class="col-md-6">
             <div class="card">
                 <div class="card-header">{{ __('Login') }}</div>
-
-                <div class="card-body"> -->
+                <div class="card-body"> 
                     <form class="formulario" method="POST" action="{{ route('login') }}">
-                        <h2 class="create-account">Iniciar Sesion</h2>
-                        <div class="iconos">
-                            <div class="border-icon">
-                                <i class='bx bxl-instagram'></i>
-                            </div>
-                            <div class="border-icon">
-                                <i class='bx bxl-linkedin' ></i>
-                            </div>
-                            <div class="border-icon">
-                                <i class='bx bxl-facebook-circle' ></i>
-                            </div>
-                        </div>
                         @csrf
 
                         <div class="row mb-5">
@@ -34,7 +21,7 @@
 
                             <div class="col-md-6">
                                 <input type="text" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
-                                <!--<input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>-->
+                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
 
                                 @error('email')
                                     <span class="invalid-feedback" role="alert">
