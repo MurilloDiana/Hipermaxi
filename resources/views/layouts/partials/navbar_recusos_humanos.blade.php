@@ -8,6 +8,7 @@
             <a class="btn btn-primary" href="{{route('contrato.index')}}">Contrato</a>            
             <a class="btn btn-primary" href="{{route('chart')}}">Estadistica</a>            
             <a class="btn btn-primary" href="{{route('antiguedad.index')}}">Antiguedad</a>            
+            <a class="btn btn-primary" href="{{route('solicita')}}">Boleta de Pagos</a>            
             <a class="btn btn-primary" href="{{route('permiso.index')}}">Permisos</a>            
             </nav>            
         @endauth                             

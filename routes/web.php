@@ -37,10 +37,6 @@ use Illuminate\Support\Facades\Auth;
 Route::get('/hola', function () {
     return "hola mundo";
 });
-Route::get('/pago',[BoletaPagoController::class,'index'])->name('solicita');
-Route::post('/pago',[BoletaPagoController::class,'store'])->name('generapago');
-
-
 
 /*GESTINAR ASISTENCIA*/
 Route::get('/asistencia',[JornadaLaboralController::class, 'jornadaIndex'])->name('marcarjornada');
@@ -118,9 +114,12 @@ Route::middleware(['auth', 'user-access:admin'])->group(function () {
 
 
     /*CRUD PERMISO */ 
-    Route::get('admin/permiso', [permisoController::class, 'listar'])->name('permiso.index');
-    Route::get('admin/Genpermiso', [permisoController::class, 'mostr'])->name('Genpermiso.index');
-    Route::post('admin/Genpermiso', [permisoController::class, 'store'])->name('registra');
+    Route::get('/admin/permiso', [permisoController::class, 'listar'])->name('permiso.index');
+    Route::get('/admin/Genpermiso', [permisoController::class, 'mostr'])->name('Genpermiso.index');
+    Route::post('/admin/Genpermiso', [permisoController::class, 'store'])->name('registra');
+
+    Route::get('/admin/pago',[BoletaPagoController::class,'index'])->name('solicita');
+    Route::post('/admin/pago',[BoletaPagoController::class,'store'])->name('generapago');
 });
   
 /*------------------------------------------
