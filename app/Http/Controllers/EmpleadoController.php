@@ -57,18 +57,8 @@ class EmpleadoController extends Controller
         $dato->DIRECCION = $request->input('DIRECCION');
         $dato->FECHA_ING = $request->input('FECHA_ING');
         $dato->AREA = $request->input('AREA');
-
         $dato->update();                
-        return redirect()->route('empleado.index');
-
-        $dato->ANTIGUEDAD = $request->input('ANTIGUEDAD');
-        $dato->USUARIO = $request->input('USUARIO');
-        $dato->PASSWORD = Hash::make( $request->input('PASSWORD'));
-        $dato->NIVEL = $request->input('NIVEL');        
-        $dato->update();
-        
-        $datos=empleado::get();
-        return view ('empleado', compact('datos'));  
+        return redirect()->route('empleado.index');        
     }
 
 

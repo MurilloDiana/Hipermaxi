@@ -4,10 +4,12 @@
     <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">        
         @auth            
             <nav>                        
-            <a class="btn btn-primary" href="{{route('admin.home')}}">Inicio</a>            
+            <a class="btn btn-primary" href="{{route('admin.home')}}">Inicio</a>
+            <a class="btn btn-primary" href="{{route('adminempleado.index')}}">Empleado</a>            
             <a class="btn btn-primary" href="{{route('contrato.index')}}">Contrato</a>            
             <a class="btn btn-primary" href="{{route('chart')}}">Estadistica</a>            
             <a class="btn btn-primary" href="{{route('antiguedad.index')}}">Antiguedad</a>                     
+            <a class="btn btn-primary" href="{{route('memorandum')}}">Memorandum</a>
             <a class="btn btn-primary" href="{{route('solicita')}}">Boleta de Pagos</a>                        
             <a class="btn btn-primary" href="{{route('mostrar.index')}}">Descuentos</a>
             <a class="btn btn-primary" href="{{route('pagoadicional.index')}}">Pago Adicional</a>

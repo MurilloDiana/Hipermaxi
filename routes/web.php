@@ -46,13 +46,6 @@ Route::post('/marcar',[JornadaLaboralController::class, 'marcarJornada'])->name(
 Route::get('/marcar1',[JornadaLaboralController::class, 'listarAsistencia'])->name('listar_index');
 
 
-/*MEMORANDUM AUXI BEBE*/ /* ---> BORRAR */
-route::get('/memorandum',[memorandumController::class,'index'])->name('memorandum');
-route::post('/memorandum',[memorandumController::class,'store'])->name('memorandumregistro');
-route::get('/PDFmemorandum',[memorandumController::class,'show'])->name('memo');
-
-
-
 Auth::routes();  
 
 Route::get('/', function () {
@@ -106,14 +99,15 @@ Route::middleware(['auth', 'user-access:admin'])->group(function () {
     Route::get('/admin/antiguedad', [AntiguedadController::class, 'index'])->name('antiguedad.index');
 
     /* GRAFICAS*/
-    Route::get('admin/chart', [ChartController::class, 'index'])->name('chart');
-    Route::get('admin/bar-chart', [ChartController::class, 'barChart'])->name('bar-chart');
+    Route::get('/admin/chart', [ChartController::class, 'index'])->name('chart');
+    Route::get('/admin/bar-chart', [ChartController::class, 'barChart'])->name('bar-chart');
 
-    /*CRUD PERMISO */ 
-    Route::get('/admin/permiso', [permisoController::class, 'listar'])->name('permiso.index');
-    Route::get('/admin/Genpermiso', [permisoController::class, 'mostr'])->name('Genpermiso.index');
-    Route::post('/admin/Genpermiso', [permisoController::class, 'store'])->name('registra');
+    /*MEMORANDUM AUXI BEBE*/ /* ---> BORRAR */
+    route::get('/memorandum',[memorandumController::class,'index'])->name('memorandum');
+    route::post('/memorandum',[memorandumController::class,'store'])->name('memorandumregistro');
+    route::get('/PDFmemorandum',[memorandumController::class,'show'])->name('memo');
 
+    /**boleta de pago */
     Route::get('/admin/pago',[BoletaPagoController::class,'index'])->name('solicita');
     Route::post('/admin/pago',[BoletaPagoController::class,'store'])->name('generapago');
     Route::get('/admin/impboleta',[BoletaPagoController::class,'show'])->name('imp');
