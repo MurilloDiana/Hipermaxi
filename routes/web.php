@@ -46,19 +46,11 @@ Route::post('/marcar',[JornadaLaboralController::class, 'marcarJornada'])->name(
 Route::get('/marcar1',[JornadaLaboralController::class, 'listarAsistencia'])->name('listar_index');
 
 
-/*MEMORANDUM AUXI BEBE*/ /* ---> BORRAR */
-route::get('/memorandum',[memorandumController::class,'index'])->name('memorandum');
-route::post('/memorandum',[memorandumController::class,'store'])->name('memorandumregistro');
-route::get('/PDFmemorandum',[memorandumController::class,'show'])->name('memo');
-
-
-
 Auth::routes();  
 
 Route::get('/', function () {
     return view('home.index');
 });
-
 
 /*GESTINAR ASISTENCIA*/
 Route::get('/marcar_asistencia',[JornadaLaboralController::class, 'marcarAsistencia'])->name('marcar_asistencia');
@@ -107,9 +99,15 @@ Route::middleware(['auth', 'user-access:admin'])->group(function () {
     Route::get('/admin/antiguedad', [AntiguedadController::class, 'index'])->name('antiguedad.index');
 
     /* GRAFICAS*/
-    Route::get('admin/chart', [ChartController::class, 'index'])->name('chart');
+    Route::get('/admin/chart', [ChartController::class, 'index'])->name('chart');
+    Route::get('/admin/bar-chart', [ChartController::class, 'barChart'])->name('bar-chart');
 
-    /* BOLETA DE PAGO */
+    /*MEMORANDUM AUXI BEBE*/ /* ---> BORRAR */
+    route::get('/memorandum',[memorandumController::class,'index'])->name('memorandum');
+    route::post('/memorandum',[memorandumController::class,'store'])->name('memorandumregistro');
+    route::get('/PDFmemorandum',[memorandumController::class,'show'])->name('memo');
+
+    /**boleta de pago */
     Route::get('/admin/pago',[BoletaPagoController::class,'index'])->name('solicita');
     Route::post('/admin/pago',[BoletaPagoController::class,'store'])->name('generapago');
     Route::get('/admin/impboleta',[BoletaPagoController::class,'show'])->name('imp');
@@ -165,5 +163,4 @@ Route::middleware(['auth', 'user-access:manager'])->group(function () {
     Route::post('/manager/Genpermiso',[permisoController::class, 'store'])->name('registra');
 });
 
-Route::get('/boletas', [BoletaPagoController::class, 'index'])->name('boleta.index');
-Route::get('/boleta/pdf', [GeneradorController::class, 'createPDF'])->name('boleta.pdf');
+

@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@extends('layouts.partials.navbar')
+@extends('layouts.partials.navbar_recusos_humanos')
 @section('content')
 <div class="container">
     <h1 class="text-center">FORMULARIO DE REGISTRO</h1>                                
@@ -50,7 +50,7 @@
     </div>
         <div class="mb-3 mt-4">                                        
             <button class="btn btn-success mt-3" type="submit">Registrar</button>  
-            <a href="{{route('empleado.index')}}" class="btn btn-danger float-end">CANCELAR</a>            
+            <a href="{{route('adminempleado.index')}}" class="btn btn-danger float-end">CANCELAR</a>            
         </div>
     </form>
 </div>
