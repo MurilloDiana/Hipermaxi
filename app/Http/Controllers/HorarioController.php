@@ -31,12 +31,13 @@ class HorarioController extends Controller
         Horario::create($newHorario);
     }
 
-    public function asignarHorarios(Request $request){        
-            $usuario = empleado::find($request->CODIGO); 
-            return view('modificar_horario', compact('usuario'));        
+    public function asignarHorarios(Request $request){              
+            $empleado = empleado::find($request->CODIGO); 
+            return view('modificar_horario', compact('empleado'));        
     }
 
     public function update(Request $request, $CODIGO){
+        
         $dato = empleado::find($CODIGO);  
         $dato->id_horario = $request->input('id_horario');
         $dato->update();
