@@ -72,7 +72,7 @@ class BoletaPagoController extends Controller
         $pago->monto_desc = $v2;
         $v3 = sueldo::where("id_ingreso_emp","=",$request->id_empleado)->get()->first();
         $v3 = $v3->Sueldo*1;
-        $v4 = $v3+$v1+$v2;
+        $v4 = $v3+$v1-$v2;
         $pago->monto_total = $v4;
        //dd($v3);
         $pago->save();
