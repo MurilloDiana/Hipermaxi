@@ -1,5 +1,4 @@
 @extends('layouts.app')
-@extends('layouts.partials.navbar_recusos_humanos')
 @section('content')
 <div class="row wrapper border-bottom white-bg page-heading">
     <div class="col-lg-6">

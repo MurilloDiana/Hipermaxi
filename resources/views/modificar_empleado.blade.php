@@ -1,5 +1,4 @@
 @extends('layouts.app')
-@extends('layouts.partials.navbar_recusos_humanos')
 @section('content')
 <form action="{{ url('/admin/actualizar_empleado/'.$usuario->CODIGO) }}" method="POST">
     {{csrf_field()}}

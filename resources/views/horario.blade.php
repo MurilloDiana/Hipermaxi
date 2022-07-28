@@ -10,6 +10,7 @@
         <th scope="col">HORA DE INGRESO</th>
         <th scope="col">HORA DE SALIDA</th>
         <th scope="col">TURNO</th>
+        <th scope="col">ASIGNAR EMPELADO</th>
         <th scope="col">ELIMINAR EMPELADO</th>
         </tr>
     </thead>
@@ -20,13 +21,13 @@
             <td>{{$horario->hora_ingreso}}</td>
             <td>{{$horario->hora_salida}}</td>
             <td>{{$horario->turno}}</td>
-            <!--<td>           
+            <td>           
                 <form method="POST" action="{ url('/admin/asignar/'.$horario->id) }}">                
                 @csrf
                 @method('POST')
                 <button type="submit" class="btn btn-success">ASIGNAR</button>
                 </form>                
-            </td>-->
+            </td>
             <td>                     
                 <a type="submit"  class="btn btn-danger" href="">ELIMINAR</a>
             </td>  
@@ -37,11 +38,11 @@
 
 <!--ASIGNAR HORARIO-->  
     <div class="box">
-    <div class="py-4 container">     
+    <div class="container-1">     
             <form action="{{route('asignar')}}" method="GET">
                 @csrf                    
                 <input type="search" placeholder="Cuscar Codigo" name="CODIGO" requered/>
-                <button type="submit" class="btn btn-success">Buscar y asignar horario</button>            
+                <button type="submit" class="btn btn-success">Buscar</button>            
             </form>     
     </div>
     </div>

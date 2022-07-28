@@ -8,7 +8,7 @@
             <form action="{{route('asignarContrato')}}" method="GET">
                 @csrf                    
                 <input type="search" placeholder="Buscar Codigo" name="CODIGO" requered/>
-                <button type="submit" class="btn btn-success">Asignar Contrato</button>            
+                <button type="submit" class="btn btn-success">Buscar</button>            
             </form>     
     </div>
 </div>

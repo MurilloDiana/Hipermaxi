@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@extends('layouts.partials.navbar_recusos_humanos')
+@extends('layouts.partials.navbar_administracion')
 @section('content')
 <div class="middle-box text-center">
   <div class="m-t">     
@@ -7,9 +7,9 @@
         <form action="{{route('buscar')}}" method="GET">
             @csrf                    
             <input type="search" placeholder="Buscar Codigo" name="CODIGO" requered/>
-            <button type="submit" class="btn btn-success">Buscar</button>
+            <button type="submit" class="btn btn-success">Buscar</button>                        
+            <a type="submit"  class="btn btn-success" href="{{route('formulario.index')}}"> Registrar Empleado</a>
         </form>                             
-        <a type="submit"  class="btn btn-success" href="{{route('formulario.index')}}"> Registrar Empleado</a>
   </div>  
 </div>
 
